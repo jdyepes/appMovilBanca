@@ -19,6 +19,41 @@ export class AppComponent {
       title: 'List',
       url: '/list',
       icon: 'list'
+    },
+    {
+      title: 'Consultas',
+      url: '/consultas',
+      icon: 'consultas'
+    },
+    {
+      title: 'Transferencias',
+      url: '/transferencias',
+      icon: 'transferencia'
+    },
+    {
+      title: 'Pago Móvil',
+      url: '/pago-movil',
+      icon: 'pago-movil'
+    },
+    {
+      title: 'Pagos de TDC',
+      url: '/pago-tarjeta-de-credito',
+      icon: 'paaa'
+    },
+    {
+      title: 'Avance de Efectivo',
+      url: '/avance-de-efectivo',
+      icon: 'cash'
+    },
+    {
+      title: 'Recargas',
+      url: '/recargas',
+      icon: 'consultas'
+    },
+    {
+      title: 'Suspension de TDC',
+      url: '/suspension-tarjeta-de-credito',
+      icon: 'consultas'
     }
   ];
 
