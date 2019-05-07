@@ -12,4 +12,14 @@ export class TransferenciasPage implements OnInit {
   ngOnInit() {
   }
 
+  options: any[] = [
+    {
+      id: 1,
+      name: 'a',
+    },
+    {
+      id: 2,
+      name: 'b',
+    }
+  ]
 }
