@@ -12,4 +12,38 @@ export class PagoMovilPage implements OnInit {
   ngOnInit() {
   }
 
+  options: any[] = [
+    {
+      id: 1,
+      name: 'Banesco',
+    },
+    {
+      id: 2,
+      name: 'Provincial',
+    },
+    {
+      id: 3,
+      name: 'Mercantil',
+    },
+    {
+      id: 4,
+      name: 'BFC',
+    }
+  ]
+
+  //// Operadoras por confirmar
+  operadoras: any[] = [
+    {
+      id: 1,
+      name: 'Movilnet',
+    },
+    {
+      id: 2,
+      name: 'Movistar',
+    },
+    {
+      id: 3,
+      name: 'Digitel',
+    }  
+  ]
 }
