@@ -51,8 +51,8 @@ export class AppComponent {
       icon: 'consultas'
     },
     {
-      title: 'Suspension de TDC',
-      url: '/suspension-tarjeta-de-credito',
+      title: 'Suspension de TDD',
+      url: '/suspension-tarjeta-de-debito',
       icon: 'consultas'
     }
   ];
