@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>PagoMóvil</ion-title>
+    <ion-buttons slot="start">
+        <ion-back-button color= "primary" defaultHref="home" icon="arrow-back" defaultHref="#"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header style="background: #0d46a0; color: whitesmoke;">Banco Destino</ion-card-header>
+        <ion-card-content>
+            <ion-row>
+                <ion-col style="margin-top: 10px; margin-left: 5px;" >Banco: </ion-col>
+                <ion-item style="padding:1px; margin-bottom: 5px;" >
+                    <ion-label style="padding:1px;" >Seleccione el Banco</ion-label>
+                    <ion-select style="padding:5px; " placeholder="">
+                        <ion-select-option *ngFor="let option of options" >{{option.name}}</ion-select-option>
+                    </ion-select>
+                </ion-item>          
+            </ion-row> 
+        </ion-card-content>
+        <ion-card-header style="background: #0d46a0; color: whitesmoke;">Telefóno del Beneficiario</ion-card-header>
+        <ion-card-content>
+            <ion-row>
+                <ion-col style="margin-top: 10px; margin-left: 5px;" >Operadora de Teléfono: </ion-col>
+                <ion-item style="padding:1px; margin-bottom: 5px;" >                
+                    <ion-label style="padding:1px;" >Operadora</ion-label>
+                    <ion-select style="padding:5px; " placeholder="">
+                        <ion-select-option *ngFor="let option of operadoras" >{{option.name}}</ion-select-option>
+                    </ion-select>                  
+                </ion-item>
+            </ion-row> 
+            <ion-row>
+                <ion-col style="margin-top: 10px; margin-left: 5px;" >Número de Teléfono: </ion-col>                 
+                    <ion-input type="tel" placeholder="Tel Input" required></ion-input>                    
+            </ion-row> 
+        </ion-card-content>
+        <ion-card-header style="background: #0d46a0; color: whitesmoke;">Cédula de Identidad del Beneficiario</ion-card-header>
+        <ion-card-content>
+            <ion-row>
+                <ion-col style="margin-top: 10px; margin-left: 5px;" >Tipo de Cédula de Identidad: </ion-col>
+                <ion-item style="padding:1px; margin-bottom: 5px;" >                
+                    <ion-label style="padding:1px;" >Cédula</ion-label>
+                    <ion-select style="padding:5px; " placeholder="">
+                        <ion-select-option *ngFor="let option of operadoras" >{{option.name}}</ion-select-option>
+                    </ion-select>                  
+                </ion-item>
+            </ion-row> 
+            <ion-row>
+                <ion-col style="margin-top: 10px; margin-left: 5px;" >Número de Cédula: </ion-col>                 
+                    <ion-input type="tel" placeholder="Tel Input" required></ion-input>                    
+            </ion-row> 
+        </ion-card-content>
+        <ion-card-header style="background: #0d46a0; color: whitesmoke;">Datos del Pago</ion-card-header>
+        <ion-card-content>
+            <ion-row>
+                <ion-col style="margin-top: 10px; margin-left: 5px;" >Monto: </ion-col>            
+                <ion-item>                    
+                    <ion-input type="number" placeholder=""></ion-input>,
+                    <ion-input type="number" placeholder=""></ion-input>
+                </ion-item>       
+            </ion-row> 
+        </ion-card-content>
+        <ion-button float-right expand="full" style= "margin-left: 70px; margin-right: 30px; margin-bottom: 15px; margin-top:15px; width: 70px;" fill="outline">Enviar
+        </ion-button>
+    </ion-card>  
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-title>Footer</ion-title>
+    </ion-toolbar>
+</ion-footer>
