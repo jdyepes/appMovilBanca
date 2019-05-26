@@ -1,22 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-consulta-saldo',
-  templateUrl: './consulta-saldo.page.html',
-  styleUrls: ['./consulta-saldo.page.scss'],
+  selector: 'app-consulta-movimiento',
+  templateUrl: './consulta-movimiento.page.html',
+  styleUrls: ['./consulta-movimiento.page.scss'],
 })
-export class ConsultaSaldoPage implements OnInit {
+export class ConsultaMovimientoPage implements OnInit {
 
   constructor() { }
-
   accounts: any[] = [
     {
       id: 1,
-      name: 'Cuenta Corriente',
+      name: 'Corriente',
     },
     {
       id: 2,
-      name: 'Cuenta de Ahorros',
+      name: 'Ahorro',
     }
   ];
 
@@ -31,7 +30,7 @@ export class ConsultaSaldoPage implements OnInit {
     }
   ];
 
-
   ngOnInit() {
   }
+
 }

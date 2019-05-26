@@ -22,7 +22,9 @@ const routes: Routes = [
   { path: 'avance-de-efectivo', loadChildren: './avance-de-efectivo/avance-de-efectivo.module#AvanceDeEfectivoPageModule' },
   { path: 'recargas', loadChildren: './recargas/recargas.module#RecargasPageModule' },
   { path: 'suspension-tarjeta-de-debito', loadChildren: './suspension-tarjeta-de-debito/suspension-tarjeta-de-debito.module#SuspensionTarjetaDeDebitoPageModule' },
-  { path: 'consulta-saldo', loadChildren: './consulta-saldo/consulta-saldo.module#ConsultaSaldoPageModule' }
+  { path: 'consulta-saldo', loadChildren: './consulta-saldo/consulta-saldo.module#ConsultaSaldoPageModule' },
+  { path: 'consulta-movimiento', loadChildren: './consulta-movimiento/consulta-movimiento.module#ConsultaMovimientoPageModule' },
+  { path: 'consulta-tarjeta-de-credito', loadChildren: './consulta-tarjeta-de-credito/consulta-tarjeta-de-credito.module#ConsultaTarjetaDeCreditoPageModule' }
 ];
 
 @NgModule({
