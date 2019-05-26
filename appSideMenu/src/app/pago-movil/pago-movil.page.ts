@@ -29,7 +29,7 @@ export class PagoMovilPage implements OnInit {
       id: 4,
       name: 'BFC',
     }
-  ]
+  ];
 
   //// Operadoras por confirmar
   operadoras: any[] = [
@@ -45,5 +45,5 @@ export class PagoMovilPage implements OnInit {
       id: 3,
       name: 'Digitel',
     }  
-  ]
+  ];
 }

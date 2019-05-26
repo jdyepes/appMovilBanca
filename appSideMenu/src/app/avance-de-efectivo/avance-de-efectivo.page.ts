@@ -9,9 +9,6 @@ export class AvanceDeEfectivoPage implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
   accounts: any[] = [
     {
       id: 1,
@@ -21,7 +18,7 @@ export class AvanceDeEfectivoPage implements OnInit {
       id: 2,
       name: 'Cuenta de Ahorros',
     }
-  ]
+  ];
 
   options: any[] = [
     {
@@ -32,7 +29,7 @@ export class AvanceDeEfectivoPage implements OnInit {
       id: 2,
       name: 'b',
     }
-  ]
+  ];
 
   cards: any[] = [
     {
@@ -43,6 +40,9 @@ export class AvanceDeEfectivoPage implements OnInit {
       id: 'M1',
       name: 'Master Card',
     }
-  ]
+  ];
+
+  ngOnInit() {
+  }
 
 }
