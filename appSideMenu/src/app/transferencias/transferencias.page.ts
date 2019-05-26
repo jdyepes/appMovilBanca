@@ -6,11 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transferencias.page.scss'],
 })
 export class TransferenciasPage implements OnInit {
+  montoDecimal: any;
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  accounts: any[] = [
+    {
+      id: 1,
+      name: 'Corriente',
+    },
+    {
+      id: 2,
+      name: 'Ahorro',
+    }
+  ];
 
   options: any[] = [
     {
@@ -21,5 +30,20 @@ export class TransferenciasPage implements OnInit {
       id: 2,
       name: 'b',
     }
-  ]
+  ];
+
+  cards: any[] = [
+    {
+      id: 'V1',
+      name: 'Visa',
+    },
+    {
+      id: 'M1',
+      name: 'Master Card',
+    }
+  ];
+
+  ngOnInit() {
+  }
+
 }
