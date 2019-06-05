@@ -18,22 +18,24 @@ export class AppComponent {
     {
       title: 'Consultas',
       url: '/consultas',
-      icon: 'consultas'
+      icon: 'search'
     },
     {
       title: 'Transferencias',
       url: '/transferencias',
-      icon: 'transferencia'
+      icon: '',
+      src: '/assets/icon/transfer.svg'
     },
     {
       title: 'Pago Móvil',
       url: '/pago-movil',
-      icon: 'pago-movil'
+      icon: 'pago-movil',
+      src: '/assets/icon/metodo-de-pago.svg'
     },
     {
       title: 'Pagos de TDC',
       url: '/pago-tarjeta-de-credito',
-      icon: 'paaa'
+      icon: 'card'
     },
     {
       title: 'Avance de Efectivo',
@@ -43,12 +45,12 @@ export class AppComponent {
     {
       title: 'Recargas',
       url: '/recargas',
-      icon: 'consultas'
+      icon: 'bookmarks'
     },
     {
       title: 'Suspension de TDD',
       url: '/suspension-tarjeta-de-debito',
-      icon: 'consultas'
+      icon: 'close-circle'
     }
   ];
 
