@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-consulta-saldo',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultaSaldoPage implements OnInit {
 
-  constructor() { }
+  constructor(public alertCtrl: AlertController) { }
 
   accounts: any[] = [
     {
@@ -31,7 +32,30 @@ export class ConsultaSaldoPage implements OnInit {
     }
   ];
 
-
   ngOnInit() {
+  }
+
+ async consultarSaldo(){
+    let alert = await this.alertCtrl.create({
+      header: 'Alerta',  
+      message: '¿Seguro?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          handler: () => {
+            //no
+            console.log('entro en no');
+          }
+        },
+        {
+          text: 'OK',
+          handler: () => {
+            //si
+            console.log('entro en ok');
+          }
+        }
+      ]       
+    });
+    await alert.present();
   }
 }
