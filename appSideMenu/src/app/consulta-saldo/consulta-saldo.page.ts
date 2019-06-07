@@ -8,16 +8,31 @@ import { AlertController } from '@ionic/angular';
 })
 export class ConsultaSaldoPage implements OnInit {
 
+  tipoCuenta: string;
+  correlativoSelected: string;
+
   constructor(public alertCtrl: AlertController) { }
 
   accounts: any[] = [
     {
       id: 1,
-      name: 'Cuenta Corriente',
+      name: 'Ahorro',
     },
     {
       id: 2,
-      name: 'Cuenta de Ahorros',
+      name: 'Corriente',
+    },
+    {
+      id: 3,
+      name: 'Visa',
+    },
+    {
+      id: 4,
+      name: 'Master',
+    },
+    {
+      id: 5,
+      name: 'Prestamo',
     }
   ];
 
@@ -45,6 +60,7 @@ export class ConsultaSaldoPage implements OnInit {
           handler: () => {
             //no
             console.log('entro en no');
+            console.log('la seleccion fue: '+ this.correlativoSelected);
           }
         },
         {
