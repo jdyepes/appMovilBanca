@@ -18,7 +18,7 @@
   <ion-card-content>
     <ion-list>
         <ion-label auto-hide="false" *ngFor="let p of appPages">
-          <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+          <ion-item class="item-divider" [routerDirection]="'root'" [routerLink]="[p.url]">
             <ion-icon slot="start" [name]="p.icon" [src]="p.src"></ion-icon>
             <ion-label>
               {{p.title}}
