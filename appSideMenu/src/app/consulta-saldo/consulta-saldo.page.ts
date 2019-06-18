@@ -26,19 +26,9 @@ export class ConsultaSaldoPage implements OnInit {
       id: 2,
       name: 'Corriente',
       shortCode: 'c',
-    },
+    }, 
     {
       id: 3,
-      name: 'Visa',
-      shortCode: 'v',
-    },
-    {
-      id: 4,
-      name: 'Master',
-      shortCode: 'm',
-    },
-    {
-      id: 5,
       name: 'Prestamo',
       shortCode: 'p',
     }
@@ -50,7 +40,7 @@ export class ConsultaSaldoPage implements OnInit {
   ngOnInit() {
   }
 
-  //alertoBox
+  //alertBox
  async consultarSaldo(){
     let alert = await this.alertCtrl.create({
       header: 'Alerta',  
