@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-recargas',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecargasPage implements OnInit {
 
-  constructor() { }
+  constructor(public navCtrl: NavController) { }
 
   ngOnInit() {
+  }
+
+  abrirSiguientePag(pagina: number) {
+    if (pagina === 1) {
+      this.navCtrl.navigateForward('recarga-telefonica');
+    }
+    if (pagina === 2) {
+      this.navCtrl.navigateForward('recarga-directv');
+    }
   }
 
 }

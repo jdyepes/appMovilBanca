@@ -25,7 +25,9 @@ const routes: Routes = [
   { path: 'consulta-saldo', loadChildren: './consulta-saldo/consulta-saldo.module#ConsultaSaldoPageModule' },
   { path: 'consulta-movimiento', loadChildren: './consulta-movimiento/consulta-movimiento.module#ConsultaMovimientoPageModule' },
   { path: 'consulta-tarjeta-de-credito', loadChildren: './consulta-tarjeta-de-credito/consulta-tarjeta-de-credito.module#ConsultaTarjetaDeCreditoPageModule' },  { path: 'pago-movil-menu', loadChildren: './pago-movil-menu/pago-movil-menu.module#PagoMovilMenuPageModule' },
-  { path: 'confirmar-pago-movil', loadChildren: './confirmar-pago-movil/confirmar-pago-movil.module#ConfirmarPagoMovilPageModule' }
+  { path: 'confirmar-pago-movil', loadChildren: './confirmar-pago-movil/confirmar-pago-movil.module#ConfirmarPagoMovilPageModule' },
+  { path: 'recarga-telefonica', loadChildren: './recarga-telefonica/recarga-telefonica.module#RecargaTelefonicaPageModule' },
+  { path: 'recarga-directv', loadChildren: './recarga-directv/recarga-directv.module#RecargaDirectvPageModule' }
 
 ];
 

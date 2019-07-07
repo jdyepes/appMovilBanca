@@ -64,7 +64,7 @@
                 <ion-item> 
                     <ion-label>Monto:</ion-label>
                     <ion-input required [(ngModel)]="montoEntero" type="number" placeholder=""></ion-input>,
-                    <ion-input required [(ngModel)]="montoDecimal" type="number" placeholder=""></ion-input>
+                    <ion-input required [(ngModel)]="montoDecimal" type="number" placeholder="" onKeyPress="if(this.value.length==2) return false;"></ion-input>
                 </ion-item>       
             </ion-row> 
         </ion-card-content>
