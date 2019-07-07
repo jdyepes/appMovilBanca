@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Suspension de Tárjeta de Débito</ion-title>
+    <ion-title>Suspension de Tarjeta de Débito</ion-title>
     <ion-buttons slot="start">
         <ion-back-button color= "primary" defaultHref="home" icon="arrow-back" defaultHref="#"></ion-back-button>
     </ion-buttons>
@@ -8,7 +8,32 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-card class="page-card">
+    <ion-img src="/assets/icon/logoTUBFCpage.png" class="logo-img"></ion-img>
+  </ion-card>
+<ion-card>
+  <ion-card-header class="card-title">Suspender TDD</ion-card-header>
+  <ion-card-content>
+  <ion-row>
+    <ion-col class="card-content-name">
+    <ion-item class="item-name">
+      <ion-label style="padding:1px;">Tipo de Documento:</ion-label>
+      <ion-select required [(ngModel)]="tipoIdentificacion" style="padding:5px; " placeholder="" okText="Aceptar"
+        cancelText="Cancelar">
+        <ion-select-option *ngFor="let option of tipos" [value]="option.type">{{option.type}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="card-content-name">Número de Cédula: </ion-col>
+    <ion-input required [(ngModel)]="numeroCedula" type="tel" placeholder="30123456"></ion-input>
+  </ion-row>
+  </ion-card-content>
+  
+  <ion-button float-right expand="full" class="btn-enviar" fill="outline" (click)="suspenderTarjeta()">Enviar
+  </ion-button>
+  </ion-card>
 </ion-content>
 
 <ion-footer>

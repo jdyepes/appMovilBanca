@@ -21,7 +21,7 @@ export class HomePage {
     },
     {
       title: 'Pago Móvil',
-      url: '/pago-movil',
+      url: '/pago-movil-menu',
       icon: 'pago-movil',
       src: '/assets/icon/metodo-de-pago.svg'
     },

@@ -28,8 +28,8 @@ export class AppComponent {
     },
     {
       title: 'Pago Móvil',
-      url: '/pago-movil',
-      icon: 'pago-movil',
+      url: '/pago-movil-menu',
+      icon: 'pago-movil-menu',
       src: '/assets/icon/metodo-de-pago.svg'
     },
     {
