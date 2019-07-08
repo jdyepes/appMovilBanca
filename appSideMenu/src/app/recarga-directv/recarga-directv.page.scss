@@ -28,11 +28,18 @@ ion-item{
 .card-title {
   background: #0d46a0; 
   color: whitesmoke;
+  font-size: 18px;
 }
 
 .card-content-name {
     margin-top: 10px; 
     margin-left: 5px;
+    color: black;
+    font: 400 15px Arial;
+}
+
+.sc-ion-input-md-h {
+  --color: black;
 }
 
 .btn-enviar {
