@@ -9,35 +9,36 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-<ion-card style="margin-top: 150px;">
-  <ion-card-content>
-    <ion-grid>
-      <ion-row>
-         <ion-button expand="full" color="#0d46a0" class="btn-consulta" (click)="abrirSiguientePag(1)" >Saldo</ion-button> 
-      </ion-row>      
-    </ion-grid>
-  </ion-card-content>
-</ion-card>
 
-<ion-card>
-  <ion-card-content> 
-    <ion-grid>
-      <ion-row>
-        <ion-button expand="full" color="#0d46a0" class="btn-consulta" (click)="abrirSiguientePag(2)">Movimientos</ion-button>
-      </ion-row>
-    </ion-grid>
-  </ion-card-content>
-</ion-card>
+  <ion-card class="page-card">
+    <ion-img src="/assets/icon/logoTUBFCpage.png" class="logo-img"></ion-img>
+  </ion-card>
+  
+  <ion-card class="card-menu"> 
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-button expand="full"  class="btn-saldo" (click)="abrirSiguientePag(1)" >Saldo</ion-button> 
+        </ion-row>      
+      </ion-grid>
+    </ion-card-content>
 
-<ion-card>
-  <ion-card-content>
-    <ion-grid>
-      <ion-row>
-        <ion-button expand="full" color="#0d46a0" class="btn-consulta" (click)="abrirSiguientePag(3)">Tarjeta de Crédito (TDC)</ion-button>
-      </ion-row>
-    </ion-grid>
-  </ion-card-content>
-</ion-card>
+    <ion-card-content> 
+      <ion-grid>
+        <ion-row>
+          <ion-button expand="full" class="btn-movimiento" (click)="abrirSiguientePag(2)">Movimientos</ion-button>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-button expand="full" class="btn-tdc" (click)="abrirSiguientePag(3)">Tarjeta de Crédito (TDC)</ion-button>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 
 <ion-footer>
