@@ -1,5 +1,7 @@
 {
   "name": "TuBFC2",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
