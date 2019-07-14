@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { SMS } from '@ionic-native/sms/ngx';
 
 @Component({
   selector: 'app-consulta-saldo',
@@ -11,9 +12,10 @@ export class ConsultaSaldoPage implements OnInit {
   tipoCuenta: string;
   correlativoSelected: string;
   prefijoAccion: string;
+  mensajeEnviar: string;
 
-  constructor(public alertCtrl: AlertController) { 
-    this.prefijoAccion ='S';
+  constructor(public alertCtrl: AlertController, private sms: SMS) {
+    this.prefijoAccion = 'S';
   }
 
   accounts: any[] = [
@@ -43,25 +45,30 @@ export class ConsultaSaldoPage implements OnInit {
   //alertBox
  async consultarSaldo(){
     let alert = await this.alertCtrl.create({
-      header: 'Alerta',  
+      header: 'Alerta',
       message: '¿Seguro?',
       buttons: [
         {
           text: 'Cancelar',
           handler: () => {
             //no
-            console.log('entro en no');            
+            console.log('entro en no');
           }
         },
         {
           text: 'OK',
           handler: () => {
-            //si           
-            console.log('mensaje a enviar: '+this.prefijoAccion + ' ' + this.tipoCuenta+ this.correlativoSelected);
+            //si
+            this.mensajeEnviar = this.prefijoAccion + ' ' + this.tipoCuenta + this.correlativoSelected;
+            console.log('mensaje a enviar: ' + this.mensajeEnviar);
           }
         }
-      ]       
+      ]
     });
     await alert.present();
   }
+
+sendSMS() {
+  this.sms.send('4122002889', 'prueba');
+}
 }
