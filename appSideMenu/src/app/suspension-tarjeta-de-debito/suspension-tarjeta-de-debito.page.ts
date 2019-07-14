@@ -12,4 +12,19 @@ export class SuspensionTarjetaDeDebitoPage implements OnInit {
   ngOnInit() {
   }
 
+  tipos: any[] = [
+    {
+      id: 1,
+      type: 'V',
+    },
+    {
+      id: 2,
+      type: 'E',
+    },
+    {
+      id: 3,
+      type: 'P',
+    }
+  ];
+  
 }

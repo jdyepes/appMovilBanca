@@ -10,16 +10,6 @@ import { equal } from 'assert';
 export class ConsultasPage implements OnInit {
 
   constructor(public navCtrl: NavController) { }
-  options: any[] = [
-    {
-      id: 1,
-      name: 'a',
-    },
-    {
-      id: 2,
-      name: 'b',
-    }
-  ];
 
   ngOnInit() {
   }

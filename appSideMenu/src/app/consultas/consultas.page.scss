@@ -1,6 +1,63 @@
-.btn-consulta{
+.page-card ion-img {
+    max-height: 200px; 
+  }
+  
+.page-card {
+    --webkit-box-shadow: none;
+    box-shadow: none;
+    margin-top: 10px;    
+  }
+  
+.logo-img {
+    width: 300px; 
+    height: 100px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    display: block;
+}
+  
+ion-item{ 
+    --border-color: #0d46a0; 
+}
+
+.btn-saldo{
     margin-left: auto;
     margin-right: auto;
     display: block !important;
-    background: #0d46a0;
+    height: 70px;
+    width: 100%;
+    font-size: 18px;
+    --background: #f7b423;
+}
+
+.btn-movimiento{
+    margin-left: auto;
+    margin-right: auto;
+    display: block !important;
+    height: 70px;
+    width: 100%;
+    font-size: 18px;
+    --background: #ad1010;
+}
+
+.btn-tdc{
+    margin-left: auto;
+    margin-right: auto;
+    display: block !important;
+    height: 70px;
+    width: 100%;
+    font-size: 18px;
+    --background: #0d46a0;
+}
+
+.card-menu{
+    margin-top: 20px;
+}
+
+.card-title {
+  margin-bottom:30px;
+  background: #0d46a0; 
+  color: whitesmoke;
+  font-size: 20px;
+  text-align: center;
 }

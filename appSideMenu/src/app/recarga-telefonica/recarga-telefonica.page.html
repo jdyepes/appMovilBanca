@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Recarga Telefónica</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary" defaultHref="recargas" icon="arrow-back"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="page-card">
+    <ion-img src="/assets/icon/logoTUBFCpage.png" class="logo-img"></ion-img>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header class="card-title">Telefóno del Beneficiario</ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-col class="card-content-name">
+        <ion-item class="item-name">
+          <ion-label style="padding:1px;">Operadora</ion-label>
+          <ion-select required [(ngModel)]="operadoraSeleccion" style="padding:5px; " placeholder="" okText="Aceptar"
+            cancelText="Cancelar">
+            <ion-select-option *ngFor="let option of operadoras" [value]="option">{{option.number}} |
+              {{option.company}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="card-content-name">Número de Teléfono: </ion-col>
+        <ion-input required [(ngModel)]="telefonoSeleccion" type="number" placeholder="5671234" onKeyPress="if(this.value.length==7) return false;"></ion-input>
+      </ion-row>
+    </ion-card-content>
+    <ion-card-header class="card-title">Monto a recargar</ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-item>
+          <ion-label>Monto:</ion-label>
+          <ion-input required [(ngModel)]="montoEntero" type="number" placeholder=""></ion-input>,
+          <ion-input required [(ngModel)]="montoDecimal" type="number" placeholder=""onKeyPress="if(this.value.length==2) return false;"></ion-input>
+        </ion-item>
+      </ion-row>
+    </ion-card-content>
+    <ion-card-header class="card-title">Cuenta a debitar</ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          <ion-item style="padding:1px; margin-bottom: 5px;">
+            <ion-label style="padding:1px;">Cuenta origen</ion-label>
+            <ion-select required [(ngModel)]="tipoCuentaOrigen" style="padding:5px;" placeholder="" okText="Aceptar"
+              cancelText="Cancelar">
+              <ion-select-option *ngFor="let option of accounts" [value]="option">{{option.name}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>
+          <ion-item>
+            <ion-label>Correlativo</ion-label>
+            <ion-select required [(ngModel)]="correlativoOrigen" okText="Aceptar" cancelText="Cancelar">
+              <ion-select-option *ngFor="let option of options">{{option}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+    
+    <ion-button float-right expand="full" class="btn-enviar" fill="outline" (click)="realizarPago()">Enviar
+    </ion-button>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>

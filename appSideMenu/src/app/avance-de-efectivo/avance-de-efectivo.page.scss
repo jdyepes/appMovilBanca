@@ -1,0 +1,41 @@
+.page-card ion-img {
+    max-height: 200px; 
+  }
+  
+.page-card {
+    --webkit-box-shadow: none;
+    box-shadow: none;
+    margin-top: 0px;    
+  }
+  
+.logo-img {
+    width: 300px; 
+    height: 100px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    display: block;
+}
+  
+ion-item{ 
+    --border-color: #0d46a0; 
+}
+  
+.card-title {
+  background: #0d46a0; 
+  color: whitesmoke;
+  font-size: 18px;
+}
+
+.card-content-name {
+    margin-top: 10px; 
+    margin-left: 5px;
+}
+
+.btn-enviar {
+  margin-left: 70px;
+  margin-right: 30px; 
+  margin-bottom: 15px; 
+  margin-top:15px;
+  width: 75px;
+  font-size: 11px;  
+}

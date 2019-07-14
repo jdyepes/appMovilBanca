@@ -1,4 +1,39 @@
 .welcome-card ion-img {
-  max-height: 35vh;
-  overflow: hidden;
+  max-height: 100px; 
+  //overflow: hidden;
 }
+
+.welcome-card {
+  --webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.logo-img {
+  width: 300px; 
+  height: 300px; 
+  margin-left: auto; 
+  margin-right: auto; 
+  display: block;
+}
+
+ion-item{ 
+  --border-color: #0d46a0; 
+}
+
+/*.card, .card-md, .card-ios {
+
+}
+*/
+ion-card {
+  box-shadow: 0 0px 0px 0px rgba(0,0,0,.2), 0 0px 0px 0px rgba(0,0,0,.14), 0 0px 0px 0 rgba(0,0,0,.12);
+  }
+
+
+/* para el logo movil
+.logo-img {
+  width:200px; 
+  height: 200px; 
+  margin-left: auto; 
+  margin-right: auto; 
+  display: block;
+}*/
