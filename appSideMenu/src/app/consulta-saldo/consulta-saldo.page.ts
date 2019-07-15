@@ -13,9 +13,11 @@ export class ConsultaSaldoPage implements OnInit {
   correlativoSelected: string;
   prefijoAccion: string;
   mensajeEnviar: string;
+  numeroDestino: string;
 
   constructor(public alertCtrl: AlertController, private sms: SMS) {
     this.prefijoAccion = 'S';
+    this.numeroDestino = '88232';
   }
 
   accounts: any[] = [
@@ -46,7 +48,7 @@ export class ConsultaSaldoPage implements OnInit {
  async consultarSaldo(){
     let alert = await this.alertCtrl.create({
       header: 'Alerta',
-      message: '¿Seguro?',
+      message: '¿Seguro s?',
       buttons: [
         {
           text: 'Cancelar',
@@ -60,6 +62,7 @@ export class ConsultaSaldoPage implements OnInit {
           handler: () => {
             //si
             this.mensajeEnviar = this.prefijoAccion + ' ' + this.tipoCuenta + this.correlativoSelected;
+            this.sendSMS();
             console.log('mensaje a enviar: ' + this.mensajeEnviar);
           }
         }
@@ -68,7 +71,16 @@ export class ConsultaSaldoPage implements OnInit {
     await alert.present();
   }
 
-sendSMS() {
-  this.sms.send('4122002889', 'prueba');
+async sendSMS() {
+  // CONFIGURATION
+  var options = {
+    replaceLineBreaks: false, // true to replace \n by a new line, false by default
+    android: {
+      intent: 'INTENT'  // send SMS with the native android SMS messaging
+      //intent: '' // send SMS without opening any other app
+    }
+  };
+  await this.sms.send(this.numeroDestino, this.mensajeEnviar, options);
+  console.log('prueba ');
 }
 }
