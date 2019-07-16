@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { SMS } from '@ionic-native/sms/ngx';
 
 @Component({
   selector: 'app-avance-de-efectivo',
@@ -12,15 +13,18 @@ export class AvanceDeEfectivoPage implements OnInit {
   tarjetaOrigen: string;
   cuentaDestino: string;
   correlativoOrigen: string;
-  correlativoDestino:string;
-  cvvTarjeta: number;  
+  correlativoDestino: string;
+  cvvTarjeta: number;
   montoEntero: number; 
   montoDecimal: number;
   operacion: string;
+  mensajeEnviar: string;
+  numeroDestino: string;
 
-  constructor(public alertCtrl: AlertController) { 
-    this.prefijoAccion ='A';
-    this.operacion ='AVANCE';
+  constructor(public alertCtrl: AlertController, private sms: SMS) { 
+    this.prefijoAccion = 'A';
+    this.operacion = 'AVANCE';
+    this.numeroDestino = '88232';
   }
 
   ngOnInit() {
@@ -77,12 +81,26 @@ export class AvanceDeEfectivoPage implements OnInit {
         {
           text: 'OK',
           handler: () => {
-            //si           
-            console.log('mensaje a enviar: '+this.prefijoAccion + ' ' + this.tarjetaOrigen + this.correlativoOrigen + ' ' +this.cuentaDestino + this.correlativoDestino + ' ' + this.cvvTarjeta + ' ' + this.montoEntero + ',' + this.montoDecimal);
+            //si
+            this.mensajeEnviar = this.prefijoAccion + ' ' + this.tarjetaOrigen + this.correlativoOrigen + ' ' + this.cuentaDestino + this.correlativoDestino + ' ' + this.cvvTarjeta + ' ' + this.montoEntero + ',' + this.montoDecimal;
+            console.log('mensaje a enviar: ' + this.mensajeEnviar );
+            this.sendSMS(this.mensajeEnviar);
           }
         }
       ]       
     });
     await alert.present();
+  }
+
+  async sendSMS(mensaje: string) {
+    // CONFIGURATION
+    var options = {
+      replaceLineBreaks: false, // true to replace \n by a new line, false by default
+      android: {
+        intent: 'INTENT'  // send SMS with the native android SMS messaging
+        //intent: '' // send SMS without opening any other app
+      }
+    };
+    await this.sms.send(this.numeroDestino, mensaje, options);
   }
 }

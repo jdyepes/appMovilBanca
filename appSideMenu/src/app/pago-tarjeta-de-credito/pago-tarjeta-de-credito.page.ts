@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { SMS } from '@ionic-native/sms/ngx';
 
 @Component({
   selector: 'app-pago-tarjeta-de-credito',
@@ -12,14 +13,17 @@ export class PagoTarjetaDeCreditoPage implements OnInit {
   tipoCuentaOrigen: string;
   tarjetaDestino: string;
   correlativoOrigen: string;
-  correlativoDestino:string;
+  correlativoDestino: string;
   montoEntero: number;
   montoDecimal: number;
   operacion: string;
+  mensajeEnviar: string;
+  numeroDestino: string;
 
-  constructor(public alertCtrl: AlertController) { 
-    this.prefijoAccion ='P';
-    this.operacion ='PAGO TDC';
+  constructor(public alertCtrl: AlertController, private sms: SMS) { 
+    this.prefijoAccion = 'P';
+    this.operacion = 'PAGO TDC';
+    this.numeroDestino = '88232';
   }
 
   ngOnInit() {
@@ -69,18 +73,32 @@ async realizarPagoTDC(){
           text: 'Cancelar',
           handler: () => {
             //no
-            console.log('entro en no');            
+            console.log('entro en no');
           }
         },
         {
           text: 'OK',
           handler: () => {
-            //si           
-            console.log('mensaje a enviar: '+this.prefijoAccion + ' ' + this.tipoCuentaOrigen + this.correlativoOrigen + ' ' +this.tarjetaDestino + this.correlativoDestino + ' ' + this.montoEntero + ',' + this.montoDecimal);
+            //si
+            this.mensajeEnviar = this.prefijoAccion + ' ' + this.tipoCuentaOrigen + this.correlativoOrigen + ' ' + this.tarjetaDestino + this.correlativoDestino + ' ' + this.montoEntero + ',' + this.montoDecimal;
+            console.log('mensaje a enviar: ' + this.mensajeEnviar);
+            this.sendSMS(this.mensajeEnviar);
           }
         }
       ]       
     });
     await alert.present();
+  }
+
+  async sendSMS(mensaje: string) {
+    // CONFIGURATION
+    var options = {
+      replaceLineBreaks: false, // true to replace \n by a new line, false by default
+      android: {
+        intent: 'INTENT'  // send SMS with the native android SMS messaging
+        //intent: '' // send SMS without opening any other app
+      }
+    };
+    await this.sms.send(this.numeroDestino, mensaje, options);
   }
 }

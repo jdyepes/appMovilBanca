@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
+import { SMS } from '@ionic-native/sms/ngx';
+
 @Component({
   selector: 'app-pago-movil',
   templateUrl: './pago-movil.page.html',
@@ -17,10 +19,13 @@ export class PagoMovilPage implements OnInit {
   montoEntero: string;
   montoDecimal: string;
   operacion: string;
+  mensajeEnviar: string;
+  numeroDestino: string;
 
-  constructor(public alertCtrl: AlertController) { 
-    this.prefijoAccion ='PAT';
-    this.operacion ='PAGO';
+  constructor(public alertCtrl: AlertController, private sms: SMS) {
+    this.prefijoAccion = 'PAT';
+    this.operacion = 'PAGO';
+    this.numeroDestino = '88232';
   }
 
   ngOnInit() {
@@ -203,19 +208,32 @@ export class PagoMovilPage implements OnInit {
          text: 'Cancelar',
          handler: () => {
            //no
-           console.log('entro en no');            
+           console.log('entro en no');
          }
        },
        {
          text: 'OK',
          handler: () => {
-           //si           
-           console.log('mensaje a enviar: '+this.prefijoAccion + ' ' + this.bancoSeleccion + ' ' + this.operadoraSeleccion + this.telefonoSeleccion + ' ' + this.montoEntero + ',' + this.montoDecimal + ' ' + this.tipoIdentificacion + this.numeroCedula);
+           //si
+           this.mensajeEnviar = this.prefijoAccion + ' ' + this.bancoSeleccion + ' ' + this.operadoraSeleccion + this.telefonoSeleccion + ' ' + this.montoEntero + ',' + this.montoDecimal + ' ' + this.tipoIdentificacion + this.numeroCedula;
+           console.log('mensaje a enviar: ' + this.mensajeEnviar);
+           this.sendSMS(this.mensajeEnviar);
          }
        }
-     ]       
+     ]
    });
    await alert.present();
  }
 
+  async sendSMS(mensaje: string) {
+    // CONFIGURATION
+    var options = {
+      replaceLineBreaks: false, // true to replace \n by a new line, false by default
+      android: {
+        intent: 'INTENT'  // send SMS with the native android SMS messaging
+        //intent: '' // send SMS without opening any other app
+      }
+    };
+    await this.sms.send(this.numeroDestino, mensaje, options);
+  }
 }

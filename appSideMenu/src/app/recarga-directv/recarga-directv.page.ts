@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
+import { SMS } from '@ionic-native/sms/ngx';
+
 @Component({
   selector: 'app-recarga-directv',
   templateUrl: './recarga-directv.page.html',
@@ -19,11 +21,13 @@ export class RecargaDirectvPage implements OnInit {
   mostrar: boolean;
   prepago: boolean;
   mensajeEnviar: string;
+  numeroDestino: string;
 
-  constructor(public alertCtrl: AlertController) {
+  constructor(public alertCtrl: AlertController, private sms: SMS) {
     this.prefijoAccion = 'RD';
     this.operacion = 'RECARGA DIRECTV';
     this.mostrar = false;
+    this.numeroDestino = '88232';
   }
 
   ngOnInit() {
@@ -101,10 +105,23 @@ export class RecargaDirectvPage implements OnInit {
             // tslint:disable-next-line:max-line-length
             this.mensajeEnviar = this.prefijoAccion + ' ' + this.numeroClienteContrato + ' ' + this.montoEntero + ',' + this.montoDecimal + ' ' + auxAccounts.shortCode + this.correlativoOrigen;
             console.log('mensaje a enviar: ' + this.mensajeEnviar);
+            this.sendSMS(this.mensajeEnviar);
           }
         }
       ]
     });
     await alert.present();
+  }
+
+  async sendSMS(mensaje: string) {
+    // CONFIGURATION
+    var options = {
+      replaceLineBreaks: false, // true to replace \n by a new line, false by default
+      android: {
+        intent: 'INTENT'  // send SMS with the native android SMS messaging
+        //intent: '' // send SMS without opening any other app
+      }
+    };
+    await this.sms.send(this.numeroDestino, mensaje, options);
   }
 }

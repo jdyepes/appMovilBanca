@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { SMS } from '@ionic-native/sms/ngx';
+import { AlertController } from '@ionic/angular';
+
 @Component({
   selector: 'app-suspension-tarjeta-de-debito',
   templateUrl: './suspension-tarjeta-de-debito.page.html',
@@ -7,7 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuspensionTarjetaDeDebitoPage implements OnInit {
 
-  constructor() { }
+  prefijoAccion: string;
+  mensajeEnviar: string;
+  numeroDestino: string;
+
+  constructor(public alertCtrl: AlertController, private sms: SMS) {
+    this.prefijoAccion = 'STD';
+    this.numeroDestino = '88232';
+  }
 
   ngOnInit() {
   }
@@ -27,4 +37,16 @@ export class SuspensionTarjetaDeDebitoPage implements OnInit {
     }
   ];
   
+  async sendSMS(mensaje: string) {
+    // CONFIGURATION
+    var options = {
+      replaceLineBreaks: false, // true to replace \n by a new line, false by default
+      android: {
+        intent: 'INTENT'  // send SMS with the native android SMS messaging
+        //intent: '' // send SMS without opening any other app
+      }
+    };
+    await this.sms.send(this.numeroDestino, mensaje, options);
+  }
+
 }

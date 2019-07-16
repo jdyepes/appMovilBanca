@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
+import { SMS } from '@ionic-native/sms/ngx';
+
 @Component({
   selector: 'app-transferencias',
   templateUrl: './transferencias.page.html',
@@ -16,10 +18,12 @@ export class TransferenciasPage implements OnInit {
   montoEntero: string;
   montoDecimal: string;
   operacion: string;
+  mensajeEnviar: string;
+  numeroDestino: string;
 
-  constructor(public alertCtrl: AlertController) { 
-    this.prefijoAccion ='T';
-    this.operacion ='TRANSFERENCIA';
+  constructor(public alertCtrl: AlertController, private sms: SMS) {
+    this.prefijoAccion = 'T';
+    this.operacion = 'TRANSFERENCIA';
   }
 
   accounts: any[] = [
@@ -56,18 +60,32 @@ export class TransferenciasPage implements OnInit {
           text: 'Cancelar',
           handler: () => {
             //no
-            console.log('entro en no');            
+            console.log('entro en no');
           }
         },
         {
           text: 'OK',
           handler: () => {
             //si           
-            console.log('mensaje a enviar: '+this.prefijoAccion + ' ' + this.tipoCuentaOrigen + this.correlativoOrigen + ' ' +this.tipoCuentaDestino + this.correlativoDestino + ' ' + this.montoEntero + ',' + this.montoDecimal);
+            this.mensajeEnviar = this.prefijoAccion + ' ' + this.tipoCuentaOrigen + this.correlativoOrigen + ' ' + this.tipoCuentaDestino + this.correlativoDestino + ' ' + this.montoEntero + ',' + this.montoDecimal;
+            console.log('mensaje a enviar: ' + this.mensajeEnviar);
+            this.sendSMS(this.mensajeEnviar);
           }
         }
-      ]       
+      ]
     });
     await alert.present();
+  }
+
+  async sendSMS(mensaje: string) {
+    // CONFIGURATION
+    var options = {
+      replaceLineBreaks: false, // true to replace \n by a new line, false by default
+      android: {
+        intent: 'INTENT'  // send SMS with the native android SMS messaging
+        //intent: '' // send SMS without opening any other app
+      }
+    };
+    await this.sms.send(this.numeroDestino, mensaje, options);
   }
 }
