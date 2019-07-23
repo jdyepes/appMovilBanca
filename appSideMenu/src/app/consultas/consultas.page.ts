@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { equal } from 'assert';
 
 @Component({
   selector: 'app-consultas',

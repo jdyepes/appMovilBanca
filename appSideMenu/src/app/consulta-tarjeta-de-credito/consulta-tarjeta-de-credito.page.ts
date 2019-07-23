@@ -34,36 +34,38 @@ export class ConsultaTarjetaDeCreditoPage implements OnInit {
   ];
 
   //correlativos
-  options: number[] = [1,2,3,4,5,6];
+  options: number[] = [1, 2, 3, 4, 5, 6];
 
   ngOnInit() {
   }
 
+ async consultarTDC() {
+   if (this.tipoCuenta === undefined) {
+     this.mostrarError('Campo no seleccionado. Seleccione una Cuenta');
+   } else
+     if (this.correlativoSelected === undefined) {
+       this.mostrarError('Campo no seleccionado. Seleccione correlativo');
+     } else {
+       this.mensajeEnviar = this.prefijoAccion + ' ' + this.tipoCuenta + this.correlativoSelected;
+       console.log('mensaje a enviar: ' + this.mensajeEnviar);
+       this.sendSMS(this.mensajeEnviar);
+     }
+  }
+
   //alertBox
- async consultarTDC(){
-  let alert = await this.alertCtrl.create({
-    header: 'Alerta',  
-    message: '¿Seguro?',
-    buttons: [
-      {
-        text: 'Cancelar',
-        handler: () => {
-          //no
-          console.log('entro en no');
+  async mostrarError(mensaje: string) {
+
+    let alert = await this.alertCtrl.create({
+      header: 'Alerta',
+      message: '<p>' + mensaje + '</p>',
+      cssClass: 'alertColor',
+      buttons: [
+        {
+          text: 'OK'
         }
-      },
-      {
-        text: 'OK',
-        handler: () => {
-          //si
-          this.mensajeEnviar = this.prefijoAccion + ' ' + this.tipoCuenta + this.correlativoSelected;
-          console.log('mensaje a enviar: ' + this.mensajeEnviar);
-          this.sendSMS(this.mensajeEnviar);
-        }
-      }
-    ]
-  });
-  await alert.present();
+      ]
+    });
+    await alert.present();
   }
 
   async sendSMS(mensaje: string) {
@@ -77,5 +79,14 @@ export class ConsultaTarjetaDeCreditoPage implements OnInit {
     };
     await this.sms.send(this.numeroDestino, mensaje, options);
     console.log('prueba ');
+  }
+
+  doRefresh(event) {
+    console.log('Begin async operation');
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+      window.location.reload();
+    }, 1000);
   }
 }

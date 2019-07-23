@@ -34,38 +34,42 @@ export class ConsultaMovimientoPage implements OnInit {
   ];
 
   //correlativos
-  options: number[] = [1,2,3,4,5,6];
+  options: number[] = [1, 2, 3, 4, 5, 6];
 
   ngOnInit() {
   }
 
-   //alertBox
-  async consultarMovimiento(){
+  
+  async consultarMovimiento() {
+    if (this.tipoCuenta === undefined) {
+      this.mostrarError('Campo no seleccionado. Seleccione una Cuenta');
+    } else
+      if (this.correlativoSelected === undefined) {
+        this.mostrarError('Campo no seleccionado. Seleccione correlativo');
+      } else {
+        this.mensajeEnviar = this.prefijoAccion + ' ' + this.tipoCuenta + this.correlativoSelected;
+        console.log('mensaje a enviar: ' + this.mensajeEnviar);
+        this.sendSMS(this.mensajeEnviar);
+      }
+  }
+
+  //alertBox
+  async mostrarError(mensaje: string) {
+
     let alert = await this.alertCtrl.create({
       header: 'Alerta',
-      message: '¿Seguro?',
+      message: '<p>' + mensaje + '</p>',
+      cssClass: 'alertColor',
       buttons: [
         {
-          text: 'Cancelar',
-          handler: () => {
-            //no
-            console.log('entro en no'); 
-          }
-        },
-        {
-          text: 'OK',
-          handler: () => {
-            //si
-            this.mensajeEnviar = this.prefijoAccion + ' ' + this.tipoCuenta + this.correlativoSelected;
-            console.log('mensaje a enviar: ' + this.mensajeEnviar);
-            this.sendSMS(this.mensajeEnviar);
-          }
+          text: 'OK'
         }
       ]
     });
     await alert.present();
   }
 
+  /// Envia el mensaje mostrando la mensajeria del telefono
   async sendSMS(mensaje: string) {
     // CONFIGURATION
     var options = {
@@ -76,5 +80,14 @@ export class ConsultaMovimientoPage implements OnInit {
       }
     };
     await this.sms.send(this.numeroDestino, mensaje, options);
+  }
+
+  doRefresh(event) {
+    console.log('Begin async operation');
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+      window.location.reload();
+    }, 1000);
   }
 }
