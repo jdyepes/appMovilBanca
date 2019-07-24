@@ -32,7 +32,7 @@ export class ConsultaSaldoPage implements OnInit {
       id: 2,
       name: 'Corriente',
       shortCode: 'c',
-    }, 
+    },
     {
       id: 3,
       name: 'Prestamo',
@@ -47,6 +47,9 @@ export class ConsultaSaldoPage implements OnInit {
   }
 
  async consultarSaldo() {
+   if (this.prefijoAccion === undefined) {
+     this.mostrarError('El prefijo no se pudo cargar. Intente nuevamente');
+   } else
    if (this.tipoCuenta === undefined) {
       this.mostrarError('Campo no seleccionado. Seleccione una Cuenta');
     } else
