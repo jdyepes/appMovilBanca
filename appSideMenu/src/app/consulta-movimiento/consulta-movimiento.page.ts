@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { SMS } from '@ionic-native/sms/ngx';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-consulta-movimiento',
@@ -15,10 +16,10 @@ export class ConsultaMovimientoPage implements OnInit {
   mensajeEnviar: string;
   numeroDestino: string;
 
-  constructor(public alertCtrl: AlertController, private sms: SMS) {
-      this.prefijoAccion = 'M';
-      this.numeroDestino = '88232';
-   }
+  constructor(public alertCtrl: AlertController, private sms: SMS, private rutaActiva: ActivatedRoute) {
+    this.prefijoAccion = this.rutaActiva.snapshot.params.operacion;
+    this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
+  }
 
   accounts: any[] = [
     {
@@ -87,7 +88,7 @@ export class ConsultaMovimientoPage implements OnInit {
     setTimeout(() => {
       console.log('Async operation has ended');
       event.target.complete();
-      window.location.reload();
+      //window.location.reload();
     }, 1000);
   }
 }

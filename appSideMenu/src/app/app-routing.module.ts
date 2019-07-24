@@ -16,8 +16,8 @@ const routes: Routes = [
     loadChildren: './list/list.module#ListPageModule'
   },
   /** Se coloca las urls con parametros solo a las opciones del menu principal */
-  /** El resto son los submenus que recibiran los parametros usando NavCtrl */
-  { path: 'consultas/:numeroProveedor/:operacionSaldo/:operacionMovi', loadChildren: './consultas/consultas.module#ConsultasPageModule' },
+  /** El resto son los submenus que recibiran solos los parametros del proveedor y la operacion */
+  { path: 'consultas/:numeroProveedor/:operacionSaldo/:operacionMov', loadChildren: './consultas/consultas.module#ConsultasPageModule' },
   { path: 'transferencias/:numeroProveedor/:operacion', loadChildren: './transferencias/transferencias.module#TransferenciasPageModule' },
   { path: 'pago-movil-menu/:numeroProveedor/:operacionPAT/:operacionPAC', loadChildren: './pago-movil-menu/pago-movil-menu.module#PagoMovilMenuPageModule' },
   { path: 'pago-tarjeta-de-credito/:numeroProveedor/:operacion', loadChildren: './pago-tarjeta-de-credito/pago-tarjeta-de-credito.module#PagoTarjetaDeCreditoPageModule' },
@@ -26,9 +26,9 @@ const routes: Routes = [
   { path: 'suspension-tarjeta-de-debito/:numeroProveedor/:operacion', loadChildren: './suspension-tarjeta-de-debito/suspension-tarjeta-de-debito.module#SuspensionTarjetaDeDebitoPageModule' },
 
   /** Opciones submenus */
-  { path: 'consulta-saldo', loadChildren: './consulta-saldo/consulta-saldo.module#ConsultaSaldoPageModule' },
-  { path: 'consulta-movimiento', loadChildren: './consulta-movimiento/consulta-movimiento.module#ConsultaMovimientoPageModule' },
-  { path: 'consulta-tarjeta-de-credito', loadChildren: './consulta-tarjeta-de-credito/consulta-tarjeta-de-credito.module#ConsultaTarjetaDeCreditoPageModule' },
+  { path: 'consulta-saldo/:numeroProveedor/:operacion', loadChildren: './consulta-saldo/consulta-saldo.module#ConsultaSaldoPageModule' },
+  { path: 'consulta-movimiento/:numeroProveedor/:operacion', loadChildren: './consulta-movimiento/consulta-movimiento.module#ConsultaMovimientoPageModule' },
+  { path: 'consulta-tarjeta-de-credito/:numeroProveedor/:operacion', loadChildren: './consulta-tarjeta-de-credito/consulta-tarjeta-de-credito.module#ConsultaTarjetaDeCreditoPageModule' },
   { path: 'pago-movil', loadChildren: './pago-movil/pago-movil.module#PagoMovilPageModule' },
   { path: 'confirmar-pago-movil', loadChildren: './confirmar-pago-movil/confirmar-pago-movil.module#ConfirmarPagoMovilPageModule' },
   { path: 'recarga-telefonica', loadChildren: './recarga-telefonica/recarga-telefonica.module#RecargaTelefonicaPageModule' },

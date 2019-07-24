@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { SMS } from '@ionic-native/sms/ngx';
 
@@ -17,9 +17,9 @@ export class ConsultaSaldoPage implements OnInit {
   mensajeEnviar: string;
   numeroDestino: string;
 
-  constructor(public alertCtrl: AlertController, private sms: SMS, private navCtrl: NavController) {
-    this.prefijoAccion = 'S';
-    this.numeroDestino = '88232';
+  constructor(public alertCtrl: AlertController, private sms: SMS, private rutaActiva: ActivatedRoute, private navCtrl: NavController) {
+    this.prefijoAccion = this.rutaActiva.snapshot.params.operacion;
+    this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
   }
 
   accounts: any[] = [
@@ -90,10 +90,12 @@ export class ConsultaSaldoPage implements OnInit {
 
   doRefresh(event) {
     console.log('Begin async operation');
+    this.navCtrl.pop();
     setTimeout(() => {
       console.log('Async operation has ended');
       event.target.complete();
-      window.location.reload();
+      this.navCtrl.navigateForward('consulta-saldo/' + this.numeroDestino + '/' + this.prefijoAccion);
     }, 1000);
   }
+
 }
