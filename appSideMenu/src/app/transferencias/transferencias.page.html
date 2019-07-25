@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title>Transferencia</ion-title>
     <ion-buttons slot="start">
-        <ion-back-button color= "primary" defaultHref="home" icon="arrow-back" defaultHref="#"></ion-back-button>
+        <ion-back-button color= "primary" defaultHref="home" icon="arrow-back"></ion-back-button>
       </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -12,6 +12,13 @@
     <ion-img src="/assets/icon/logoTUBFCpage.png" class="logo-img"></ion-img>
   </ion-card>
 
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content 
+      pullingIcon="arrow-dropdown"
+      refreshingSpinner="bubbles"
+      pullingText="Deslice para actualizar">
+    </ion-refresher-content>
+  </ion-refresher>
   <ion-card>
     <ion-card-header class="card-title">Datos del Pago</ion-card-header>
     <ion-card-content>
@@ -68,9 +75,9 @@
         <ion-row>
           <ion-item>
                 <ion-label>Monto:</ion-label>
-                <ion-input required [(ngModel)]="montoEntero" type="number" placeholder=""></ion-input>,
-                <ion-input required [(ngModel)]="montoDecimal" type="number"  placeholder="" onKeyPress="if(this.value.length==2) return false;"></ion-input>
-            </ion-item>
+                <ion-input required pattern="[0-9]{1,10}"[(ngModel)]="montoEntero" type="number" placeholder="" ></ion-input>,
+                <ion-input required pattern="[0-9]{2}" [(ngModel)]="montoDecimal" type="number" placeholder="" onKeyPress="if(this.value.length==2) return false;"></ion-input>
+          </ion-item>          
         </ion-row>
       
         <ion-button float-right expand="full" class="btn-enviar" fill="outline" (click)="transferirCuenta()">Enviar SMS</ion-button>
