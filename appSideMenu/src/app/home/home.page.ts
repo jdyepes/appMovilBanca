@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
+import { Platform, AlertController } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +24,7 @@ export class HomePage {
   prefijoDirectvPrePago: string = 'RDD';
   prefijoDirectvPrevioPago: string = 'RDP';
   prefijoSuspensionTDD: string = 'STD';
+  subscription: any;
 
   public appPages = [
     {
@@ -61,4 +66,52 @@ export class HomePage {
     }
   ];
 
+  constructor(
+    private platform: Platform,
+    private splashScreen: SplashScreen,
+    private statusBar: StatusBar,
+    private alertCtrl: AlertController
+  ) {
+    this.initializeApp();
+  }
+
+  initializeApp() {
+    this.platform.ready().then(() => {
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
+    });
+  }
+
+  // salir de la app
+  ionViewDidEnter() {
+    this.subscription = this.platform.backButton.subscribe(() => {
+      this.confirmarSalida();
+    });
+  }
+  // deshabilita el boton regresar antes de salir de la pag
+  ionViewWillLeave() {
+    this.subscription.unsubscribe();
+  }
+
+  //alertBox
+  async confirmarSalida() {
+      let alert = await this.alertCtrl.create({
+        header: 'Alerta',
+        message: 'Desea salir de TUBFC',
+
+        buttons: [
+          {
+            text: 'Cancelar',
+            handler: () => { }
+          },
+          {
+            text: 'OK',
+            handler: () => {
+              navigator['app'].exitApp();
+            }
+          }
+        ]
+      });
+      await alert.present();
+    }
 }
