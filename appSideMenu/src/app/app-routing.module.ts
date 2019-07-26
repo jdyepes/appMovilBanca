@@ -32,7 +32,8 @@ const routes: Routes = [
   { path: 'pago-movil', loadChildren: './pago-movil/pago-movil.module#PagoMovilPageModule' },
   { path: 'confirmar-pago-movil', loadChildren: './confirmar-pago-movil/confirmar-pago-movil.module#ConfirmarPagoMovilPageModule' },
   { path: 'recarga-telefonica', loadChildren: './recarga-telefonica/recarga-telefonica.module#RecargaTelefonicaPageModule' },
-  { path: 'recarga-directv', loadChildren: './recarga-directv/recarga-directv.module#RecargaDirectvPageModule' }
+  { path: 'recarga-directv', loadChildren: './recarga-directv/recarga-directv.module#RecargaDirectvPageModule' },  { path: 'spinner', loadChildren: './spinner/spinner.module#SpinnerPageModule' }
+
 ];
 
 @NgModule({
