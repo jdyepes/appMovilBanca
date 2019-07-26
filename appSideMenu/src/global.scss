@@ -29,7 +29,6 @@
     }
 }
 
-
 ion-item{ 
     --border-color: #0d46a0; 
 }
@@ -58,6 +57,7 @@ ion-item{
     margin-right: auto; 
     display: block;
 }
+
 .btn-enviar {
   margin-left: 70px;
   margin-right: 30px; 
@@ -71,3 +71,10 @@ ion-item{
   color:#3880ff;
 }
 
+.toolbar-container {
+  --background: #032864;
+  color: white;
+  ion-title {
+  font-size: 14px;
+  }
+}
