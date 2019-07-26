@@ -157,7 +157,7 @@ export class TransferenciasPage implements OnInit {
 
   doRefresh(event) {
     console.log('Begin async operation');
-    this.navCtrl.pop();
+    this.navCtrl.navigateForward('spinner');
     setTimeout(() => {
       console.log('Async operation has ended');
       event.target.complete();

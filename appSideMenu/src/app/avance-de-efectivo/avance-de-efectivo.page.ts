@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, Platform, NavController } from '@ionic/angular';
 import { SMS } from '@ionic-native/sms/ngx';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-avance-de-efectivo',
@@ -20,14 +21,14 @@ export class AvanceDeEfectivoPage implements OnInit {
   operacion: string;
   mensajeEnviar: string;
   numeroDestino: string;
+  subscription: any;
 
-  constructor(public alertCtrl: AlertController, private sms: SMS) { 
-    this.prefijoAccion = 'A';
+  constructor(public alertCtrl: AlertController, private sms: SMS,
+              private rutaActiva: ActivatedRoute,
+              private navCtrl: NavController, private platform: Platform) {
     this.operacion = 'AVANCE';
-    this.numeroDestino = '88232';
-  }
-
-  ngOnInit() {
+    this.prefijoAccion = this.rutaActiva.snapshot.params.operacion;
+    this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
   }
 
   accounts: any[] = [
@@ -43,7 +44,7 @@ export class AvanceDeEfectivoPage implements OnInit {
     }
   ];
 
-  //correlativos
+  // correlativos
   options: number[] = [1,2,3,4,5,6];
 
   cards: any[] = [
@@ -59,7 +60,56 @@ export class AvanceDeEfectivoPage implements OnInit {
     }
   ];
 
-  //alertBox
+  // deshabilita el boton regresar antes de salir de la pag
+  ionViewWillLeave() {
+    this.subscription.unsubscribe();
+  }
+
+  // evento cuando se presiona el boton de regresar en el telefono
+  initializeBackButton(): void {
+    this.subscription = this.platform.backButton.subscribeWithPriority(999999, () => {
+      this.regresar();
+    });
+  }
+
+  ngOnInit() {
+    this.initializeBackButton();
+  }
+
+  // alertBox
+  async mostrarError(mensaje: string) {
+
+    let alert = await this.alertCtrl.create({
+      header: 'Alerta',
+      message: '<p>' + mensaje + '</p>',
+      cssClass: 'alertColor',
+      buttons: [
+        {
+          text: 'OK'
+        }
+      ]
+    });
+    await alert.present();
+  }
+
+  async doRefresh(event) {
+    console.log('Begin async operation');
+    this.navCtrl.pop();
+    this.navCtrl.navigateBack('spinner');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      this.navCtrl.pop();
+      this.navCtrl.navigateForward('consulta-saldo/' + this.numeroDestino + '/' + this.prefijoAccion);
+      event.target.complete();
+    }, 1000);
+  }
+
+  regresar() {
+    this.navCtrl.navigateBack('home');
+  }
+
+  // alertBox
   async realizarAvanceTDC(){
     let alert = await this.alertCtrl.create({
       header: 'Alerta',  
