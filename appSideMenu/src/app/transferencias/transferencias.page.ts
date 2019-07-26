@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, NavController } from '@ionic/angular';
+import { AlertController, NavController, Platform } from '@ionic/angular';
 import { SMS } from '@ionic-native/sms/ngx';
 import { ActivatedRoute } from '@angular/router';
 
@@ -20,8 +20,11 @@ export class TransferenciasPage implements OnInit {
   operacion: string;
   mensajeEnviar: string;
   numeroDestino: string;
+  subscription: any;
 
-  constructor(public alertCtrl: AlertController, private sms: SMS, private rutaActiva: ActivatedRoute, private navCtrl: NavController) {
+  /** Navegacion entre paginas por rutas */
+  constructor(public alertCtrl: AlertController, private sms: SMS, private rutaActiva: ActivatedRoute, 
+    private navCtrl: NavController, private platform: Platform) {
     this.prefijoAccion = this.rutaActiva.snapshot.params.operacion;
     this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
     this.operacion = 'TRANSFERENCIA';
@@ -43,8 +46,21 @@ export class TransferenciasPage implements OnInit {
   //correlativos
   options: number[] = [1, 2, 3, 4, 5, 6];
 
-  ngOnInit() {
-  }
+  // deshabilita el boton regresar antes de salir de la pag
+  ionViewWillLeave() {
+    this.subscription.unsubscribe();
+ }
+
+ // evento cuando se presiona el boton de regresar en el telefono
+ initializeBackButton(): void {
+   this.subscription = this.platform.backButton.subscribeWithPriority(999999, () => {
+     this.regresar();
+   });
+ }
+
+ ngOnInit() {
+   this.initializeBackButton();
+ }
 
   // muestra los mensajes de los campos si estan errados
   async mostrarError(mensaje: string) {
@@ -157,11 +173,17 @@ export class TransferenciasPage implements OnInit {
 
   doRefresh(event) {
     console.log('Begin async operation');
-    this.navCtrl.navigateForward('spinner');
+    this.navCtrl.pop();
+    this.navCtrl.navigateBack('spinner');
     setTimeout(() => {
-      console.log('Async operation has ended');
-      event.target.complete();
+      console.log('Async operation has ended');      
+      this.navCtrl.pop();
       this.navCtrl.navigateForward('transferencias/' + this.numeroDestino + '/' + this.prefijoAccion);
-    }, 1000);
+      event.target.complete();
+    }, 1000);    
+  }
+
+  regresar() {
+    this.navCtrl.navigateBack('home');
   }
 }
