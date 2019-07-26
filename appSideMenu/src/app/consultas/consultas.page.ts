@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, Platform } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -12,13 +12,30 @@ export class ConsultasPage implements OnInit {
   numeroProveedor: number;
   prefijoSaldo: string;
   prefijoMovimiento: string;
+  subscription: any;
 
-  constructor(public navCtrl: NavController, private rutaActiva: ActivatedRoute) { }
+  constructor(public navCtrl: NavController, private rutaActiva: ActivatedRoute, private platform: Platform) {
+  }
 
   ngOnInit() {
     this.numeroProveedor = this.rutaActiva.snapshot.params.numeroProveedor;
     this.prefijoSaldo = this.rutaActiva.snapshot.params.operacionSaldo;
-    this.prefijoMovimiento = this.rutaActiva.snapshot.params.operacionMov;
+    this.prefijoMovimiento = this.rutaActiva.snapshot.params.operacionMov;  
+  }
+
+  // evento cuando se presiona el boton de regresar en el telefono
+  initializeBackButton(): void {
+    this.subscription = this.platform.backButton.subscribeWithPriority(999999, () => {
+      this.regresar();
+    });
+  }
+
+  ionViewDidEnter() {
+    this.initializeBackButton();
+  }
+  // deshabilita el boton regresar antes de salir de la pag
+  ionViewWillLeave() {
+    this.subscription.unsubscribe();
   }
 
   abrirSiguientePag(pagina: number) {
@@ -33,4 +50,7 @@ export class ConsultasPage implements OnInit {
     }
   }
 
+  regresar() {
+   this.navCtrl.navigateBack('/home');
+  }
 }

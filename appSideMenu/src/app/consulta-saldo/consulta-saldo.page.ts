@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, NavController } from '@ionic/angular';
+import { AlertController, NavController, Platform } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 
 import { SMS } from '@ionic-native/sms/ngx';
+
 
 @Component({
   selector: 'app-consulta-saldo',
@@ -16,10 +17,18 @@ export class ConsultaSaldoPage implements OnInit {
   prefijoAccion: string;
   mensajeEnviar: string;
   numeroDestino: string;
+  consultasMenu: string;
+  subscription: any;
 
-  constructor(public alertCtrl: AlertController, private sms: SMS, private rutaActiva: ActivatedRoute, private navCtrl: NavController) {
+  /** Navegacion entre paginas por rutas */
+  constructor(public alertCtrl: AlertController,
+              private sms: SMS, private rutaActiva: ActivatedRoute,
+              private navCtrl: NavController, private platform: Platform)
+  {
     this.prefijoAccion = this.rutaActiva.snapshot.params.operacion;
     this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
+    // regreso a la pag anterior
+    this.consultasMenu = 'consultas/' + this.numeroDestino + '/' + this.prefijoAccion + '/M';
   }
 
   accounts: any[] = [
@@ -40,10 +49,23 @@ export class ConsultaSaldoPage implements OnInit {
     }
   ];
 
-  //correlativos
+  // correlativos
   options: number[] = [1, 2, 3, 4, 5, 6];
 
+  // deshabilita el boton regresar antes de salir de la pag
+  ionViewWillLeave() {
+     this.subscription.unsubscribe();
+  }
+
+  // evento cuando se presiona el boton de regresar en el telefono
+  initializeBackButton(): void {
+    this.subscription = this.platform.backButton.subscribeWithPriority(999999, () => {
+      this.regresar();
+    });
+  }
+
   ngOnInit() {
+    this.initializeBackButton();
   }
 
  async consultarSaldo() {
@@ -62,7 +84,7 @@ export class ConsultaSaldoPage implements OnInit {
    }
   }
 
-  //alertBox
+  // alertBox
   async mostrarError(mensaje: string) {
 
     let alert = await this.alertCtrl.create({
@@ -91,14 +113,20 @@ export class ConsultaSaldoPage implements OnInit {
     await this.sms.send(this.numeroDestino, mensaje, options);
   }
 
-  doRefresh(event) {
+ async doRefresh(event) {
     console.log('Begin async operation');
     this.navCtrl.pop();
+    this.navCtrl.navigateBack('spinner');
+
     setTimeout(() => {
       console.log('Async operation has ended');
-      event.target.complete();
+      this.navCtrl.pop();
       this.navCtrl.navigateForward('consulta-saldo/' + this.numeroDestino + '/' + this.prefijoAccion);
+      event.target.complete ();
     }, 1000);
   }
 
+  regresar() {
+    this.navCtrl.navigateBack(this.consultasMenu);
+  }
 }

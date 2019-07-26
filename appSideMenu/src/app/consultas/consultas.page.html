@@ -3,8 +3,10 @@
   <ion-toolbar>
     <ion-title>Consultas</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button color="primary" text="atrás" icon="arrow-back" defaultHref="home">
-      </ion-back-button>
+      <ion-button (click)="regresar()">
+        <ion-icon color="primary" slot="start" name="arrow-back"></ion-icon>
+        <p class="arrow-back">atrás</p>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
