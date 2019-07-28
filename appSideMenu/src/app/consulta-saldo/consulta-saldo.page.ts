@@ -3,6 +3,7 @@ import { AlertController, NavController, Platform } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 
 import { SMS } from '@ionic-native/sms/ngx';
+import { flatten } from '@angular/router/src/utils/collection';
 
 
 @Component({
@@ -58,7 +59,7 @@ export class ConsultaSaldoPage implements OnInit {
   }
 
   // evento cuando se presiona el boton de regresar en el telefono
-  initializeBackButton(): void {
+  initializeBackButton() {
     this.subscription = this.platform.backButton.subscribeWithPriority(999999, () => {
       this.regresar();
     });
@@ -68,16 +69,23 @@ export class ConsultaSaldoPage implements OnInit {
     this.initializeBackButton();
   }
 
- async consultarSaldo() {
-   if (this.prefijoAccion === undefined) {
-     this.mostrarError('El prefijo no se pudo cargar. Intente nuevamente');
-   } else
-   if (this.tipoCuenta === undefined) {
+  validarCampos(): boolean {
+    let flag = false;
+    if (this.prefijoAccion === undefined) {
+      this.mostrarError('El prefijo no se pudo cargar. Intente nuevamente');
+    } else
+    if (this.tipoCuenta === undefined) {
       this.mostrarError('Campo no seleccionado. Seleccione una Cuenta');
     } else
-   if (this.correlativoSelected === undefined) {
-     this.mostrarError('Campo no seleccionado. Seleccione correlativo');
-   } else {
+    if (this.correlativoSelected === undefined) {
+      this.mostrarError('Campo no seleccionado. Seleccione correlativo');
+    } else {
+      flag = true;
+    }
+    return flag;
+  }
+ async consultarSaldo() {
+   if (this.validarCampos()) {
       this.mensajeEnviar = this.prefijoAccion + ' ' + this.tipoCuenta + this.correlativoSelected;
       console.log('mensaje a enviar: ' + this.mensajeEnviar);
       this.sendSMS(this.mensajeEnviar);
@@ -113,7 +121,7 @@ export class ConsultaSaldoPage implements OnInit {
     await this.sms.send(this.numeroDestino, mensaje, options);
   }
 
- async doRefresh(event) {
+  doRefresh(event) {
     console.log('Begin async operation');
     this.navCtrl.pop();
     this.navCtrl.navigateBack('spinner');

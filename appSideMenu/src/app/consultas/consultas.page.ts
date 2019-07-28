@@ -24,7 +24,7 @@ export class ConsultasPage implements OnInit {
   }
 
   // evento cuando se presiona el boton de regresar en el telefono
-  initializeBackButton(): void {
+  initializeBackButton() {
     this.subscription = this.platform.backButton.subscribeWithPriority(999999, () => {
       this.regresar();
     });

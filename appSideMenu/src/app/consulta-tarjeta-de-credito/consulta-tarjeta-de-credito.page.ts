@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController, Platform } from '@ionic/angular';
 import { SMS } from '@ionic-native/sms/ngx';
 import { ActivatedRoute } from '@angular/router';
 
@@ -15,10 +15,18 @@ export class ConsultaTarjetaDeCreditoPage implements OnInit {
   prefijoAccion: string;
   mensajeEnviar: string;
   numeroDestino: string;
+  consultasMenu: string;
+  subscription: any;
 
-  constructor(public alertCtrl: AlertController, private sms: SMS, private rutaActiva: ActivatedRoute) {
+  /** Navegacion entre paginas por rutas */
+  constructor(public alertCtrl: AlertController,
+              private sms: SMS, private rutaActiva: ActivatedRoute,
+              private navCtrl: NavController, private platform: Platform)
+  {
     this.prefijoAccion = this.rutaActiva.snapshot.params.operacion;
     this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
+    // regreso a la pag anterior
+    this.consultasMenu = 'consultas/' + this.numeroDestino + '/' + this.prefijoAccion + '/M';
   }
 
   cards: any[] = [
@@ -34,23 +42,47 @@ export class ConsultaTarjetaDeCreditoPage implements OnInit {
     },
   ];
 
-  //correlativos
+  // correlativos
   options: number[] = [1, 2, 3, 4, 5, 6];
 
+  // deshabilita el boton regresar antes de salir de la pag
+  ionViewWillLeave() {
+    this.subscription.unsubscribe();
+  }
+
+  // evento cuando se presiona el boton de regresar en el telefono
+  initializeBackButton() {
+    this.subscription = this.platform.backButton.subscribeWithPriority(999999, () => {
+      this.regresar();
+    });
+  }
+
   ngOnInit() {
+    this.initializeBackButton();
+  }
+
+  validarCampos(): boolean {
+    let flag = false;
+    if (this.prefijoAccion === undefined) {
+      this.mostrarError('El prefijo no se pudo cargar. Intente nuevamente');
+    } else
+    if (this.tipoCuenta === undefined) {
+      this.mostrarError('Campo no seleccionado. Seleccione una Cuenta');
+    } else
+    if (this.correlativoSelected === undefined) {
+      this.mostrarError('Campo no seleccionado. Seleccione correlativo');
+    } else {
+      flag = true;
+    }
+    return flag;
   }
 
  async consultarTDC() {
-   if (this.tipoCuenta === undefined) {
-     this.mostrarError('Campo no seleccionado. Seleccione una Cuenta');
-   } else
-     if (this.correlativoSelected === undefined) {
-       this.mostrarError('Campo no seleccionado. Seleccione correlativo');
-     } else {
-       this.mensajeEnviar = this.prefijoAccion + ' ' + this.tipoCuenta + this.correlativoSelected;
-       console.log('mensaje a enviar: ' + this.mensajeEnviar);
-       this.sendSMS(this.mensajeEnviar);
-     }
+   if (this.validarCampos()) {
+     this.mensajeEnviar = this.prefijoAccion + ' ' + this.tipoCuenta + this.correlativoSelected;
+     console.log('mensaje a enviar: ' + this.mensajeEnviar);
+     this.sendSMS(this.mensajeEnviar);
+   }
   }
 
   //alertBox
@@ -84,10 +116,18 @@ export class ConsultaTarjetaDeCreditoPage implements OnInit {
 
   doRefresh(event) {
     console.log('Begin async operation');
+    this.navCtrl.pop();
+    this.navCtrl.navigateBack('spinner');
+
     setTimeout(() => {
       console.log('Async operation has ended');
+      this.navCtrl.pop();
+      this.navCtrl.navigateForward('consulta-tarjeta-de-credito/' + this.numeroDestino + '/' + this.prefijoAccion);
       event.target.complete();
-    //  window.location.reload();
     }, 1000);
+  }
+
+  regresar() {
+    this.navCtrl.navigateBack(this.consultasMenu);
   }
 }
