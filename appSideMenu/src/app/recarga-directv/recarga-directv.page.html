@@ -2,7 +2,10 @@
   <ion-toolbar>
     <ion-title>Recarga Directv</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button color="primary" defaultHref="recargas" icon="arrow-back"></ion-back-button>
+      <ion-button (click)="regresar()">
+        <ion-icon color="primary" slot="start" name="arrow-back"></ion-icon>
+        <p class="arrow-back">atrás</p>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -12,6 +15,11 @@
     <ion-img src="/assets/icon/logoTUBFCpage.png" class="logo-img"></ion-img>
   </ion-card>
 
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="Deslice para actualizar">
+    </ion-refresher-content>
+  </ion-refresher>
+    
   <ion-card>
     <ion-card-header class="card-title">Tipo de Servicio</ion-card-header>
     <ion-card-content>    
@@ -27,14 +35,19 @@
           </ion-item>
         </ion-col>
       <ion-row *ngIf="(prepago && mostrar)" >
-        <ion-col class="card-content-name">Tarjeta Nro: </ion-col>
-        <ion-input required [(ngModel)]="numeroClienteContrato" type="number" placeholder="5671234"
-          onKeyPress="if(this.value.length==12) return false;"></ion-input>
+        <ion-item>
+          <ion-label>Tarjeta Nro:</ion-label>
+            <ion-input required [(ngModel)]="numeroClienteContrato" type="number" placeholder=""
+              onKeyPress="if(this.value.length==12) return false;">
+            </ion-input>
+        </ion-item>          
       </ion-row>
       <ion-row *ngIf="(!prepago && mostrar)">
-        <ion-col class="card-content-name">Cliente Nro: </ion-col>
-        <ion-input required [(ngModel)]="numeroClienteContrato" type="number" placeholder="5671234"
-          onKeyPress="if(this.value.length==5|| this.value.length==8) return false;"></ion-input>
+        <ion-item>
+          <ion-label>Cliente Nro:</ion-label>
+          <ion-input required [(ngModel)]="numeroClienteContrato" type="number" placeholder="">
+          </ion-input>
+        </ion-item>       
       </ion-row>
     </ion-card-content>
     <ion-card-header *ngIf="mostrar" class="card-title">Monto a recargar</ion-card-header>

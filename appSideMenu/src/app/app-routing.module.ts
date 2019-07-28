@@ -31,8 +31,9 @@ const routes: Routes = [
   { path: 'consulta-tarjeta-de-credito/:numeroProveedor/:operacion', loadChildren: './consulta-tarjeta-de-credito/consulta-tarjeta-de-credito.module#ConsultaTarjetaDeCreditoPageModule' },
   { path: 'pago-movil', loadChildren: './pago-movil/pago-movil.module#PagoMovilPageModule' },
   { path: 'confirmar-pago-movil', loadChildren: './confirmar-pago-movil/confirmar-pago-movil.module#ConfirmarPagoMovilPageModule' },
-  { path: 'recarga-telefonica', loadChildren: './recarga-telefonica/recarga-telefonica.module#RecargaTelefonicaPageModule' },
-  { path: 'recarga-directv', loadChildren: './recarga-directv/recarga-directv.module#RecargaDirectvPageModule' },  { path: 'spinner', loadChildren: './spinner/spinner.module#SpinnerPageModule' }
+  { path: 'recarga-telefonica/:numeroProveedor/:operacionTel', loadChildren: './recarga-telefonica/recarga-telefonica.module#RecargaTelefonicaPageModule' },
+  { path: 'recarga-directv/:numeroProveedor/:operacionDirectv', loadChildren: './recarga-directv/recarga-directv.module#RecargaDirectvPageModule' },
+  { path: 'spinner', loadChildren: './spinner/spinner.module#SpinnerPageModule' }
 
 ];
 
