@@ -15,9 +15,9 @@ export class AvanceDeEfectivoPage implements OnInit {
   cuentaDestino: string;
   correlativoOrigen: string;
   correlativoDestino: string;
-  cvvTarjeta: number;
-  montoEntero: number; 
-  montoDecimal: number;
+  cvvTarjeta: string;
+  montoEntero: string;
+  montoDecimal: string;
   operacion: string;
   mensajeEnviar: string;
   numeroDestino: string;
@@ -45,7 +45,7 @@ export class AvanceDeEfectivoPage implements OnInit {
   ];
 
   // correlativos
-  options: number[] = [1,2,3,4,5,6];
+  options: number[] = [1, 2, 3, 4, 5, 6];
 
   cards: any[] = [
     {
@@ -66,7 +66,7 @@ export class AvanceDeEfectivoPage implements OnInit {
   }
 
   // evento cuando se presiona el boton de regresar en el telefono
-  initializeBackButton(): void {
+  initializeBackButton() {
     this.subscription = this.platform.backButton.subscribeWithPriority(999999, () => {
       this.regresar();
     });
@@ -92,54 +92,97 @@ export class AvanceDeEfectivoPage implements OnInit {
     await alert.present();
   }
 
-  async doRefresh(event) {
-    console.log('Begin async operation');
-    this.navCtrl.pop();
-    this.navCtrl.navigateBack('spinner');
-
-    setTimeout(() => {
-      console.log('Async operation has ended');
-      this.navCtrl.pop();
-      this.navCtrl.navigateForward('consulta-saldo/' + this.numeroDestino + '/' + this.prefijoAccion);
-      event.target.complete();
-    }, 1000);
-  }
-
-  regresar() {
-    this.navCtrl.navigateBack('home');
-  }
-
   // alertBox
-  async realizarAvanceTDC(){
-    let alert = await this.alertCtrl.create({
-      header: 'Alerta',  
-      message: 'Confirma que desea realizar un ' + '<b>' + this.operacion + '</b>' +
-      ' con los siguientes datos: ' + '<BR>' +
-      '<b>Tarjeta Origen: </b>' + this.tarjetaOrigen +' ' + this.correlativoOrigen + '<BR>' +
-      '<b>CVV: </b>' + this.cvvTarjeta + '<BR>' +
-      '<b>Cuenta Destino: </b>' + this.cuentaDestino + ' ' + this.correlativoDestino + '<BR>' +
-      '<b>Monto: </b>' + this.montoEntero + ',' + this.montoDecimal,
+  async realizarAvanceTDC() {
+    if (this.validarCampos()) {
+      let alert = await this.alertCtrl.create({
+        header: 'Alerta',
+        message: 'Confirma que desea realizar un ' + '<b>' + this.operacion + '</b>' +
+        ' con los siguientes datos: ' + '<BR>' +
+        '<b>Tarjeta Origen: </b>' + this.tarjetaOrigen +' ' + this.correlativoOrigen + '<BR>' +
+        '<b>CVV: </b>' + this.cvvTarjeta + '<BR>' +
+        '<b>Cuenta Destino: </b>' + this.cuentaDestino + ' ' + this.correlativoDestino + '<BR>' +
+        '<b>Monto: </b>' + this.montoEntero + ',' + this.montoDecimal,
 
-      buttons: [
-        {
-          text: 'Cancelar',
-          handler: () => {
-            //no
-            console.log('entro en no');            
+        buttons: [
+          {
+            text: 'Cancelar',
+            handler: () => {
+              //no
+              console.log('entro en no');
+            }
+          },
+          {
+            text: 'OK',
+            handler: () => {
+              //si
+              this.mensajeEnviar = this.prefijoAccion + ' ' + this.tarjetaOrigen + this.correlativoOrigen + ' ' + this.cuentaDestino + this.correlativoDestino + ' ' + this.cvvTarjeta + ' ' + this.montoEntero + ',' + this.montoDecimal;
+              console.log('mensaje a enviar: ' + this.mensajeEnviar );
+              this.sendSMS(this.mensajeEnviar);
+            }
           }
-        },
-        {
-          text: 'OK',
-          handler: () => {
-            //si
-            this.mensajeEnviar = this.prefijoAccion + ' ' + this.tarjetaOrigen + this.correlativoOrigen + ' ' + this.cuentaDestino + this.correlativoDestino + ' ' + this.cvvTarjeta + ' ' + this.montoEntero + ',' + this.montoDecimal;
-            console.log('mensaje a enviar: ' + this.mensajeEnviar );
-            this.sendSMS(this.mensajeEnviar);
-          }
-        }
-      ]       
-    });
-    await alert.present();
+        ]
+      });
+      await alert.present();
+  }
+}
+
+  validarCampos(): boolean {
+    let numberPattern = new RegExp(/^\d*$/);
+    let numberCVVPattern = new RegExp(/^[0-9]{3}$/);
+    if (this.prefijoAccion === undefined) {
+      this.mostrarError('El prefijo no se pudo cargar. Intente nuevamente.');
+      return false;
+    } else
+    if (this.tarjetaOrigen === undefined) {
+      this.mostrarError('Campo requerido. ' + '<BR>' + 'Seleccione tarjeta origen.');
+      this.tarjetaOrigen = undefined;
+      return false;
+    } else
+    if (this.correlativoOrigen === undefined) {
+      this.mostrarError('Campo requerido. ' + '<BR>' + 'Seleccione el correlativo de origen.');
+      this.correlativoOrigen = undefined;
+      return false;
+    } else
+    if (this.cvvTarjeta === undefined) {
+      this.mostrarError('Campo requerido. ' + '<BR>' + 'Indique el CVV de la Tarjeta.');
+      this.cvvTarjeta = undefined;
+      return false;
+    } else
+    if (!numberCVVPattern.test(this.cvvTarjeta)) {
+      this.mostrarError('Número de CVV es de 3 dígitos');
+      return false;
+    } else
+    if (!numberPattern.test(this.cvvTarjeta)) {
+      this.mostrarError('Número de CVV inválido');
+      return false;
+    } else
+    if (this.cuentaDestino === undefined) {
+      this.mostrarError('Campo requerido. ' + '<BR>' + 'Seleccione la cuenta destino.');
+      this.cuentaDestino = undefined;
+      return false;
+    } else
+    if (this.correlativoDestino === undefined) {
+      this.mostrarError('Campo requerido. ' + '<BR>' + 'Seleccione el correlativo de destino.');
+      this.correlativoDestino = undefined;
+      return false;
+    } else
+    if (this.montoEntero === undefined) {
+      this.mostrarError('Campo requerido. ' + '<BR>' + 'Indique el monto.');
+      this.montoEntero = undefined;
+      return false;
+    } else
+    if (this.montoDecimal === undefined) {
+      this.mostrarError('Campo requerido. ' + '<BR>' + 'Indique los dos decimales.');
+      this.montoDecimal = undefined;
+      return false;
+    } else
+    if (!numberPattern.test(this.montoEntero) || !numberPattern.test(this.montoDecimal)) {
+      this.mostrarError('Ha ingresado un monto inválido');
+      return false;
+    } else {
+      return true;
+    }
   }
 
   async sendSMS(mensaje: string) {
@@ -152,5 +195,21 @@ export class AvanceDeEfectivoPage implements OnInit {
       }
     };
     await this.sms.send(this.numeroDestino, mensaje, options);
+  }
+
+  doRefresh(event) {
+    console.log('Begin async operation');
+    this.navCtrl.pop();
+    this.navCtrl.navigateBack('spinner');
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      this.navCtrl.pop();
+      this.navCtrl.navigateForward('avance-de-efectivo/' + this.numeroDestino + '/' + this.prefijoAccion);
+      event.target.complete();
+    }, 1000);
+  }
+
+  regresar() {
+    this.navCtrl.navigateBack('home');
   }
 }
