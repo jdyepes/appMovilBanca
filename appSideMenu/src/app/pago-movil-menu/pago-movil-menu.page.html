@@ -16,6 +16,20 @@
 <ion-card class="card-menu">
   <ion-card-header class="card-title">Opciones</ion-card-header>
   <ion-card-content class="card-content">            
+
+    <ion-item class="item-name">
+      <ion-label style="//padding:1px;">Servicio</ion-label>
+      <ion-select [compareWith]="true" [(ngModel)]="opcionPagoMovil" style="padding:5px; " placeholder="" okText="Aceptar"
+        cancelText="Cancelar">
+        <ion-select-option [disabled]="true">
+          {{operacionPAT}} 
+        </ion-select-option>
+        <ion-select-option  [value]="operacionPAC">
+          {{operacionPAC}} 
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    
     <ion-button class="btn-left" (click)="abrirSiguientePag(1)">
       <ion-icon slot="start" name="star"></ion-icon>
       Pago Movil

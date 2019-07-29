@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, AlertController, Platform } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pago-movil-menu',
@@ -8,9 +9,23 @@ import { NavController } from '@ionic/angular';
 })
 export class PagoMovilMenuPage implements OnInit {
 
-  constructor(public navCtrl: NavController) { }
+  opcionPagoMovil: string;
+  operacionPAT: string;
+  operacionPAC: string;
+  numeroDestino: string;
 
-  ngOnInit() {
+  /** Navegacion entre paginas por rutas */
+  constructor(public alertCtrl: AlertController,
+              private rutaActiva: ActivatedRoute,
+              private navCtrl: NavController, private platform: Platform) {
+                this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
+                this.operacionPAT = this.rutaActiva.snapshot.params.operacionPAT;
+                this.operacionPAC = this.rutaActiva.snapshot.params.operacionPAC;
+            //  this.opcionPagoMovil ='PAT';
+              }
+
+  ngOnInit() {   
+    
   }
 
     abrirSiguientePag(pagina: number) {
