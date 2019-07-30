@@ -1,8 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Pago Móvil</ion-title>
+    <ion-title>Pago Móvil ({{prefijoAccion}})</ion-title>
     <ion-buttons slot="start">
-        <ion-back-button color= "primary" defaultHref="pago-movil-menu" icon="arrow-back"></ion-back-button>
+        <ion-button (click)="regresar()">
+            <ion-icon color= "primary" slot="start" name="arrow-back"></ion-icon>
+            <p class="arrow-back">atrás</p>
+        </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -12,6 +15,12 @@
         <ion-img src="/assets/icon/logoTUBFCpage.png" class="logo-img"></ion-img>
     </ion-card>
 
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content 
+          pullingText="Deslice para actualizar">
+        </ion-refresher-content>
+    </ion-refresher>
+
     <ion-card>
         <ion-card-header class="card-title">Banco Destino</ion-card-header>
         <ion-card-content>
@@ -20,7 +29,7 @@
                     <ion-item class="item-name" >
                         <ion-label style="padding:1px;" >Banco: </ion-label>
                         <ion-select required [(ngModel)]="bancoSeleccion" style="padding:5px; " placeholder="" okText="Aceptar" cancelText="Cancelar">
-                            <ion-select-option *ngFor="let option of banks" [value]="option.code">{{option.code}} | {{option.name}}</ion-select-option>
+                            <ion-select-option *ngFor="let option of banks" [value]="option">{{option.code}} | {{option.name}}</ion-select-option>
                         </ion-select>
                     </ion-item> 
                 </ion-col>         

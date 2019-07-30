@@ -2,7 +2,10 @@
   <ion-toolbar>
     <ion-title>Opciones Pago Movil</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button color="primary" text="atrás" defaultHref="" icon="arrow-back"></ion-back-button>
+      <ion-button (click)="regresar()">
+        <ion-icon color= "primary" slot="start" name="arrow-back"></ion-icon>
+        <p class="arrow-back">atrás</p>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -17,19 +20,14 @@
   <ion-card-header class="card-title">Opciones</ion-card-header>
   <ion-card-content class="card-content">            
 
-    <ion-item class="item-name">
-      <ion-label style="//padding:1px;">Servicio</ion-label>
-      <ion-select [compareWith]="true" [(ngModel)]="opcionPagoMovil" style="padding:5px; " placeholder="" okText="Aceptar"
-        cancelText="Cancelar">
-        <ion-select-option [disabled]="true">
-          {{operacionPAT}} 
-        </ion-select-option>
-        <ion-select-option  [value]="operacionPAC">
-          {{operacionPAC}} 
-        </ion-select-option>
+    <ion-item class="item-name" style="margin-bottom: 20px;">
+      <ion-label>Tipo:</ion-label>
+      <ion-select [(ngModel)]="opcionPagoMovil" okText="Aceptar" cancelText="Cancelar" (ngModelChange)="seleccionPagoMovil()">
+        <ion-select-option *ngFor="let option of opcionesPagoMovil;" [value]="option.name" >
+          {{option.name}} 
+        </ion-select-option>   
       </ion-select>
     </ion-item>
-    
     <ion-button class="btn-left" (click)="abrirSiguientePag(1)">
       <ion-icon slot="start" name="star"></ion-icon>
       Pago Movil
