@@ -2,7 +2,10 @@
   <ion-toolbar>
     <ion-title>Confirmación Pago Móvil</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button color="primary" defaultHref="pago-movil-menu" icon="arrow-back"></ion-back-button>
+      <ion-button (click)="regresar()">
+        <ion-icon color="primary" slot="start" name="arrow-back"></ion-icon>
+        <p class="arrow-back">atrás</p>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -12,8 +15,13 @@
     <ion-img src="/assets/icon/logoTUBFCpage.png" class="logo-img"></ion-img>
   </ion-card>
 
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="Deslice para actualizar">
+    </ion-refresher-content>
+  </ion-refresher>
+
   <ion-card style="margin-top:50px;">
-    <ion-card-header class="card-title">Envío de Clave de Confirmación</ion-card-header>
+    <ion-card-header class="card-title">Envío de Clave de Confirmación <br> ({{prefijoAccion}})</ion-card-header>
     <ion-card-content>
       <ion-row>
         <ion-item>
