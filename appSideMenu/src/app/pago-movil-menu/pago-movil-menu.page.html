@@ -22,7 +22,7 @@
 
     <ion-item class="item-name" style="margin-bottom: 20px;">
       <ion-label>Tipo:</ion-label>
-      <ion-select [(ngModel)]="opcionPagoMovil" okText="Aceptar" cancelText="Cancelar" (ngModelChange)="seleccionPagoMovil()">
+      <ion-select [(ngModel)]="opcionPagoMovil" okText="Aceptar" cancelText="Cancelar">
         <ion-select-option *ngFor="let option of opcionesPagoMovil;" [value]="option.name" >
           {{option.name}} 
         </ion-select-option>   

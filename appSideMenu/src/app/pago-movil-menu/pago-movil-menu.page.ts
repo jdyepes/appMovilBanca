@@ -22,7 +22,8 @@ export class PagoMovilMenuPage implements OnInit {
                 this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
                 this.operacionPAT = this.rutaActiva.snapshot.params.operacionPAT;
                 this.operacionPAC = this.rutaActiva.snapshot.params.operacionPAC;
-                this.opcionPagoMovil =this.operacionPAT;
+                this.opcionPagoMovil = this.operacionPAT;
+                this.initializeBackButton();
               }
 
     opcionesPagoMovil: any[] = [
@@ -36,12 +37,6 @@ export class PagoMovilMenuPage implements OnInit {
       }
     ];
 
-    ngOnInit() {   
-      this.opcionesPagoMovil[0].name = this.operacionPAT;
-      this.opcionesPagoMovil[1].name = this.operacionPAC;
-      this.initializeBackButton();
-    }
-
       // deshabilita el boton regresar antes de salir de la pag
     ionViewWillLeave() {
         this.subscription.unsubscribe();
@@ -54,20 +49,22 @@ export class PagoMovilMenuPage implements OnInit {
       });
     }
 
-    seleccionPagoMovil() {     
-      console.log(this.opcionPagoMovil);
-    }
+  ngOnInit() {
+    this.initializeBackButton();
+    this.opcionesPagoMovil[0].name = this.operacionPAT;
+    this.opcionesPagoMovil[1].name = this.operacionPAC;
+  }
 
     abrirSiguientePag(pagina: number) {
     if (pagina === 1) {
       this.navCtrl.navigateForward('pago-movil/'+ this.numeroDestino + '/' + this.operacionPAT + '/' + this.operacionPAC + '/' + this.opcionPagoMovil);
     }
     if (pagina === 2) {
-      this.navCtrl.navigateForward('confirmar-pago-movil');
+      this.navCtrl.navigateForward('confirmar-pago-movil/' + this.numeroDestino + '/' + this.operacionPAT + '/' + this.operacionPAC + '/' + this.opcionPagoMovil);
     }
   }
 
   regresar() {
-    this.navCtrl.navigateBack('/home');
+    this.navCtrl.navigateBack('home');
    }
 }

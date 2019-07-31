@@ -29,10 +29,10 @@ export class PagoMovilPage implements OnInit {
 
   /** Navegacion entre paginas por rutas */
   constructor(public alertCtrl: AlertController,
-    private sms: SMS, private rutaActiva: ActivatedRoute,
-    private navCtrl: NavController, private platform: Platform) {
-    this.parametroPAT = this.rutaActiva.snapshot.params.operacionPAT; // paramtros para el 
-    this.parametroPAC =this.rutaActiva.snapshot.params.operacionPAC; // regreso a la pagina anterior
+              private sms: SMS, private rutaActiva: ActivatedRoute,
+              private navCtrl: NavController, private platform: Platform) {
+    this.parametroPAT = this.rutaActiva.snapshot.params.operacionPAT; // paramtros para el ->
+    this.parametroPAC = this.rutaActiva.snapshot.params.operacionPAC; // regreso a la pagina anterior
     this.prefijoAccion = this.rutaActiva.snapshot.params.valorSeleccion; // valor seleccionado por el usuario (PAT por defecto)   
     this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
     this.operacion = 'PAGO';
