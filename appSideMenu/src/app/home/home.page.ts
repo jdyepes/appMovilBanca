@@ -1,68 +1,85 @@
 import { Component } from '@angular/core';
 
-import { Platform, AlertController } from '@ionic/angular';
+import { Platform, AlertController, NavController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+
+import { ProviderService} from '../provider-service';
+import { HttpClient } from '@angular/common/http';
+import { Proveedor } from '../models/Proveedor';
+import { OPERACIONES } from '../constantes/prefijo-opciones';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
+
 export class HomePage {
 
-  numeroDestinoProveedor: string = '88232';
-  prefijoSaldo: string = 'S';
-  prefijoMovimiento: string = 'M';
-  prefijoTransferencia: string = 'T';
-  prefijoPagoTDC: string = 'P';
-  prefijoAvanceEfectivo: string = 'A';
-  prefijoPagoMovilPAT: string = 'PAT';
-  prefijoPagoMovilPAC: string = 'PAC';
-  prefijoRecargasTelefonicas: string = 'RT';
-  prefijoRecargasDirectv: string = 'RD';
-  prefijoDirectvPrePago: string = 'RDD';
-  prefijoDirectvPrevioPago: string = 'RDP';
-  prefijoSuspensionTDD: string = 'STD';
+  numeroDestinoProveedor: string = OPERACIONES.numeroDestinoProveedor;
+  prefijoSaldo: string = OPERACIONES.preSaldo;
+  prefijoMovimiento: string = OPERACIONES.preMovimiento;
+  prefijoTransferencia: string = OPERACIONES.preTransferencia;
+  prefijoPagoTDC: string = OPERACIONES.prePagoTDC;
+  prefijoAvanceEfectivo: string = OPERACIONES.preAvanceEfectivo;
+  prefijoPagoMovilPAT: string = OPERACIONES.prePagoMovilPAT;
+  prefijoPagoMovilPAC: string = OPERACIONES.prePagoMovilPAC;
+  prefijoRecargasTelefonicas: string = OPERACIONES.preRecargasTelefonicas;
+  prefijoRecargasDirectv: string = OPERACIONES.preRecargasDirectv;
+  prefijoDirectvPrePago: string = OPERACIONES.preDirectvPrePago;
+  prefijoDirectvPrevioPago: string = OPERACIONES.preDirectvPrevioPago;
+  prefijoSuspensionTDD: string = OPERACIONES.preSuspensionTDD;
   subscription: any;
+  proveedor: any;
+
+  /** Peticion que hace al servicio rest API
+   * Creado 24 agosto 2019
+   */
+  servicioProveedor = new ProviderService(this.http);
 
   public appPages = [
     {
-      title: 'Consultas',
-      url: '/consultas/' + this.numeroDestinoProveedor + '/' + this.prefijoSaldo + '/' + this.prefijoMovimiento ,
-      icon: 'search'
-    },
-    {
-      title: 'Transferencias',
-      url: '/transferencias/' + this.numeroDestinoProveedor + '/' + this.prefijoTransferencia ,
+      title: '',
+      url: '',
       icon: '',
-      src: '/assets/icon/transfer.svg'
+      src: ''
     },
     {
-      title: 'Pago Móvil',
-      url: '/pago-movil-menu/' + this.numeroDestinoProveedor + '/' + this.prefijoPagoMovilPAT + '/' + this.prefijoPagoMovilPAC,
-      icon: '' ,
-      src: '/assets/icon/metodo-de-pago.svg'
+      title: '',
+      url: '',
+      icon: '',
+      src: ''
     },
     {
-      title: 'Pagos de TDC',
-      url: '/pago-tarjeta-de-credito/' + this.numeroDestinoProveedor + '/' + this.prefijoPagoTDC,
-      icon: 'card'
+      title: '',
+      url: '',
+      icon: '',
+      src: ''
+    },
+     {
+      title: '',
+      url: '',
+      icon: '',
+      src: ''
     },
     {
-      title: 'Avance de Efectivo',
-      url: '/avance-de-efectivo/' + this.numeroDestinoProveedor + '/' + this.prefijoAvanceEfectivo,
-      icon: 'cash'
+      title: '',
+      url: '',
+      icon: '',
+      src: ''
     },
     {
-      title: 'Recargas',
-      url: '/recargas/' + this.numeroDestinoProveedor + '/' + this.prefijoRecargasTelefonicas + '/' + this.prefijoRecargasDirectv ,
-      icon: 'bookmarks'
+      title: '',
+      url: '',
+      icon: '',
+      src: ''
     },
     {
-      title: 'Suspension de TDD',
-      url: '/suspension-tarjeta-de-debito/' + this.numeroDestinoProveedor + '/' + this.prefijoSuspensionTDD,
-      icon: 'close-circle'
+      title: '',
+      url: '',
+      icon: '',
+      src: ''
     }
   ];
 
@@ -70,10 +87,89 @@ export class HomePage {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    public providerService: ProviderService,
+    public http: HttpClient,
+    private navCtrl: NavController
   ) {
+    this.cargarProveedor();
     this.initializeApp();
   }
+
+  ionViewDidLoad() {
+    this.cargarProveedor();
+  }
+
+  // antes de entrar a la app
+  ionViewWillEnter() {
+    this.llenarMenu(this.numeroDestinoProveedor);
+  }
+
+
+  async cargarProveedor() {
+    await this.providerService.getProveedor()
+      .subscribe(
+        (data) => { // Success
+          this.proveedor = data;
+         // this.fillListInterface();
+          let proAux = new Proveedor();
+
+          proAux.$id = data['_id'];
+          proAux.$nombre = data['_nombre'];
+          proAux.$numero = data['_numero'];
+          proAux.$disponible = data['_disponible'];
+          console.log(proAux);
+          this.numeroDestinoProveedor = proAux.$numero;
+          this.llenarMenu(this.numeroDestinoProveedor);
+        },
+        (error) => {
+          console.error(error);
+          this.numeroDestinoProveedor = OPERACIONES.numeroDestinoProveedor;
+        }
+      );
+
+  }
+
+  /** Se llena las opciones del menu principal con el numero del 
+   * proveedor extraido mediante el servicio rest api
+   * Creado 25 ago 2019 fin 3er sprint
+   */
+  llenarMenu(numeroTelefono) {
+    this.appPages[0].title = 'Consultas';
+    this.appPages[0].url = '/consultas/' + this.numeroDestinoProveedor + '/' + this.prefijoSaldo + '/' + this.prefijoMovimiento;
+    this.appPages[0].icon = 'search';
+    this.appPages[0].src = '';
+
+    this.appPages[1].title = 'Transferencias';
+    this.appPages[1].url = '/transferencias/' + this.numeroDestinoProveedor + '/' + this.prefijoTransferencia;
+    this.appPages[1].icon = '';
+    this.appPages[1].src = '/assets/icon/transfer.svg';
+
+    this.appPages[2].title = 'Pago Móvil';
+    this.appPages[2].url = '/pago-movil-menu/' + this.numeroDestinoProveedor + '/' + this.prefijoPagoMovilPAT + '/' + this.prefijoPagoMovilPAC;
+    this.appPages[2].icon = '';
+    this.appPages[2].src = '/assets/icon/metodo-de-pago.svg';
+
+    this.appPages[3].title = 'Pagos de TDC';
+    this.appPages[3].url = '/pago-tarjeta-de-credito/' + this.numeroDestinoProveedor + '/' + this.prefijoPagoTDC;
+    this.appPages[3].icon = 'card';
+    this.appPages[3].src = '';
+
+    this.appPages[4].title = 'Avance de Efectivo';
+    this.appPages[4].url = '/avance-de-efectivo/' + this.numeroDestinoProveedor + '/' + this.prefijoAvanceEfectivo;
+    this.appPages[4].icon = 'cash';
+    this.appPages[4].src = '';
+
+    this.appPages[5].title = 'Recargas';
+    this.appPages[5].url = '/recargas/' + this.numeroDestinoProveedor + '/' + this.prefijoRecargasTelefonicas + '/' + this.prefijoRecargasDirectv;
+    this.appPages[5].icon = 'bookmarks';
+    this.appPages[5].src = '';
+
+    this.appPages[6].title = 'Suspension de TDD';
+    this.appPages[6].url = '/suspension-tarjeta-de-debito/' + this.numeroDestinoProveedor + '/' + this.prefijoSuspensionTDD;
+    this.appPages[6].icon = 'close-circle';
+    this.appPages[6].src = '';
+}
 
   initializeApp() {
     this.platform.ready().then(() => {
@@ -114,4 +210,8 @@ export class HomePage {
       });
       await alert.present();
     }
+
+  regresar() {
+    this.navCtrl.navigateBack('/');
+  }
 }
