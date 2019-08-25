@@ -3,7 +3,6 @@ import { AlertController, NavController, Platform } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 
 import { SMS } from '@ionic-native/sms/ngx';
-import { flatten } from '@angular/router/src/utils/collection';
 
 
 @Component({
