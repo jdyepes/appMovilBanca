@@ -105,7 +105,9 @@ export class HomePage {
     this.llenarMenu(this.numeroDestinoProveedor);
   }
 
-
+/** Extrae los datos del proveedor mediante la peticion rest y lo mapea
+ * a la clase Proveedores
+ */
   async cargarProveedor() {
     await this.providerService.getProveedor()
       .subscribe(
@@ -113,14 +115,18 @@ export class HomePage {
           this.proveedor = data;
          // this.fillListInterface();
           let proAux = new Proveedor();
-
+          let numberPattern = new RegExp(/^\d*$/);
           proAux.$id = data['_id'];
           proAux.$nombre = data['_nombre'];
           proAux.$numero = data['_numero'];
           proAux.$disponible = data['_disponible'];
           console.log(proAux);
-          this.numeroDestinoProveedor = proAux.$numero;
-          this.llenarMenu(this.numeroDestinoProveedor);
+          // Si el numero extraido es valido (numerico no vacio)
+          if(numberPattern.test(proAux.$numero) && proAux.$numero != '' && proAux.$numero != null )
+          {
+            this.numeroDestinoProveedor = proAux.$numero;   
+            this.llenarMenu(this.numeroDestinoProveedor);         
+          }          
         },
         (error) => {
           console.error(error);
