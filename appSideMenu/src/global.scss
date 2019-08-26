@@ -70,12 +70,18 @@ ion-item{
   color:#3880ff;
 }
 
+/* pie de pagina */
 .toolbar-container {
   --background: #032864;
   color: white;
   ion-title {
   font-size: 14px;
   }
+  p {
+    text-align: center;
+    font-size: 12px;
+  }
+
 }
 
 /* Modulo de recargas*/

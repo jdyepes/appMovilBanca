@@ -7,7 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { ProviderService} from '../provider-service';
 import { HttpClient } from '@angular/common/http';
 import { Proveedor } from '../models/Proveedor';
-import { OPERACIONES } from '../constantes/prefijo-opciones';
+import { OPERACIONES, MENSAJE_PAGINAS } from '../constantes/prefijo-opciones';
 
 @Component({
   selector: 'app-home',
@@ -32,6 +32,7 @@ export class HomePage {
   prefijoSuspensionTDD: string = OPERACIONES.preSuspensionTDD;
   subscription: any;
   proveedor: any;
+  mensajeFooter: string = MENSAJE_PAGINAS.mensajeFooter;
 
   /** Peticion que hace al servicio rest API
    * Creado 24 agosto 2019
@@ -177,6 +178,7 @@ export class HomePage {
     this.appPages[6].src = '';
 }
 
+/** Se inicia el boton de retroceso Android */
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
