@@ -10,7 +10,10 @@ export const METHOD = {
 };
 
 export const AppUrlBase = {
-     //appUrlBase: 'http://localhost:60978/api'
+   //appUrlBase: 'http://localhost:60978/api'
    /** Publicado en mi servidor local en IIS */
-     appUrlBase: 'http://192.168.0.103/ServicioRestProveedorSMS/api'
+   /** Local */  
+   //appUrlBase: 'http://192.168.0.103/ServicioRestProveedorSMS/api'
+   /** Local desarrollo BFC */
+   appUrlBase: 'http://10.60.102.84/ServicioRestProveedorSMS/api'
 };
