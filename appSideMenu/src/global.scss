@@ -80,9 +80,14 @@ ion-item{
   p {
     text-align: center;
     font-size: 12px;
+    line-height: 1.5px;
+    font-family: "Roboto", "Helvetica Neue", sans-serif;
   }
-
+  position: relative;
+  bottom: 0;
+  display: block;
 }
+
 
 /* Modulo de recargas*/
 .item-name {

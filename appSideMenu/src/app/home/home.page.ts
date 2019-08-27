@@ -32,7 +32,11 @@ export class HomePage {
   prefijoSuspensionTDD: string = OPERACIONES.preSuspensionTDD;
   subscription: any;
   proveedor: any;
-  mensajeFooter: string = MENSAJE_PAGINAS.mensajeFooter;
+  mensajeFooter1: string = MENSAJE_PAGINAS.mensajeFooter1;
+  mensajeFooter2: string = MENSAJE_PAGINAS.mensajeFooter2;
+  mensajeFooter3: string = MENSAJE_PAGINAS.mensajeFooter3;
+  mensajeFooter4: string = MENSAJE_PAGINAS.mensajeFooter4;
+  mensajeFooter5: string = MENSAJE_PAGINAS.mensajeFooter5;
 
   /** Peticion que hace al servicio rest API
    * Creado 24 agosto 2019
