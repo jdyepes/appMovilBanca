@@ -9,8 +9,8 @@
 }
 
 .logo-img {
-  width: 300px; 
-  height: 300px; 
+  width: 200px; 
+  height: 200px; 
   margin-left: auto; 
   margin-right: auto; 
   display: block;
@@ -28,6 +28,25 @@ ion-card {
   box-shadow: 0 0px 0px 0px rgba(0,0,0,.2), 0 0px 0px 0px rgba(0,0,0,.14), 0 0px 0px 0 rgba(0,0,0,.12);
   }
 
+// cabecera de la vista home
+.toolbar-home {
+  //--background: #0d46a0;
+  --box-shadow: 0 0px 0px 0px rgba(0,0,0,.2), 0 0px 0px 0px rgba(0,0,0,.14), 0 0px 0px 0 rgba(0,0,0,.12);
+   --webkit-box-shadow: none;
+  box-shadow: none;
+  max-height: 150px;
+  position: relative;   
+}
+
+// linea de la cabecera
+.header-md:after {
+  height: 0px;
+}
+
+.boton-superior {
+    margin-left: 5px;
+    color: #0d46a0;
+  }
 
 /* para el logo movil
 .logo-img {

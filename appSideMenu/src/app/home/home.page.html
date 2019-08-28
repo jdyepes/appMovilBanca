@@ -1,21 +1,23 @@
+<ion-content>
+  
 <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
+    <ion-toolbar class="toolbar-home">
+      <ion-buttons class="boton-superior" slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
-      <ion-title>
-        Principal
-      </ion-title>
+      <ion-card class="welcome-card">
+        <ion-img src="/assets/icon/logoTUBFC.png" class="logo-img"></ion-img>
+        <ion-title class="number-home">{{numeroDestinoProveedor}}</ion-title>
+      </ion-card>
     </ion-toolbar>
   </ion-header>
   
-<ion-content>
-
+<!--
   <ion-card class="welcome-card">   
     <ion-img src="/assets/icon/logoTUBFC.png" class="logo-img"></ion-img>      
   <ion-title class="number-home">{{numeroDestinoProveedor}}</ion-title>
   </ion-card>
-
+-->
   <ion-card>
     <ion-card-content>
       <ion-list>

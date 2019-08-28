@@ -90,7 +90,7 @@ export class AppComponent {
   ) {    
     this.initializeApp();
     this.cargarProveedor();
-    // this.llenarMenu(this.numeroDestinoProveedor);
+    this.llenarMenu(this.numeroDestinoProveedor);
   }
 
   /** Realiza la peticion rest antes de que la aplicacion este lista 
