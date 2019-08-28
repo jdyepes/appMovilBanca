@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController, Platform } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { SMS } from '@ionic-native/sms/ngx';
+import { MENSAJE_SUBPAGINAS } from '../constantes/prefijo-opciones';
 
 @Component({
   selector: 'app-confirmar-pago-movil',
@@ -22,6 +23,12 @@ export class ConfirmarPagoMovilPage implements OnInit {
   parametroPAC: string;
   prefijoAccion: string;
 
+  /** Mensajes pie de pagina */
+  mensajeFooter1: string = MENSAJE_SUBPAGINAS.mensajeFooter1;
+  mensajeFooter2: string = MENSAJE_SUBPAGINAS.mensajeFooter2;
+  mensajeFooter3: string = MENSAJE_SUBPAGINAS.mensajeFooter3;
+  mensajeFooter4: string = MENSAJE_SUBPAGINAS.mensajeFooter4;
+ 
   /** Navegacion entre paginas por rutas */
   constructor(public alertCtrl: AlertController,
               private sms: SMS, private rutaActiva: ActivatedRoute,

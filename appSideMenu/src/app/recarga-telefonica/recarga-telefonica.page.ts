@@ -3,6 +3,7 @@ import { AlertController, Platform, NavController } from '@ionic/angular';
 
 import { SMS } from '@ionic-native/sms/ngx';
 import { ActivatedRoute } from '@angular/router';
+import { MENSAJE_SUBPAGINAS } from '../constantes/prefijo-opciones';
 
 @Component({
   selector: 'app-recarga-telefonica',
@@ -24,6 +25,12 @@ export class RecargaTelefonicaPage implements OnInit {
   recargasMenu: string;
   subscription: any;
 
+  /** Mensajes pie de pagina */
+  mensajeFooter1: string = MENSAJE_SUBPAGINAS.mensajeFooter1;
+  mensajeFooter2: string = MENSAJE_SUBPAGINAS.mensajeFooter2;
+  mensajeFooter3: string = MENSAJE_SUBPAGINAS.mensajeFooter3;
+  mensajeFooter4: string = MENSAJE_SUBPAGINAS.mensajeFooter4;
+ 
   /** Navegacion entre paginas por rutas */
   constructor(public alertCtrl: AlertController,
               private sms: SMS, private rutaActiva: ActivatedRoute,

@@ -20,7 +20,7 @@
     </ion-refresher-content>
   </ion-refresher>
     
-  <ion-card>
+  <ion-card class="content-card">
     <ion-card-header class="card-title">Tipo de Servicio</ion-card-header>
     <ion-card-content>    
         <ion-col class="card-content-name">
@@ -90,10 +90,24 @@
     <ion-button *ngIf="mostrar" float-right expand="full" class="btn-enviar" fill="outline" (click)="realizarPago()">Enviar
     </ion-button>
   </ion-card>
+
+  <ion-footer *ngIf="mostrar">
+    <ion-toolbar class="toolbar-container"> 
+        <ion-title ></ion-title>
+        <p>{{mensajeFooter1}}</p>
+        <p>{{mensajeFooter2}}</p>
+        <p>{{mensajeFooter3}}</p>
+        <p>{{mensajeFooter4}}</p>      
+    </ion-toolbar>
+  </ion-footer>
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar>
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>
+<ion-footer *ngIf="!mostrar">
+    <ion-toolbar class="toolbar-container"> 
+        <ion-title ></ion-title>
+        <p>{{mensajeFooter1}}</p>
+        <p>{{mensajeFooter2}}</p>
+        <p>{{mensajeFooter3}}</p>
+        <p>{{mensajeFooter4}}</p>      
+    </ion-toolbar>
+  </ion-footer>

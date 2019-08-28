@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, AlertController, Platform } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
+import { MENSAJE_SUBPAGINAS } from '../constantes/prefijo-opciones';
 
 @Component({
   selector: 'app-pago-movil-menu',
@@ -15,6 +16,12 @@ export class PagoMovilMenuPage implements OnInit {
   numeroDestino: string;
   subscription: any;
 
+  /** Mensajes pie de pagina */
+  mensajeFooter1: string = MENSAJE_SUBPAGINAS.mensajeFooter1;
+  mensajeFooter2: string = MENSAJE_SUBPAGINAS.mensajeFooter2;
+  mensajeFooter3: string = MENSAJE_SUBPAGINAS.mensajeFooter3;
+  mensajeFooter4: string = MENSAJE_SUBPAGINAS.mensajeFooter4;
+ 
   /** Navegacion entre paginas por rutas */
   constructor(public alertCtrl: AlertController,
               private rutaActiva: ActivatedRoute,

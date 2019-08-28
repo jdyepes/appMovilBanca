@@ -17,6 +17,7 @@ export const OPERACIONES = {
     preSuspensionTDD:  'STD'
 }
 
+/** mensaje pie de pagina principal (HOME) */
 let fecha = new Date();
 let year = fecha.getFullYear();
 export const MENSAJE_PAGINAS = {
@@ -26,4 +27,13 @@ export const MENSAJE_PAGINAS = {
     mensajeFooter3: ' Todos los derechos reservados ' + year,
     mensajeFooter4: ' BFC Banco Fondo Común, C.A. Banco Universal',
     mensajeFooter5: ' RIF. J-00072306-0'
+}
+
+/** Mensaje pie de pagina de las operaciones*/
+export const MENSAJE_SUBPAGINAS = {
+
+    mensajeFooter1: 'Esta aplicación utiliza mensajería de texto para' ,
+    mensajeFooter2:  ' comunicarse con BFC Banco Fondo Común, cada',
+    mensajeFooter3: ' transacción realizada empleará un mensaje de texto ' ,
+    mensajeFooter4: '  SMS Premium.',    
 }

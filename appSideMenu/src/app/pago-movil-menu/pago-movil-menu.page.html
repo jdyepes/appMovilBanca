@@ -21,26 +21,31 @@
   <ion-card-content class="card-content">            
 
     <ion-item class="item-name" style="margin-bottom: 20px;">
-      <ion-label>Tipo:</ion-label>
+      <ion-label>Tipo</ion-label>
       <ion-select [(ngModel)]="opcionPagoMovil" okText="Aceptar" cancelText="Cancelar">
         <ion-select-option *ngFor="let option of opcionesPagoMovil;" [value]="option.name" >
           {{option.name}} 
         </ion-select-option>   
       </ion-select>
     </ion-item>
-    <ion-button class="btn-left" (click)="abrirSiguientePag(1)">
-      <ion-icon slot="start" name="star"></ion-icon>
-      Pago Movil
+    <ion-button float-left class="btn-left" (click)="abrirSiguientePag(1)">    
+      <p>Pago Móvil</p>
+      <ion-img src="/assets/icon/pagoMovil.png" class="logo-img-btn"></ion-img>
     </ion-button>       
     <ion-button float-right class="btn-right" (click)="abrirSiguientePag(2)">
-      <p>Confirmar <br>Pago Movil</p>
-      <ion-icon slot="end" name="star"></ion-icon>
+      <p>Confirmar <br>Pago Móvil</p>   
+      <ion-img src="/assets/icon/confPagoMovil.png" class="logo-img-btn"></ion-img>  
     </ion-button>
   </ion-card-content>
 </ion-card>
 </ion-content>
-<ion-footer>
-  <ion-toolbar>
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>
+
+<ion-footer  >
+    <ion-toolbar class="toolbar-container"> 
+        <ion-title ></ion-title>
+        <p>{{mensajeFooter1}}</p>
+        <p>{{mensajeFooter2}}</p>
+        <p>{{mensajeFooter3}}</p>
+        <p>{{mensajeFooter4}}</p>      
+    </ion-toolbar>
+  </ion-footer>

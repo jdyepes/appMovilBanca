@@ -20,7 +20,7 @@
     </ion-refresher-content>
   </ion-refresher>
 
-  <ion-card style="margin-top:50px;">
+  <ion-card class="content-card">
     <ion-card-header class="card-title">Envío de Clave de Confirmación <br> ({{prefijoAccion}})</ion-card-header>
     <ion-card-content>
       <ion-row>
@@ -33,10 +33,14 @@
     <ion-button float-right expand="full" class="btn-enviar" fill="outline" (click)="enviarSMS()">Enviar
     </ion-button>
   </ion-card>
-</ion-content>
 
-<ion-footer>
-  <ion-toolbar>
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>
+ <ion-footer  >
+    <ion-toolbar class="toolbar-container"> 
+        <ion-title ></ion-title>
+        <p>{{mensajeFooter1}}</p>
+        <p>{{mensajeFooter2}}</p>
+        <p>{{mensajeFooter3}}</p>
+        <p>{{mensajeFooter4}}</p>      
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

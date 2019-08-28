@@ -15,23 +15,27 @@
     <ion-img src="/assets/icon/logoTUBFCpage.png" class="logo-img"></ion-img>
   </ion-card>
 
-
   <ion-card class="card-menu">
     <ion-card-header class="card-title">Opciones</ion-card-header>
     <ion-card-content class="card-content">
       <ion-button float-left class="btn-left" (click)="abrirSiguientePag(1)">
-        <ion-icon slot="start" name="star"></ion-icon>
-        Telefonía
+          <p> Telefonía </p>    
+          <ion-img src="/assets/icon/recargasTelefonicas.png" class="logo-img-btn"></ion-img>
       </ion-button>    
-      <ion-button float-right class="btn-right" (click)="abrirSiguientePag(2)">
-        <ion-icon slot="start" name="star"></ion-icon>
-        Directv 
+      <ion-button float-right class="btn-right" (click)="abrirSiguientePag(2)">    
+          <p> Directv <br> </p> 
+        <ion-img src="/assets/icon/recargaDirectv.png" class="logo-img-btn"></ion-img>
       </ion-button>     
     </ion-card-content>
   </ion-card>
-</ion-content>
+
 <ion-footer>
-  <ion-toolbar>
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>
+    <ion-toolbar class="toolbar-container"> 
+        <ion-title ></ion-title>
+        <p>{{mensajeFooter1}}</p>
+        <p>{{mensajeFooter2}}</p>
+        <p>{{mensajeFooter3}}</p>
+        <p>{{mensajeFooter4}}</p>      
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

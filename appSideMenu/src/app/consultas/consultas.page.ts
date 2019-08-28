@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, Platform } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
+import { MENSAJE_SUBPAGINAS } from '../constantes/prefijo-opciones';
 
 @Component({
   selector: 'app-consultas',
@@ -13,7 +14,13 @@ export class ConsultasPage implements OnInit {
   prefijoSaldo: string;
   prefijoMovimiento: string;
   subscription: any;
-
+  
+  /** Mensajes pie de pagina */
+  mensajeFooter1: string = MENSAJE_SUBPAGINAS.mensajeFooter1;
+  mensajeFooter2: string = MENSAJE_SUBPAGINAS.mensajeFooter2;
+  mensajeFooter3: string = MENSAJE_SUBPAGINAS.mensajeFooter3;
+  mensajeFooter4: string = MENSAJE_SUBPAGINAS.mensajeFooter4;
+ 
   constructor(public navCtrl: NavController, private rutaActiva: ActivatedRoute, private platform: Platform) {
     this.initializeBackButton();
   }

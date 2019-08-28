@@ -1,28 +1,29 @@
-
-
 .btn-saldo{
     margin-left: auto;
     margin-right: auto;
     display: block !important;
-    height: 150px;
-    width: 70%;
-    font-size: 16px;
+    height: 120px;
+    width: 80%;
+    font-size: 16px;    
   //--background: #f7b423;    
-  --background: rgba(213, 225, 238, 0.664);
+  --background: rgba(131, 180, 236, 0.267);
+  --border-radius: 10px;
    p {
     color: #0d46a0;
     font-weight: bold;
    }
+
 }
 
 .btn-movimiento{
     margin-left: auto;
     margin-right: auto;
     display: block !important;
-    height: 150px;
-    width: 70%;
+    height: 120px;
+    width: 80%;
     font-size: 16px;
-    --background: #79000018;
+    --background: #7900003a;
+    --border-radius: 10px;
     p {
     color: rgb(240, 6, 6);
     font-weight: bold;
@@ -33,14 +34,15 @@
     margin-left: auto;
     margin-right: auto;
     display: block !important;
-    height: 150px;
-    width: 70%;
+    height: 120px;
+    width: 80%;
     font-size: 16px;
-    --background: rgba(255, 174, 0, 0.24);
+    --background: rgba(128, 128, 128, 0.24);  // rgba(213, 225, 238, 0.664);// rgba(255, 166, 0, 0.788);
+    --border-radius: 10px; 
     p {
-    color: rgb(228, 187, 7);
-    font-weight: bold;
-   }
+      color: black;
+      font-weight: bold;
+     }  
 }
 
 .card-menu{
@@ -53,4 +55,12 @@
   color: whitesmoke;
   font-size: 20px;
   text-align: center;
+}
+
+.logo-img-btn {
+  width: 300px; 
+  height: 100px; 
+  margin-left: auto; 
+  margin-right: auto; 
+  display: block;  
 }
