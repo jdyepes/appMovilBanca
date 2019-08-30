@@ -116,7 +116,7 @@ export class SuspensionTarjetaDeDebitoPage implements OnInit {
   }
 
   validarCampos(): boolean {
-    let numberPattern = new RegExp(/^[0-9]{8}$/);
+    let numberPattern = new RegExp(/^[0-9]{7,8}$/);
     if (this.prefijoAccion === undefined) {
       this.mostrarError('El prefijo no se pudo cargar. Intente nuevamente.');
       return false;

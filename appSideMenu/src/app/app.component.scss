@@ -10,4 +10,18 @@
 
 ion-card {
   box-shadow: 0 0px 0px 0px rgba(0,0,0,.2), 0 0px 0px 0px rgba(0,0,0,.14), 0 0px 0px 0 rgba(0,0,0,.12);
-  }
+}
+
+.logo-img {
+  width: 200px; 
+  height: 200px; 
+  margin-left: auto; 
+  margin-right: auto; 
+  display: block;
+}
+
+// card content menu principal (Opciones)
+.menu-principal {
+  margin-left: -5px;
+  margin-right: 5px;
+}

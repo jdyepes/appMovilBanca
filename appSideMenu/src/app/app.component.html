@@ -7,28 +7,27 @@
           <ion-title>Menu</ion-title>
         </ion-toolbar>
       </ion-header> -->
-      <ion-card class="welcome-card">   
-          <ion-img src="/assets/icon/logoTUBFC.png" class="logo-img"></ion-img>      
-        <ion-title class="number-home">{{numeroDestinoProveedor}}</ion-title>
-        </ion-card>
- 
-     
-        <ion-card>
-          <ion-card-content>
-            <ion-list>
-              <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-                <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
-                  <ion-icon slot="start" [name]="p.icon" [src]="p.src"></ion-icon>
-                  <ion-label>
-                    {{p.title}}
-                  </ion-label>
-                </ion-item>
-              </ion-menu-toggle>
-            </ion-list>
-          </ion-card-content>
-      </ion-card>
-      </ion-content>
-    </ion-menu>
-    <ion-router-outlet main></ion-router-outlet>
-  </ion-split-pane>
+    <ion-card class="welcome-card">   
+      <ion-img src="/assets/icon/logoTUBFC.png" class="logo-img"></ion-img>      
+      <ion-title class="number-home">{{numeroDestinoProveedor}}</ion-title>
+    </ion-card>
+      
+    <ion-card class="menu-principal">
+      <ion-card-content>
+        <ion-list>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+              <ion-icon slot="start" [name]="p.icon" [src]="p.src"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
+</ion-split-pane>
 </ion-app>
