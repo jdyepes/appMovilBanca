@@ -15,8 +15,8 @@ export class SuspensionTarjetaDeDebitoPage implements OnInit {
   prefijoAccion: string;
   mensajeEnviar: string;
   numeroDestino: string;
-  tipoIdentificacion: string;
-  numeroCedula: string;
+  //tipoIdentificacion: string;
+  //numeroCedula: string;
   subscription: any;
   operacion: string;
 
@@ -50,7 +50,7 @@ export class SuspensionTarjetaDeDebitoPage implements OnInit {
   ngOnInit() {
     this.prefijoAccion = this.rutaActiva.snapshot.params.operacion;
     this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
-    this.operacion = 'SUSPENSION DE TARJETA DE DEBITO';
+    this.operacion = 'SUSPENSION DE TARJETA DE DÉBITO';
   }
 
   // evento cuando se presiona el boton de regresar en el telefono
@@ -89,9 +89,9 @@ export class SuspensionTarjetaDeDebitoPage implements OnInit {
     if (this.validarCampos()) {
       let alert = await this.alertCtrl.create({
         header: 'Alerta',
-        message: 'Confirma que desea realizar una ' + '<b>' + this.operacion + '</b>' +
-          ' con los siguientes datos: ' + '<BR>' +
-          '<b>Cédula: </b>' + this.tipoIdentificacion + '-' + this.numeroCedula,
+        message: 'Confirma que desea realizar una ' + '<b>' + this.operacion + '</b>' ,
+         // ' con los siguientes datos: ' + '<BR>' +
+         // '<b>Cédula: </b>' + this.tipoIdentificacion + '-' + this.numeroCedula,
         buttons: [
           {
             text: 'Cancelar',
@@ -104,7 +104,7 @@ export class SuspensionTarjetaDeDebitoPage implements OnInit {
             text: 'OK',
             handler: () => {
               //si
-              this.mensajeEnviar = this.prefijoAccion + ' ' + this.tipoIdentificacion + this.numeroCedula;
+              this.mensajeEnviar = this.prefijoAccion; // + ' ' + this.tipoIdentificacion + this.numeroCedula;
               console.log('mensaje a enviar: ' + this.mensajeEnviar);
               this.sendSMS(this.mensajeEnviar);
             }
@@ -120,7 +120,7 @@ export class SuspensionTarjetaDeDebitoPage implements OnInit {
     if (this.prefijoAccion === undefined) {
       this.mostrarError('El prefijo no se pudo cargar. Intente nuevamente.');
       return false;
-    } else
+    } /*else
       if (this.tipoIdentificacion === undefined) {
         this.mostrarError('Campo requerido. ' + '<BR>' + 'Seleccione tipo de documento.');
         this.tipoIdentificacion = undefined;
@@ -134,7 +134,7 @@ export class SuspensionTarjetaDeDebitoPage implements OnInit {
         if (!numberPattern.test(this.numeroCedula)) {
           this.mostrarError('Número de cédula inválido');
           return false;
-        } else {
+        }*/ else {
           return true;
         }
   }

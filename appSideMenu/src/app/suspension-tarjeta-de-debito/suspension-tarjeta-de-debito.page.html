@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Suspension de Tarjeta de Débito</ion-title>
+    <ion-title>Suspensión de Tarjeta de Débito</ion-title>
     <ion-buttons slot="start">
         <ion-button (click)="regresar()">
           <ion-icon color="primary" slot="start" name="arrow-back"></ion-icon>
@@ -23,7 +23,7 @@
 <ion-card class="content-card">
   <ion-card-header class="card-title">Suspender TDD</ion-card-header>
   <ion-card-content>
-  <ion-row>
+  <!--<ion-row>
     <ion-col class="card-content-name">
     <ion-item class="item-name">
       <ion-label style="padding:1px;">Tipo de Documento:</ion-label>
@@ -40,13 +40,23 @@
         <ion-input required [(ngModel)]="numeroCedula" type="tel" placeholder="">    
       </ion-input>
     </ion-item>
-  </ion-row>
+  </ion-row>-->
+  <ion-grid>
+    <ion-row>
+      <ion-button class="btn-stdd" (click)="suspenderTarjeta()">
+        <p> Tarjeta <BR>
+          de <BR>
+          Débito </p>
+        <ion-img src="/assets/icon/suspensionTDD.svg" class="logo-img-btn"></ion-img>
+      </ion-button>
+    </ion-row>
+  </ion-grid>
   </ion-card-content>
-  
+  <!--
   <ion-button float-right expand="full" class="btn-enviar" fill="outline" (click)="suspenderTarjeta()">Enviar
-  </ion-button>
+  </ion-button>-->
   </ion-card>
-
+</ion-content>
   <ion-footer>
     <ion-toolbar class="toolbar-container"> 
         <ion-title ></ion-title>
@@ -56,4 +66,3 @@
         <p>{{mensajeFooter4}}</p>      
     </ion-toolbar>
   </ion-footer>
-</ion-content>
