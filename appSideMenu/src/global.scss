@@ -89,7 +89,6 @@ ion-item{
   display: block;
 }
 
-
 /* Modulo de recargas, confirmar pago movil*/
 .item-name {
     padding:1px; 
@@ -126,4 +125,32 @@ ion-item{
     font-weight: bold;
     font-family: Arial;
     letter-spacing: 20px;   
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: -15px; 
+}
+
+/**Propiedad responsive pie de pagina */
+/* 
+ * Creado sabado 31 agosto 4to sprint
+ * Propiedad responsive para ubicar el pie
+ * de pagina (footer) siempre al final de las vistas
+ * especificadas
+*/
+@media screen and (min-height: 645px){
+  #home {
+    margin-top: calc(100vh - 648px);
+   }  
+}
+
+@media screen and (min-height: 595px){
+   #saldo, #movimiento, #tdc {
+    margin-top: calc(100vh - 535px);
+   }  
+}
+
+@media screen and (min-height: 645px){
+   #recargas {
+    margin-top: calc(100vh - 639px);
+   }  
 }
