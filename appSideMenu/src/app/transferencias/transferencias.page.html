@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Transferencia</ion-title>
+    <ion-title>Transferencia entre cuentas</ion-title>
     <ion-buttons slot="start">
       <ion-button (click)="regresar()">
           <ion-icon color= "primary" slot="start" name="arrow-back"></ion-icon>
@@ -13,6 +13,7 @@
 <ion-content>
   <ion-card class="page-card">
     <ion-img src="/assets/icon/logoTUBFCpage.png" class="logo-img"></ion-img>
+    <ion-title class="number-home">{{numeroDestino}}</ion-title>
   </ion-card>
 
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">

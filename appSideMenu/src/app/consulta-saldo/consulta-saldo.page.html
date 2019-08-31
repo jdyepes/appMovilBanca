@@ -11,8 +11,9 @@
 </ion-header>
 
 <ion-content>
-  <ion-card class="page-card">   
-    <ion-img src="/assets/icon/logoTUBFCpage.png" class="logo-img"></ion-img>      
+  <ion-card class="page-card">
+    <ion-img src="/assets/icon/logoTUBFCpage.png" class="logo-img"></ion-img>
+    <ion-title class="number-home">{{numeroDestino}}</ion-title>
   </ion-card>
 
   <ion-refresher (ionRefresh)="doRefresh($event)">

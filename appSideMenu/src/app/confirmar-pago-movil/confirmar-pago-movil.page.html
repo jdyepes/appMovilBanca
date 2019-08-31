@@ -13,6 +13,7 @@
 <ion-content>
   <ion-card class="page-card">
     <ion-img src="/assets/icon/logoTUBFCpage.png" class="logo-img"></ion-img>
+    <ion-title class="number-home">{{numeroDestino}}</ion-title>
   </ion-card>
 
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
@@ -35,7 +36,7 @@
   </ion-card>
 </ion-content>
 
- <ion-footer  >
+ <ion-footer>
     <ion-toolbar class="toolbar-container"> 
         <ion-title ></ion-title>
         <p>{{mensajeFooter1}}</p>

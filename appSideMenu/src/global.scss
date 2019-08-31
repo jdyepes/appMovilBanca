@@ -41,13 +41,20 @@ ion-item{
 .page-card {
     --webkit-box-shadow: none;
     box-shadow: none;
-    margin-top: 20px;    
+    margin-top: 20px; 
+    margin-bottom: 1a0px;   
   }
 
 /*contenido de los cards Consultas*/
 .content-card {
   margin-top: 60px;
   margin-bottom: 60px;
+}
+
+
+.content-card-recargas {
+  margin-top: 60px;
+  margin-bottom: 10px;
 }
 
 .logo-img {
@@ -120,7 +127,7 @@ ion-item{
 
 /* Numero del proveedor de SMS en el HOME*/
 .number-home {
-    color: #fa0000;
+    color: #e70202;
     text-align: center; 
     font-weight: bold;
     font-family: Arial;
@@ -128,6 +135,7 @@ ion-item{
     margin-left: auto; 
     margin-right: auto;
     margin-top: -15px; 
+    font-size: 24px;
 }
 
 /**Propiedad responsive pie de pagina */
