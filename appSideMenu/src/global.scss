@@ -162,3 +162,9 @@ ion-item{
     margin-top: calc(100vh - 639px);
    }  
 }
+   
+@media screen and (min-height: 732px){
+    #std {
+    margin-top: calc(100vh - 670px);
+  }
+}
