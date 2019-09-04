@@ -44,6 +44,7 @@ export class PagoMovilPage implements OnInit {
     this.prefijoAccion = this.rutaActiva.snapshot.params.valorSeleccion; // valor seleccionado por el usuario (PAT por defecto)   
     this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
     this.operacion = 'PAGO';
+    this.montoDecimal === undefined ? this.montoDecimal = '00' : this.montoDecimal;
   }
 
   banks: any[] = [
@@ -279,7 +280,7 @@ async mostrarError(mensaje: string) {
  validarCampos(): boolean {
     let numberPattern = new RegExp(/^\d*$/);
     let telPattern = new RegExp(/^[0-9]{7}$/);
-    let cedPattern = new RegExp(/^[0-9]{8}$/);
+    let cedPattern = new RegExp(/^[0-9]{7,8}$/);
     if (this.prefijoAccion === undefined) {
       this.mostrarError('El prefijo no se pudo cargar. Intente nuevamente.');
       return false;

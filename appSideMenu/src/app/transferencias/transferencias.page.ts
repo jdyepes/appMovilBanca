@@ -36,6 +36,7 @@ export class TransferenciasPage implements OnInit {
     this.prefijoAccion = this.rutaActiva.snapshot.params.operacion;
     this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
     this.operacion = 'TRANSFERENCIA';
+    this.montoDecimal === undefined ? this.montoDecimal = '00' : this.montoDecimal ;
   }
 
   accounts: any[] = [

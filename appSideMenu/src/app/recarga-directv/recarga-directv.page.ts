@@ -39,11 +39,13 @@ export class RecargaDirectvPage implements OnInit {
               private navCtrl: NavController, private platform: Platform)
   {
     this.prefijoAccion = this.rutaActiva.snapshot.params.operacionDirectv;
-    this.operacion = 'RECARGA DIRECTV';
-    this.mostrar = false;
+    this.operacion = 'RECARGA DIRECTV';    
     this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
     // regreso a la pag anterior
     this.recargasMenu = 'recargas/' + this.numeroDestino + '/RT/' + this.prefijoAccion;
+    this.servicioSeleccion = 'Prepago';
+    this.prepago = true;
+    this.montoDecimal === undefined ? this.montoDecimal = '00' : this.montoDecimal ;
   }
 
   accounts: any[] = [

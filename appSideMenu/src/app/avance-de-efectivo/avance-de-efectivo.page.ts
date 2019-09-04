@@ -36,6 +36,7 @@ export class AvanceDeEfectivoPage implements OnInit {
     this.operacion = 'AVANCE';
     this.prefijoAccion = this.rutaActiva.snapshot.params.operacion;
     this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
+    this.montoDecimal === undefined ? this.montoDecimal = '00' : this.montoDecimal ;
   }
 
   accounts: any[] = [

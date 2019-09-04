@@ -41,6 +41,7 @@ export class RecargaTelefonicaPage implements OnInit {
     this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
     // regreso a la pag anterior
     this.recargasMenu = 'recargas/' + this.numeroDestino + '/' + this.prefijoAccion + '/RD';
+    this.montoDecimal === undefined ? this.montoDecimal = '00' : this.montoDecimal ;
   }
 
   accounts: any[] = [
