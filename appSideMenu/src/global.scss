@@ -168,3 +168,9 @@ ion-item{
     margin-top: calc(100vh - 670px);
   }
 }
+
+@media screen and (min-height: 571px){
+  #numeroDestinoProveedor {
+  margin-top: calc(100vh - 520px);
+  }
+}

@@ -3,18 +3,16 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    /** Establece como pagina de inicio de la app */
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'numero-destino',
     pathMatch: 'full'
   },
   {
     path: 'home',
     loadChildren: './home/home.module#HomePageModule'
   },
-  {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
-  },
+ 
   /** Se coloca las urls con parametros solo a las opciones del menu principal */
   /** El resto son los submenus que recibiran solos los parametros del proveedor y la operacion */
   { path: 'consultas/:numeroProveedor/:operacionSaldo/:operacionMov', loadChildren: './consultas/consultas.module#ConsultasPageModule' },
@@ -33,7 +31,9 @@ const routes: Routes = [
   { path: 'confirmar-pago-movil/:numeroProveedor/:operacionPAT/:operacionPAC/:valorSeleccion', loadChildren: './confirmar-pago-movil/confirmar-pago-movil.module#ConfirmarPagoMovilPageModule' },
   { path: 'recarga-telefonica/:numeroProveedor/:operacionTel', loadChildren: './recarga-telefonica/recarga-telefonica.module#RecargaTelefonicaPageModule' },
   { path: 'recarga-directv/:numeroProveedor/:operacionDirectv', loadChildren: './recarga-directv/recarga-directv.module#RecargaDirectvPageModule' },
-  { path: 'spinner', loadChildren: './spinner/spinner.module#SpinnerPageModule' }
+  { path: 'spinner', loadChildren: './spinner/spinner.module#SpinnerPageModule' },
+  { path: 'numero-destino', loadChildren: './numero-destino/numero-destino.module#NumeroDestinoPageModule' }
+
 
 ];
 

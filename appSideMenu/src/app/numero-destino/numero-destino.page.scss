@@ -1,0 +1,43 @@
+.card-title {
+    text-align: center;
+}
+
+.card-menu {
+margin-top: 50px;
+margin-bottom: 50px;
+}
+
+.btn-left {
+    height: 110px;
+    max-width: 49%;
+    text-align: center;
+    margin: 20px 0 40px 0;
+    --background: rgb(245, 244, 244);
+    --border-radius: 10px;
+    p {
+        color: black;
+        font-weight: 550;
+    }
+}
+
+.btn-right {
+    height: 110px;
+    max-width: 49%;
+    text-align: center;
+    margin: 20px 0 40px 0;
+    --background:rgb(245, 244, 244);
+    --border-radius: 10px;
+    p {
+        color: black;
+        font-weight: 550;
+    }
+}
+
+.logo-img-btn {
+    width: 100px;
+    height: 50px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }

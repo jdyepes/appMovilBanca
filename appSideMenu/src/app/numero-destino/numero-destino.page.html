@@ -1,0 +1,42 @@
+<ion-content>
+  <ion-card class="page-card">
+    <ion-img src="/assets/icon/logoTUBFC.png" class="logo-img"></ion-img>
+    <ion-title class="number-home">{{numeroDestinoSeleccion}}</ion-title>
+  </ion-card>
+
+  <ion-card class="card-menu">
+    <ion-card-header class="card-title">Selección del número de destino</ion-card-header>
+    <ion-card-content class="card-content">            
+
+      <ion-item class="item-name" style="margin-bottom: 20px;">
+        <ion-label>Número: </ion-label>
+        <ion-select [(ngModel)]="numeroDestinoSeleccion" okText="Aceptar" cancelText="Cancelar">
+          <ion-select-option *ngFor="let option of numerosDestinoProveedor;" [value]="option.$numero" >
+            {{option.$numero}} 
+          </ion-select-option>   
+        </ion-select>
+      </ion-item>
+      <ion-button float-left class="btn-left" (click)="confirmarSalida()">    
+        <p>Salir <br>
+          <ion-img src="/assets/icon/salir.png" class="logo-img-btn"></ion-img>
+        </p>
+      </ion-button>       
+      <ion-button float-right class="btn-right" (click)="abrirSiguientePag()">
+        <p>Siguiente 
+          <ion-img src="/assets/icon/siguiente.png" class="logo-img-btn"></ion-img>  
+        </p>
+      </ion-button>
+      <br>
+    </ion-card-content>
+  </ion-card>
+
+<ion-footer>
+    <ion-toolbar id="numeroDestinoProveedor" class="toolbar-container"> 
+        <ion-title ></ion-title>
+        <p>{{mensajeFooter1}}</p>
+        <p>{{mensajeFooter2}}</p>
+        <p>{{mensajeFooter3}}</p>
+        <p>{{mensajeFooter4}}</p>      
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

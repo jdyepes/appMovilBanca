@@ -97,12 +97,12 @@ export class HomePage {
     public http: HttpClient,
     private navCtrl: NavController
   ) {
-    this.cargarProveedor();
+   // this.cargarProveedor();
     this.initializeApp();
   }
 
   ionViewDidLoad() {
-    this.cargarProveedor();
+   // this.cargarProveedor();
   }
 
   // antes de entrar a la app
