@@ -39,33 +39,41 @@
         <ion-card-header class="card-title">Telefóno del Beneficiario</ion-card-header>
         <ion-card-content>
             <ion-row>
-                <ion-col class="card-content-name" >Operadora de Teléfono: </ion-col>
-                <ion-item class="item-name" >                
-                    <ion-label style="padding:1px;" >Operadora</ion-label>
-                    <ion-select required [(ngModel)]="operadoraSeleccion" style="padding:5px; " placeholder="" okText="Aceptar" cancelText="Cancelar">
-                        <ion-select-option *ngFor="let option of operadoras" [value]="option.number">{{option.number}} | {{option.company}}</ion-select-option>
-                    </ion-select>                  
-                </ion-item>
+                <ion-col class="card-content-name" > 
+                    <ion-item class="item-name" >                
+                        <ion-label style="padding:1px;" >Operadora</ion-label>
+                        <ion-select required [(ngModel)]="operadoraSeleccion" style="padding:5px; " placeholder="" okText="Aceptar" cancelText="Cancelar">
+                            <ion-select-option *ngFor="let option of operadoras" [value]="option.number">{{option.number}} | {{option.company}}</ion-select-option>
+                        </ion-select>                  
+                    </ion-item>
+                </ion-col>
             </ion-row> 
             <ion-row>
-                <ion-col class="card-content-name" >Número de Teléfono: </ion-col>                 
-                    <ion-input required [(ngModel)]="telefonoSeleccion" type="tel" placeholder="5671234"></ion-input>                    
+                <ion-item>                   
+                    <ion-label style="margin-left: 10px;">Número de Teléfono</ion-label>
+                    <ion-input required [(ngModel)]="telefonoSeleccion" type="tel" placeholder="5671234"
+                        onKeyPress="if(this.value.length==7) return false;">
+                    </ion-input>
+                </ion-item>    
             </ion-row> 
         </ion-card-content>
         <ion-card-header class="card-title">Cédula de Identidad del Beneficiario</ion-card-header>
         <ion-card-content>
             <ion-row>
-                <ion-col class="card-content-name" >Tipo de Cédula de Identidad: </ion-col>
-                <ion-item class="item-name" >                
-                    <ion-label style="padding:1px;" >Cédula</ion-label>
-                    <ion-select required [(ngModel)]="tipoIdentificacion" style="padding:5px; " placeholder="" okText="Aceptar" cancelText="Cancelar">
-                        <ion-select-option *ngFor="let option of tipos" [value]="option.type">{{option.type}}</ion-select-option>
-                    </ion-select>                  
-                </ion-item>
+                <ion-col class="card-content-name">
+                    <ion-item class="item-name" >                
+                        <ion-label style="padding:1px;" >Tipo de Documento </ion-label>
+                        <ion-select required [(ngModel)]="tipoIdentificacion" style="padding:5px; " placeholder="" okText="Aceptar" cancelText="Cancelar">
+                            <ion-select-option *ngFor="let option of tipos" [value]="option.type">{{option.type}}</ion-select-option>
+                        </ion-select>                  
+                    </ion-item>
+                </ion-col>
             </ion-row> 
             <ion-row>
-                <ion-col class="card-content-name" >Número de Cédula: </ion-col>                 
-                    <ion-input required [(ngModel)]="numeroCedula" type="tel" placeholder="30123456"></ion-input>                    
+                <ion-item>                   
+                    <ion-label style="margin-left: 10px;"> Número de Cédula:</ion-label>
+                    <ion-input required [(ngModel)]="numeroCedula" type="number" placeholder="1234567"></ion-input>                
+                </ion-item>
             </ion-row> 
         </ion-card-content>
         <ion-card-header class="card-title">Datos del Pago</ion-card-header>

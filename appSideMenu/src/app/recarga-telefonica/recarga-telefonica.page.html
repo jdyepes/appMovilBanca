@@ -27,7 +27,7 @@
       <ion-row>
         <ion-col class="card-content-name">
         <ion-item class="item-name">
-          <ion-label style="padding:1px;">Operadora</ion-label>
+          <ion-label >Operadora</ion-label>
           <ion-select required [(ngModel)]="operadoraSeleccion" style="padding:5px; " placeholder="" okText="Aceptar"
             cancelText="Cancelar">
             <ion-select-option *ngFor="let option of operadoras" [value]="option">{{option.number}} |
