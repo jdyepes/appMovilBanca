@@ -27,15 +27,15 @@
         <ion-col class="card-content-name">
           <ion-item class="item-name">
             <ion-label style="padding:1px;">Servicio</ion-label>
-            <ion-select required [(ngModel)]="servicioSeleccion" (ngModelChange)="mostrarContenido()" style="padding:5px; " placeholder="" okText="Aceptar"
+            <ion-select required [(ngModel)]="servicioSeleccion" style="padding:5px; " placeholder="" okText="Aceptar"
               cancelText="Cancelar">
-              <ion-select-option *ngFor="let option of servicios" [value]="option">
+              <ion-select-option *ngFor="let option of servicios" [value]="option.name">
                 {{option.name}} 
               </ion-select-option>
             </ion-select>
           </ion-item>
         </ion-col>
-      <ion-row *ngIf="(prepago && mostrar)" >
+      <ion-row >
         <ion-item>
           <ion-label>Tarjeta Nro:</ion-label>
             <ion-input required [(ngModel)]="numeroClienteContrato" type="number" placeholder=""
@@ -43,16 +43,9 @@
             </ion-input>
         </ion-item>          
       </ion-row>
-      <ion-row *ngIf="(!prepago && mostrar)">
-        <ion-item>
-          <ion-label>Cliente Nro:</ion-label>
-          <ion-input required [(ngModel)]="numeroClienteContrato" type="number" placeholder="">
-          </ion-input>
-        </ion-item>       
-      </ion-row>
     </ion-card-content>
-    <ion-card-header *ngIf="mostrar" class="card-title">Monto a recargar</ion-card-header>
-    <ion-card-content *ngIf="mostrar">
+    <ion-card-header class="card-title">Monto a recargar</ion-card-header>
+    <ion-card-content>
       <ion-row>
         <ion-item>
           <ion-label>Monto:</ion-label>
@@ -62,8 +55,8 @@
         </ion-item>
       </ion-row>
     </ion-card-content>
-    <ion-card-header *ngIf="mostrar" class="card-title">Cuenta a debitar</ion-card-header>
-    <ion-card-content *ngIf="mostrar">
+    <ion-card-header class="card-title">Cuenta a debitar</ion-card-header>
+    <ion-card-content>
       <ion-row>
         <ion-col>
           <ion-item style="padding:1px; margin-bottom: 5px;">
@@ -88,11 +81,11 @@
       </ion-row>
     </ion-card-content>
 
-    <ion-button *ngIf="mostrar" float-right expand="full" class="btn-enviar" fill="outline" (click)="realizarPago()">Enviar
+    <ion-button float-right expand="full" class="btn-enviar" fill="outline" (click)="realizarPago()">Enviar
     </ion-button>
   </ion-card>
 
-  <ion-footer *ngIf="mostrar">
+  <ion-footer>
     <ion-toolbar class="toolbar-container"> 
         <ion-title ></ion-title>
         <p>{{mensajeFooter1}}</p>
@@ -102,13 +95,3 @@
     </ion-toolbar>
   </ion-footer>
 </ion-content>
-
-<ion-footer *ngIf="!mostrar">
-    <ion-toolbar class="toolbar-container"> 
-        <ion-title ></ion-title>
-        <p>{{mensajeFooter1}}</p>
-        <p>{{mensajeFooter2}}</p>
-        <p>{{mensajeFooter3}}</p>
-        <p>{{mensajeFooter4}}</p>      
-    </ion-toolbar>
-  </ion-footer>

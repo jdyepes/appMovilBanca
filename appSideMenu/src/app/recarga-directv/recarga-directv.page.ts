@@ -65,12 +65,12 @@ export class RecargaDirectvPage implements OnInit {
   servicios: any[] = [
     {
       id: 1,
-      name: 'Prepago',
-    },
-    {
+      name: '',
+    }/*,
+   {
       id: 2,
       name: 'Previo Pago',
-    }
+    }*/
   ];
 
   // correlativos
@@ -90,27 +90,24 @@ export class RecargaDirectvPage implements OnInit {
 
   ngOnInit() {
     this.initializeBackButton();
+    this.servicios[0].id = 1;
+    this.servicios[0].name = 'Prepago';
   }
 
   validarCampos(): boolean {
     let numberPattern = new RegExp(/^\d*$/);
-    let prepagoPattern = new RegExp(/^[0-9]{12}$/);
-    let previoPagoPattern = new RegExp(/^([0-9]{5})|([0-9]{8})$/);
+    let prepagoPattern = new RegExp(/^[0-9]{12}$/);    // se quita opcion previo pago el miercoles 4 sep
     if (this.prefijoAccion === undefined) {
       this.mostrarError('El prefijo no se pudo cargar. Intente nuevamente');
       return false;
     } else
     if (this.numeroClienteContrato === undefined || this.numeroClienteContrato === '') {
-      this.mostrarError('Campo requerido. ' + '<BR>' + 'Indique el número.');
+      this.mostrarError('Campo requerido. ' + '<BR>' + 'Indique el número de tarjeta.');
       this.numeroClienteContrato = undefined;
       return false;
     } else
-      if (!prepagoPattern.test(this.numeroClienteContrato) && ((this.servicioSeleccion).id === 1)) {
+      if (!prepagoPattern.test(this.numeroClienteContrato)) {
       this.mostrarError('Número de Tarjeta inválido. Ingrese un total de doce dígitos');
-      return false;
-    } else
-    if (!previoPagoPattern.test(this.numeroClienteContrato) && ((this.servicioSeleccion).id === 2)) {
-      this.mostrarError('Número de Cliente inválido. Ingrese un mínimo de 5 y un máximo de 8 dígitos');
       return false;
     } else
     if (this.montoEntero === undefined) {
@@ -141,17 +138,6 @@ export class RecargaDirectvPage implements OnInit {
     }
   }
 
-  // evento del seleccionarServicio
-  mostrarContenido()
-  {
-    let aux = this.servicioSeleccion;
-    aux.id === 1 ? this.prepago = true : false; // prepago
-    aux.id === 2 ? this.prepago = false : true; // previo pago
-    this.mostrar = true; // oculta o no el contenido
-    this.numeroClienteContrato = '';
-    this.prefijoAccion = this.rutaActiva.snapshot.params.operacionDirectv;
-  }
-
   //alertBox
   async realizarPago() {
     if (this.validarCampos()) {
@@ -161,7 +147,7 @@ export class RecargaDirectvPage implements OnInit {
         header: 'Alerta',
         message: 'Confirma que desea realizar una ' + '<b>' + this.operacion + '</b>' +
           ' con los siguientes datos: ' + '<BR>' +
-          '<b>Servicio: </b>' + auxServicios.name  + '<BR>' +
+          '<b>Servicio: </b>' + auxServicios  + '<BR>' +
           '<b>Nro Cliente/Contrato: </b>' + this.numeroClienteContrato + '<BR>' +
           '<b>Monto: </b>' + this.montoEntero + ',' + this.montoDecimal + '<BR>' +
           '<b>Cuenta a debitar: </b>' + auxAccounts.name + ' ' + this.correlativoOrigen,
@@ -177,12 +163,10 @@ export class RecargaDirectvPage implements OnInit {
           {
             text: 'OK',
             handler: () => {
-              if (auxServicios.id === 1) {//Prepago
+              if (auxServicios === 'Prepago') { //Prepago
                 this.prefijoAccion = this.prefijoAccion + 'D';
               }
-              if (auxServicios.id === 2) {//Previo Pago
-                this.prefijoAccion = this.prefijoAccion + 'P';
-              }
+              // se quito opcion previo pago mier 4 sep   
               // tslint:disable-next-line:max-line-length
               this.mensajeEnviar = this.prefijoAccion + ' ' + this.numeroClienteContrato + ' ' + this.montoEntero + ',' + this.montoDecimal + ' ' + auxAccounts.shortCode + this.correlativoOrigen;
               console.log('mensaje a enviar: ' + this.mensajeEnviar);
