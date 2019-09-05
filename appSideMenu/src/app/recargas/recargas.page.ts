@@ -55,6 +55,6 @@ export class RecargasPage implements OnInit {
   }
 
   regresar() {
-    this.navCtrl.navigateBack('/home');
+    this.navCtrl.navigateBack('/home/' + this.numeroProveedor);
   }
 }

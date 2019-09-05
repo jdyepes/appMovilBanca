@@ -20,7 +20,7 @@ export class NumeroDestinoPage {
   subscription: any;
   proveedor: any;
   numeroDestinoSeleccion: string;
-  numerosDestinoProveedor: any;
+  numerosDestinoProveedor: any[];
   mensajeFooter1: string = MENSAJE_PAGINAS.mensajeFooter1;
   mensajeFooter2: string = MENSAJE_PAGINAS.mensajeFooter2;
   mensajeFooter3: string = MENSAJE_PAGINAS.mensajeFooter3;
@@ -44,6 +44,7 @@ export class NumeroDestinoPage {
     this.cargarProveedor();
     this.initializeApp();
     this.numerosDestinoProveedor = [];
+    this.numeroDestinoProveedor = OPERACIONES.numeroDestinoProveedor;
   }
 
   ionViewDidLoad() {
@@ -59,29 +60,42 @@ export class NumeroDestinoPage {
  * a la clase Proveedores
  */
   async cargarProveedor() {
+    let proAux = new Proveedor();
     await this.providerService.getProveedor()
       .subscribe(
         (data) => { // Success
+          console.log(data);
           this.proveedor = data;
          // this.fillListInterface();
-          let proAux = new Proveedor();
+          
           let numberPattern = new RegExp(/^\d*$/);
-          proAux.$id = data['_id'];
-          proAux.$nombre = data['_nombre'];
-          proAux.$numero = data['_numero'];
-          proAux.$disponible = data['_disponible'];
-          console.log(proAux);
-          this.numerosDestinoProveedor.push(proAux);
-          console.log(this.numerosDestinoProveedor);
+      
+          for (var i = 0; i< (this.proveedor.length); i++)
+          {
+              proAux.$id = data[i]['_id'];
+              proAux.$nombre = data[i]['_nombre'];
+              proAux.$numero = data[i]['_numero'];
+              proAux.$disponible = data[i]['_disponible'];              
+              this.numerosDestinoProveedor.push(proAux);
+              proAux = new Proveedor();                             
+              console.log(this.numerosDestinoProveedor);
+          }      
+
           // Si el numero extraido es valido (numerico no vacio)
-          if(numberPattern.test(proAux.$numero) && proAux.$numero != '' && proAux.$numero != null )
+          if(numberPattern.test(this.numeroDestinoSeleccion) && this.numeroDestinoSeleccion != '' && this.numeroDestinoSeleccion != null )
           {
             this.numeroDestinoProveedor = proAux.$numero;            
-          }          
+          }            
         },
         (error) => {
           console.error(error);
           this.numeroDestinoProveedor = OPERACIONES.numeroDestinoProveedor;
+          proAux = new Proveedor();  
+          proAux.$id = 1;
+              proAux.$nombre = '';
+              proAux.$numero = this.numeroDestinoProveedor ;
+              proAux.$disponible = true;              // hombres ricos 
+              this.numerosDestinoProveedor.push(proAux);
         }
       );
   }
@@ -127,8 +141,31 @@ export class NumeroDestinoPage {
       await alert.present();
     }
 
-    abrirSiguientePag() {  
-      console.log('el valor seleccionado es:' + this.numeroDestinoSeleccion);
-      this.navCtrl.navigateForward('/home');
+  // muestra los mensajes de los campos si estan errados
+  async mostrarError(mensaje: string) {
+
+    let alert = await this.alertCtrl.create({
+      header: 'Alerta',
+      message: '<p>' + mensaje + '</p>',
+      cssClass: 'alertColor',
+      buttons: [
+        {
+          text: 'OK'
+        }
+      ]
+    });
+    await alert.present();
+  }
+
+  abrirSiguientePag() {  
+    if(this.numeroDestinoSeleccion != '' && this.numeroDestinoSeleccion != null )
+    {
+        console.log('el valor seleccionado es:' + this.numeroDestinoSeleccion);
+        this.navCtrl.navigateForward('/home/' + this.numeroDestinoSeleccion);        
+    } 
+    else 
+    {
+       this.mostrarError('Favor seleccione el número de destino.');
     }
+  }
 }

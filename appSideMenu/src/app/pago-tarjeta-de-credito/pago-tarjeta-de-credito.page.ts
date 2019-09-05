@@ -204,6 +204,6 @@ async realizarPagoTDC() {
   }
 
   regresar() {
-    this.navCtrl.navigateBack('home');
+    this.navCtrl.navigateBack('home/' + this.numeroDestino);
   }
 }

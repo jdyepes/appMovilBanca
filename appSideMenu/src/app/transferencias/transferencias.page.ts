@@ -193,6 +193,6 @@ export class TransferenciasPage implements OnInit {
   }
 
   regresar() {
-    this.navCtrl.navigateBack('home');
+    this.navCtrl.navigateBack('/home/' + this.numeroDestino);
   }
 }

@@ -8,6 +8,7 @@ import { ProviderService} from '../provider-service';
 import { HttpClient } from '@angular/common/http';
 import { Proveedor } from '../models/Proveedor';
 import { OPERACIONES, MENSAJE_PAGINAS } from '../constantes/prefijo-opciones';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -95,50 +96,21 @@ export class HomePage {
     private alertCtrl: AlertController,
     public providerService: ProviderService,
     public http: HttpClient,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private rutaActiva: ActivatedRoute,
   ) {
-   // this.cargarProveedor();
+    /** recepcion por parametro el numero de destino seleccionado en la vista anterior */
+    this.numeroDestinoProveedor = this.rutaActiva.snapshot.params.numeroProveedor;
     this.initializeApp();
   }
 
   ionViewDidLoad() {
-   // this.cargarProveedor();
+
   }
 
   // antes de entrar a la app
   ionViewWillEnter() {
     this.llenarMenu(this.numeroDestinoProveedor);
-  }
-
-/** Extrae los datos del proveedor mediante la peticion rest y lo mapea
- * a la clase Proveedores
- */
-  async cargarProveedor() {
-    await this.providerService.getProveedor()
-      .subscribe(
-        (data) => { // Success
-          this.proveedor = data;
-         // this.fillListInterface();
-          let proAux = new Proveedor();
-          let numberPattern = new RegExp(/^\d*$/);
-          proAux.$id = data['_id'];
-          proAux.$nombre = data['_nombre'];
-          proAux.$numero = data['_numero'];
-          proAux.$disponible = data['_disponible'];
-          console.log(proAux);
-          // Si el numero extraido es valido (numerico no vacio)
-          if(numberPattern.test(proAux.$numero) && proAux.$numero != '' && proAux.$numero != null )
-          {
-            this.numeroDestinoProveedor = proAux.$numero;   
-            this.llenarMenu(this.numeroDestinoProveedor);         
-          }          
-        },
-        (error) => {
-          console.error(error);
-          this.numeroDestinoProveedor = OPERACIONES.numeroDestinoProveedor;
-        }
-      );
-
   }
 
   /** Se llena las opciones del menu principal con el numero del 
@@ -224,6 +196,6 @@ export class HomePage {
     }
 
   regresar() {
-    this.navCtrl.navigateBack('/');
+    this.navCtrl.navigateBack('/numero-destino');
   }
 }

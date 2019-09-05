@@ -6,7 +6,7 @@ export const PATH = {
 };
 
 export const METHOD = {
-    ObtenerProveedor: '/obtenerProveedor'
+    ObtenerProveedor: '/obtenerProveedores'
 };
 
 export const AppUrlBase = {

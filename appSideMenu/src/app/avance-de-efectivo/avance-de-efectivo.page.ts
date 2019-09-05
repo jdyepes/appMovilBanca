@@ -218,6 +218,6 @@ export class AvanceDeEfectivoPage implements OnInit {
   }
 
   regresar() {
-    this.navCtrl.navigateBack('home');
+    this.navCtrl.navigateBack('/home/' + this.numeroDestino);
   }
 }
