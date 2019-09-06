@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OPERACIONES, MENSAJE_PAGINAS } from '../constantes/prefijo-opciones';
 
-import { Platform, AlertController, NavController } from '@ionic/angular';
+import { Platform, AlertController, NavController, MenuController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
@@ -39,8 +39,13 @@ export class NumeroDestinoPage {
     private alertCtrl: AlertController,
     public providerService: ProviderService,
     public http: HttpClient,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private menuCtrl: MenuController
   ) {
+
+    /** Deshabilita el menu lateral izquierdo */
+    this.menuCtrl.enable(false);
+ // this.menuCtrl.swipeEnable(false);
     this.cargarProveedor();
     this.initializeApp();
     this.numerosDestinoProveedor = [];
