@@ -101,7 +101,7 @@ export class HomePage {
     private menuCtrl: MenuController
   ) {
     /** Habilita el menu lateral izquierdo */    
-    this.menuCtrl.enable(true);
+    //this.menuCtrl.enable(true);
     /** recepcion por parametro el numero de destino seleccionado en la vista anterior */
     this.numeroDestinoProveedor = this.rutaActiva.snapshot.params.numeroProveedor;
     this.initializeApp();

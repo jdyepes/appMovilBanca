@@ -7,6 +7,7 @@ import { OPERACIONES } from './constantes/prefijo-opciones';
 import { ProviderService } from './provider-service';
 import { HttpClient } from '@angular/common/http';
 import { Proveedor } from './models/Proveedor';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -86,10 +87,13 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     public http: HttpClient,
-    public providerService: ProviderService
+    public providerService: ProviderService,
+    private rutaActiva: ActivatedRoute
   ) {    
     this.initializeApp();
-    this.cargarProveedor();
+   // this.cargarProveedor();
+   /** recepcion por parametro el numero de destino seleccionado en la vista anterior */
+    this.numeroDestinoProveedor = this.rutaActiva.snapshot.params.numeroProveedor;
     this.llenarMenu(this.numeroDestinoProveedor);
   }
 
@@ -97,7 +101,7 @@ export class AppComponent {
    * Creado martes 27 de agosto 2019
    */
   ionViewDidLoad() {
-    this.cargarProveedor();
+   // this.cargarProveedor();
   }
 
   // antes de entrar a la app
@@ -116,7 +120,7 @@ export class AppComponent {
 /** Extrae los datos del proveedor mediante la peticion rest y lo mapea
  * a la clase Proveedores
  */
-async cargarProveedor() {
+/*async cargarProveedor() {
   await this.providerService.getProveedor()
     .subscribe(
       (data) => { // Success
@@ -142,7 +146,7 @@ async cargarProveedor() {
       }
     );
 
-}
+}*/
 
   /** Se llena las opciones del menu principal con el numero del 
    * proveedor extraido mediante el servicio rest api

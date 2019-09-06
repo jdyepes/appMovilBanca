@@ -71,7 +71,6 @@ export class NumeroDestinoPage {
         (data) => { // Success
           console.log(data);
           this.proveedor = data;
-         // this.fillListInterface();
           
           let numberPattern = new RegExp(/^\d*$/);
       
@@ -99,7 +98,7 @@ export class NumeroDestinoPage {
           proAux.$id = 1;
               proAux.$nombre = '';
               proAux.$numero = this.numeroDestinoProveedor ;
-              proAux.$disponible = true;              // hombres ricos 
+              proAux.$disponible = true;
               this.numerosDestinoProveedor.push(proAux);
         }
       );
