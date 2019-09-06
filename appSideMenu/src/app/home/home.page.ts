@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Platform, AlertController, NavController } from '@ionic/angular';
+import { Platform, AlertController, NavController, MenuController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
@@ -98,7 +98,10 @@ export class HomePage {
     public http: HttpClient,
     private navCtrl: NavController,
     private rutaActiva: ActivatedRoute,
+    private menuCtrl: MenuController
   ) {
+    /** Habilita el menu lateral izquierdo */    
+    this.menuCtrl.enable(true);
     /** recepcion por parametro el numero de destino seleccionado en la vista anterior */
     this.numeroDestinoProveedor = this.rutaActiva.snapshot.params.numeroProveedor;
     this.initializeApp();
