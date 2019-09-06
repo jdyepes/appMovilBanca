@@ -67,7 +67,7 @@ export class SuspensionTarjetaDeDebitoPage implements OnInit {
   ngOnInit() {
     this.prefijoAccion = this.rutaActiva.snapshot.params.operacion;
     this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
-    this.operacion = 'SUSPENSION DE TARJETA DE DÉBITO';
+    this.operacion = 'SUSPENSIÓN DE TARJETA DE DÉBITO';
   }
 
   // evento cuando se presiona el boton de regresar en el telefono
