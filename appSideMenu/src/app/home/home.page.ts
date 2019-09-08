@@ -107,6 +107,8 @@ export class HomePage {
     this.initializeApp();
   }
 
+  // se ejecuta cuando se ejecuta la app
+  // solo lo hace una vez
   ionViewDidLoad() {
 
   }
@@ -168,7 +170,8 @@ export class HomePage {
   // salir de la app
   ionViewDidEnter() {
     this.subscription = this.platform.backButton.subscribe(() => {
-      this.confirmarSalida();
+    // this.confirmarSalida();
+    this.regresar();
     });
   }
   // deshabilita el boton regresar antes de salir de la pag
@@ -180,7 +183,7 @@ export class HomePage {
   async confirmarSalida() {
       let alert = await this.alertCtrl.create({
         header: 'Alerta',
-        message: 'Desea salir de TUBFC',
+        message: 'Desea volver a seleccionar el número de destino?',
 
         buttons: [
           {
@@ -190,7 +193,8 @@ export class HomePage {
           {
             text: 'OK',
             handler: () => {
-              navigator['app'].exitApp();
+              // navigator['app'].exitApp();
+              this.regresar();
             }
           }
         ]
@@ -199,6 +203,6 @@ export class HomePage {
     }
 
   regresar() {
-    this.navCtrl.navigateBack('/numero-destino');
+    this.navCtrl.navigateRoot('/numero-destino');
   }
 }

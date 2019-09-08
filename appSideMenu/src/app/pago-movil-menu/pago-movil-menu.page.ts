@@ -30,7 +30,7 @@ export class PagoMovilMenuPage implements OnInit {
                 this.operacionPAT = this.rutaActiva.snapshot.params.operacionPAT;
                 this.operacionPAC = this.rutaActiva.snapshot.params.operacionPAC;
                 this.opcionPagoMovil = this.operacionPAT;
-                this.initializeBackButton();
+                // this.initializeBackButton();
               }
 
     opcionesPagoMovil: any[] = [
@@ -43,6 +43,10 @@ export class PagoMovilMenuPage implements OnInit {
         name: '', // PAC
       }
     ];
+
+    ionViewDidEnter() {
+      this.initializeBackButton();
+    }
 
       // deshabilita el boton regresar antes de salir de la pag
     ionViewWillLeave() {
@@ -57,7 +61,7 @@ export class PagoMovilMenuPage implements OnInit {
     }
 
   ngOnInit() {
-    this.initializeBackButton();
+    // this.initializeBackButton();
     this.opcionesPagoMovil[0].name = this.operacionPAT;
     this.opcionesPagoMovil[1].name = this.operacionPAC;
   }

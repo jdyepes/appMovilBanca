@@ -154,6 +154,9 @@ ion-item{
 @media screen and (min-height: 595px){
    #saldo, #movimiento, #tdc {
     margin-top: calc(100vh - 535px);
+   }
+   #pago-movil-menu {
+      margin-top: calc(100vh - 590px);
    }  
 }
 

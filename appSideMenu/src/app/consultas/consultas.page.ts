@@ -22,14 +22,14 @@ export class ConsultasPage implements OnInit {
   mensajeFooter4: string = MENSAJE_SUBPAGINAS.mensajeFooter4;
  
   constructor(public navCtrl: NavController, private rutaActiva: ActivatedRoute, private platform: Platform) {
-    this.initializeBackButton();
+   // this.initializeBackButton();
   }
 
   ngOnInit() {
     this.numeroProveedor = this.rutaActiva.snapshot.params.numeroProveedor;
     this.prefijoSaldo = this.rutaActiva.snapshot.params.operacionSaldo;
     this.prefijoMovimiento = this.rutaActiva.snapshot.params.operacionMov;  
-    this.initializeBackButton();
+   // this.initializeBackButton();
   }
 
   // evento cuando se presiona el boton de regresar en el telefono

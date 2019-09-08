@@ -15,8 +15,8 @@ import { Proveedor } from '../models/Proveedor';
 })
 export class NumeroDestinoPage {
 
-  numeroDestinoProveedor: string = OPERACIONES.numeroDestinoProveedor;
-  
+  // numeroDestinoProveedor: string = OPERACIONES.numeroDestinoProveedor;
+
   subscription: any;
   proveedor: any;
   numeroDestinoSeleccion: string;
@@ -31,7 +31,7 @@ export class NumeroDestinoPage {
    * Creado 24 agosto 2019
    */
   servicioProveedor = new ProviderService(this.http);
- 
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -46,19 +46,22 @@ export class NumeroDestinoPage {
     /** Deshabilita el menu lateral izquierdo */
     this.menuCtrl.enable(false);
  // this.menuCtrl.swipeEnable(false);
-    this.cargarProveedor();
+   // this.cargarProveedor();
     this.initializeApp();
     this.numerosDestinoProveedor = [];
-    this.numeroDestinoProveedor = OPERACIONES.numeroDestinoProveedor;
+   // this.numeroDestinoProveedor = OPERACIONES.numeroDestinoProveedor;
   }
 
+  // se ejecuta cuando se ejecuta la app
+  // solo lo hace una vez
   ionViewDidLoad() {
-    this.cargarProveedor();
+    // this.cargarProveedor();
   }
 
   // antes de entrar a la app
-  ionViewWillEnter() {
-    
+  ionViewWillEnter() { 
+    this.llenarNumeroDestino();
+    this.cargarProveedor();
   }
 
 /** Extrae los datos del proveedor mediante la peticion rest y lo mapea
@@ -71,37 +74,44 @@ export class NumeroDestinoPage {
         (data) => { // Success
           console.log(data);
           this.proveedor = data;
-          
+
+          // elimino el valor por defecto del numero de destino,
+          // para volverlo a llenar con los valores extraidos del servicio
+          this.numerosDestinoProveedor = [];
           let numberPattern = new RegExp(/^\d*$/);
-      
-          for (var i = 0; i< (this.proveedor.length); i++)
+
+          for (var i = 0; i < (this.proveedor.length); i++)
           {
               proAux.$id = data[i]['_id'];
               proAux.$nombre = data[i]['_nombre'];
               proAux.$numero = data[i]['_numero'];
-              proAux.$disponible = data[i]['_disponible'];              
+              proAux.$disponible = data[i]['_disponible'];
               this.numerosDestinoProveedor.push(proAux);
-              proAux = new Proveedor();                             
+              proAux = new Proveedor();
               console.log(this.numerosDestinoProveedor);
-          }      
+          }
 
           // Si el numero extraido es valido (numerico no vacio)
           if(numberPattern.test(this.numeroDestinoSeleccion) && this.numeroDestinoSeleccion != '' && this.numeroDestinoSeleccion != null )
           {
-            this.numeroDestinoProveedor = proAux.$numero;            
-          }            
+            this.llenarNumeroDestino();
+          }
         },
         (error) => {
           console.error(error);
-          this.numeroDestinoProveedor = OPERACIONES.numeroDestinoProveedor;
-          proAux = new Proveedor();  
-          proAux.$id = 1;
-              proAux.$nombre = '';
-              proAux.$numero = this.numeroDestinoProveedor ;
-              proAux.$disponible = true;
-              this.numerosDestinoProveedor.push(proAux);
+         // this.numeroDestinoProveedor = OPERACIONES.numeroDestinoProveedor;
+         // this.llenarNumeroDestino();
         }
       );
+  }
+
+  llenarNumeroDestino() {
+    let proAux = new Proveedor();
+    proAux.$id = 1;
+    proAux.$nombre = '';
+    proAux.$numero = OPERACIONES.numeroDestinoProveedor;
+    proAux.$disponible = true;
+    this.numerosDestinoProveedor.push(proAux);
   }
 
   /** Se inicia el boton de retroceso Android */
@@ -161,7 +171,7 @@ export class NumeroDestinoPage {
     await alert.present();
   }
 
-  abrirSiguientePag() {  
+  abrirSiguientePag() {
     if(this.numeroDestinoSeleccion != '' && this.numeroDestinoSeleccion != null )
     {
         console.log('el valor seleccionado es:' + this.numeroDestinoSeleccion);
