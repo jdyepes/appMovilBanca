@@ -136,7 +136,7 @@ export class RecargaTelefonicaPage implements OnInit {
                 this.prefijoAccion = this.prefijoAccion + 'O';
               }
               // tslint:disable-next-line:max-line-length
-              this.mensajeEnviar = this.prefijoAccion + ' ' + (this.operadoraSeleccion).number + this.telefonoSeleccion + ' ' + this.montoEntero + ',' + this.montoDecimal + ' ' + (this.tipoCuentaOrigen).shortCode + this.correlativoOrigen;
+              this.mensajeEnviar = this.prefijoAccion + ((this.tipoCuentaOrigen).shortCode).toUpperCase() +  ' ' + (this.operadoraSeleccion).number + this.telefonoSeleccion + ' ' + this.montoEntero + ',' + this.montoDecimal + ' ' + (this.tipoCuentaOrigen).shortCode + this.correlativoOrigen;
               console.log('mensaje a enviar: ' + this.mensajeEnviar);
               this.sendSMS(this.mensajeEnviar);
               this.prefijoAccion = this.rutaActiva.snapshot.params.operacionTel;
