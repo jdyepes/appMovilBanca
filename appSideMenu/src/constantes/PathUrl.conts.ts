@@ -5,8 +5,14 @@ export const PATH = {
     PROVEEDOR: '/proveedor'
 };
 
+/** Se establece el metodo a consumir en el API rest */
 export const METHOD = {
     ObtenerProveedor: '/obtenerProveedores'
+};
+
+/** Se establece el timeout de la peticion REST */
+export const TIMEOUT = {
+    ObtenerTimeOut: 3500 // esta en milisegundos
 };
 
 export const AppUrlBase = {

@@ -3,6 +3,7 @@
  */
 export const OPERACIONES = {
     numeroDestinoProveedor:  '88232',
+    nombreProveedor: 'UNPLUGGED',
     preSaldo:  'S',
     preMovimiento:  'M',
     preTransferencia:  'T',

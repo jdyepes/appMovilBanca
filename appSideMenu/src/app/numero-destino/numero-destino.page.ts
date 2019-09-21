@@ -1,21 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { OPERACIONES, MENSAJE_PAGINAS } from '../constantes/prefijo-opciones';
+import { Component } from '@angular/core';
+import { OPERACIONES, MENSAJE_PAGINAS } from '../../constantes/prefijo-opciones';
 
 import { Platform, AlertController, NavController, MenuController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { ProviderService} from '../provider-service';
+
 import { HttpClient } from '@angular/common/http';
-import { Proveedor } from '../models/Proveedor';
+import { Proveedor } from '../../models/Proveedor';
+import { LoadingService } from '../../services/loading.service';
+
 @Component({
   selector: 'app-numero-destino',
   templateUrl: './numero-destino.page.html',
   styleUrls: ['./numero-destino.page.scss'],
 })
 export class NumeroDestinoPage {
-
-  // numeroDestinoProveedor: string = OPERACIONES.numeroDestinoProveedor;
 
   subscription: any;
   proveedor: any;
@@ -40,37 +41,43 @@ export class NumeroDestinoPage {
     public providerService: ProviderService,
     public http: HttpClient,
     private navCtrl: NavController,
-    private menuCtrl: MenuController
+    private menuCtrl: MenuController,
+    public loadingService: LoadingService
   ) {
 
     /** Deshabilita el menu lateral izquierdo */
     this.menuCtrl.enable(false);
- // this.menuCtrl.swipeEnable(false);
-   // this.cargarProveedor();
+
     this.initializeApp();
     this.numerosDestinoProveedor = [];
-   // this.numeroDestinoProveedor = OPERACIONES.numeroDestinoProveedor;
+    console.log('entro constru ');
   }
 
   // se ejecuta cuando se ejecuta la app
   // solo lo hace una vez
   ionViewDidLoad() {
-    // this.cargarProveedor();
+
   }
 
   // antes de entrar a la app
   ionViewWillEnter() { 
-    this.llenarNumeroDestino();
-    this.cargarProveedor();
+    console.log('entro');
+    if (this.numerosDestinoProveedor.length === 0) {
+      this.cargarProveedor();
+    }
   }
 
-/** Extrae los datos del proveedor mediante la peticion rest y lo mapea
- * a la clase Proveedores
+/** 
+ * 24 ago 2019
+ * Extrae los datos del proveedor mediante la peticion rest y lo mapea
+ * a la clase Proveedores. Realiza la carga del spinner
  */
   async cargarProveedor() {
     let proAux = new Proveedor();
+    this.loadingService.loadingPresent();
     await this.providerService.getProveedor()
-      .subscribe(
+    
+    .subscribe(
         (data) => { // Success
           console.log(data);
           this.proveedor = data;
@@ -92,23 +99,32 @@ export class NumeroDestinoPage {
           }
 
           // Si el numero extraido es valido (numerico no vacio)
-          if(numberPattern.test(this.numeroDestinoSeleccion) && this.numeroDestinoSeleccion != '' && this.numeroDestinoSeleccion != null )
+          if (numberPattern.test(this.numeroDestinoSeleccion) && this.numeroDestinoSeleccion != '' && this.numeroDestinoSeleccion != null )
           {
             this.llenarNumeroDestino();
           }
+          // cierro spinner o loading
+          this.loadingService.loadingDismiss();
         },
-        (error) => {
+        (error) => { // error
           console.error(error);
-         // this.numeroDestinoProveedor = OPERACIONES.numeroDestinoProveedor;
-         // this.llenarNumeroDestino();
+          this.llenarNumeroDestino();
+          // cierro spinner o loading
+          this.loadingService.loadingDismiss();
         }
       );
   }
 
+  /**
+   * Metodo que llena el numero de destino del proveedor por defecto
+   * en este caso se establece UNPLUGGED por defecto
+   */
   llenarNumeroDestino() {
     let proAux = new Proveedor();
+    console.log(this.numerosDestinoProveedor);
+    // se lee en constantes el numero de destino del proveedor
     proAux.$id = 1;
-    proAux.$nombre = '';
+    proAux.$nombre = OPERACIONES.nombreProveedor;
     proAux.$numero = OPERACIONES.numeroDestinoProveedor;
     proAux.$disponible = true;
     this.numerosDestinoProveedor.push(proAux);
@@ -172,13 +188,11 @@ export class NumeroDestinoPage {
   }
 
   abrirSiguientePag() {
-    if(this.numeroDestinoSeleccion != '' && this.numeroDestinoSeleccion != null )
+    if (this.numeroDestinoSeleccion !== '' && this.numeroDestinoSeleccion != null )
     {
         console.log('el valor seleccionado es:' + this.numeroDestinoSeleccion);
-        this.navCtrl.navigateForward('/home/' + this.numeroDestinoSeleccion);        
-    } 
-    else 
-    {
+        this.navCtrl.navigateForward('/home/' + this.numeroDestinoSeleccion);
+    } else {
        this.mostrarError('Favor seleccione el número de destino.');
     }
   }
