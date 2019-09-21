@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { timeout } from 'rxjs/operators';
 
-import { PATH, AppUrlBase, METHOD } from './constantes/PathUrl.conts';
-import { Proveedor } from './models/Proveedor';
+import { PATH, AppUrlBase, METHOD, TIMEOUT } from '../constantes/PathUrl.conts';
+import { Proveedor } from '../models/Proveedor';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,9 @@ export class ProviderService {
    * desde la url ubicada en la carpeta Constantes
    */
   getProveedor() {
-    return this.http.get(this.urlRoot);
+    return this.http.get(this.urlRoot).pipe(
+      timeout(TIMEOUT.ObtenerTimeOut)
+    );
   }
 
 }

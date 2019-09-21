@@ -4,10 +4,7 @@ import { Platform, AlertController, NavController, MenuController } from '@ionic
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
-import { ProviderService} from '../provider-service';
-import { HttpClient } from '@angular/common/http';
-import { Proveedor } from '../models/Proveedor';
-import { OPERACIONES, MENSAJE_PAGINAS } from '../constantes/prefijo-opciones';
+import { OPERACIONES, MENSAJE_PAGINAS } from '../../constantes/prefijo-opciones';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -38,11 +35,6 @@ export class HomePage {
   mensajeFooter3: string = MENSAJE_PAGINAS.mensajeFooter3;
   mensajeFooter4: string = MENSAJE_PAGINAS.mensajeFooter4;
   mensajeFooter5: string = MENSAJE_PAGINAS.mensajeFooter5;
-
-  /** Peticion que hace al servicio rest API
-   * Creado 24 agosto 2019
-   */
-  servicioProveedor = new ProviderService(this.http);
 
   public appPages = [
     {
@@ -94,13 +86,11 @@ export class HomePage {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private alertCtrl: AlertController,
-    public providerService: ProviderService,
-    public http: HttpClient,
     private navCtrl: NavController,
     private rutaActiva: ActivatedRoute,
     private menuCtrl: MenuController
   ) {
-    /** Habilita el menu lateral izquierdo */    
+    /** Habilita el menu lateral izquierdo */ 
     //this.menuCtrl.enable(true);
     /** recepcion por parametro el numero de destino seleccionado en la vista anterior */
     this.numeroDestinoProveedor = this.rutaActiva.snapshot.params.numeroProveedor;

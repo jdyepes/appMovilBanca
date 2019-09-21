@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController, Platform } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { SMS } from '@ionic-native/sms/ngx';
-import { MENSAJE_SUBPAGINAS } from '../constantes/prefijo-opciones';
+import { MENSAJE_SUBPAGINAS } from '../../constantes/prefijo-opciones';
 
 @Component({
   selector: 'app-confirmar-pago-movil',

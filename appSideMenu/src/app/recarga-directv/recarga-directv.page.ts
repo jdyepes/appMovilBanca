@@ -3,7 +3,7 @@ import { AlertController, NavController, Platform } from '@ionic/angular';
 
 import { SMS } from '@ionic-native/sms/ngx';
 import { ActivatedRoute } from '@angular/router';
-import { MENSAJE_SUBPAGINAS } from '../constantes/prefijo-opciones';
+import { MENSAJE_SUBPAGINAS } from '../../constantes/prefijo-opciones';
 
 @Component({
   selector: 'app-recarga-directv',

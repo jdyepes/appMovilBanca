@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, AlertController, Platform } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
-import { MENSAJE_SUBPAGINAS } from '../constantes/prefijo-opciones';
+import { MENSAJE_SUBPAGINAS } from '../../constantes/prefijo-opciones';
 
 @Component({
   selector: 'app-pago-movil-menu',

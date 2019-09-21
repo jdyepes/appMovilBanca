@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { SMS } from '@ionic-native/sms/ngx';
 import { AlertController, NavController, Platform } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
-import { MENSAJE_SUBPAGINAS } from '../constantes/prefijo-opciones';
+import { MENSAJE_SUBPAGINAS } from '../../constantes/prefijo-opciones';
 
 @Component({
   selector: 'app-suspension-tarjeta-de-debito',
