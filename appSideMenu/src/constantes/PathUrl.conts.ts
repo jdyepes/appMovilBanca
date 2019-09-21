@@ -12,7 +12,7 @@ export const METHOD = {
 
 /** Se establece el timeout de la peticion REST */
 export const TIMEOUT = {
-    ObtenerTimeOut: 3500 // esta en milisegundos
+    ObtenerTimeOut: 5000 // esta en milisegundos
 };
 
 export const AppUrlBase = {
