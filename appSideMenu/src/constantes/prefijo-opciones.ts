@@ -4,18 +4,18 @@
 export const OPERACIONES = {
     numeroDestinoProveedor:  '88232',
     nombreProveedor: 'UNPLUGGED',
-    preSaldo:  'S',
-    preMovimiento:  'M',
-    preTransferencia:  'T',
-    prePagoTDC:  'P',
-    preAvanceEfectivo:  'A',
-    prePagoMovilPAT:  'PAT',
-    prePagoMovilPAC:  'PAC',
-    preRecargasTelefonicas:  'RT',
-    preRecargasDirectv:  'RD',
-    preDirectvPrePago:  'RDD',
-    preDirectvPrevioPago:  'RDP',
-    preSuspensionTDD:  'STD'
+    preSaldo:  'DES S',
+    preMovimiento:  'DES M',
+    preTransferencia:  'DES T',
+    prePagoTDC:  'DES P',
+    preAvanceEfectivo:  'DES A',
+    prePagoMovilPAT:  'DES PAT',
+    prePagoMovilPAC:  'DES PAC',
+    preRecargasTelefonicas:  'DES RT',
+    preRecargasDirectv:  'DES RD',
+    preDirectvPrePago:  'DES RDD',
+    preDirectvPrevioPago:  'DES RDP',
+    preSuspensionTDD:  'DES STD'
 }
 
 /** mensaje pie de pagina principal (HOME) */
