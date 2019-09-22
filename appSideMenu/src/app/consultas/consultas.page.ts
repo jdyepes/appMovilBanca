@@ -49,13 +49,14 @@ export class ConsultasPage implements OnInit {
 
   abrirSiguientePag(pagina: number) {
     if (pagina === 1) {
-      this.navCtrl.navigateForward('consulta-saldo/' + this.numeroProveedor + '/' + this.prefijoSaldo);
+      this.navCtrl.navigateForward('consulta-saldo/' + this.numeroProveedor + '/' + this.prefijoSaldo + '/' + this.prefijoMovimiento);
     }
     if (pagina === 2) {
-      this.navCtrl.navigateForward('consulta-movimiento/' + this.numeroProveedor + '/' + this.prefijoMovimiento);
+      this.navCtrl.navigateForward('consulta-movimiento/' + this.numeroProveedor + '/' + this.prefijoSaldo + '/' + this.prefijoMovimiento);
     }
     if (pagina === 3) {
-      this.navCtrl.navigateForward('consulta-tarjeta-de-credito/' + this.numeroProveedor + '/' + this.prefijoSaldo);
+      // tslint:disable-next-line:max-line-length
+      this.navCtrl.navigateForward('consulta-tarjeta-de-credito/' + this.numeroProveedor + '/' + this.prefijoSaldo + '/' + this.prefijoMovimiento);
     }
   }
 

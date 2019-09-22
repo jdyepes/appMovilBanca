@@ -24,13 +24,14 @@ const routes: Routes = [
   { path: 'suspension-tarjeta-de-debito/:numeroProveedor/:operacion', loadChildren: './suspension-tarjeta-de-debito/suspension-tarjeta-de-debito.module#SuspensionTarjetaDeDebitoPageModule' },
 
   /** Opciones submenus */
-  { path: 'consulta-saldo/:numeroProveedor/:operacion', loadChildren: './consulta-saldo/consulta-saldo.module#ConsultaSaldoPageModule' },
-  { path: 'consulta-movimiento/:numeroProveedor/:operacion', loadChildren: './consulta-movimiento/consulta-movimiento.module#ConsultaMovimientoPageModule' },
-  { path: 'consulta-tarjeta-de-credito/:numeroProveedor/:operacion', loadChildren: './consulta-tarjeta-de-credito/consulta-tarjeta-de-credito.module#ConsultaTarjetaDeCreditoPageModule' },
+  {
+    path: 'consulta-saldo/:numeroProveedor/:operacionSaldo/:operacionMov', loadChildren: './consulta-saldo/consulta-saldo.module#ConsultaSaldoPageModule' },
+  { path: 'consulta-movimiento/:numeroProveedor/:operacionSaldo/:operacionMov', loadChildren: './consulta-movimiento/consulta-movimiento.module#ConsultaMovimientoPageModule' },
+  { path: 'consulta-tarjeta-de-credito/:numeroProveedor/:operacionSaldo/:operacionMov', loadChildren: './consulta-tarjeta-de-credito/consulta-tarjeta-de-credito.module#ConsultaTarjetaDeCreditoPageModule' },
   { path: 'pago-movil/:numeroProveedor/:operacionPAT/:operacionPAC/:valorSeleccion', loadChildren: './pago-movil/pago-movil.module#PagoMovilPageModule' },
   { path: 'confirmar-pago-movil/:numeroProveedor/:operacionPAT/:operacionPAC/:valorSeleccion', loadChildren: './confirmar-pago-movil/confirmar-pago-movil.module#ConfirmarPagoMovilPageModule' },
-  { path: 'recarga-telefonica/:numeroProveedor/:operacionTel', loadChildren: './recarga-telefonica/recarga-telefonica.module#RecargaTelefonicaPageModule' },
-  { path: 'recarga-directv/:numeroProveedor/:operacionDirectv', loadChildren: './recarga-directv/recarga-directv.module#RecargaDirectvPageModule' },
+  { path: 'recarga-telefonica/:numeroProveedor/:operacionTel/:operacionDirectv', loadChildren: './recarga-telefonica/recarga-telefonica.module#RecargaTelefonicaPageModule' },
+  { path: 'recarga-directv/:numeroProveedor/:operacionTel/:operacionDirectv', loadChildren: './recarga-directv/recarga-directv.module#RecargaDirectvPageModule' },
   { path: 'spinner', loadChildren: './spinner/spinner.module#SpinnerPageModule' },
   { path: 'numero-destino', loadChildren: './numero-destino/numero-destino.module#NumeroDestinoPageModule' }
 

@@ -29,10 +29,12 @@ export class ConsultaMovimientoPage implements OnInit {
   constructor(public alertCtrl: AlertController,
               private sms: SMS, private rutaActiva: ActivatedRoute,
               private navCtrl: NavController, private platform: Platform) {
-    this.prefijoAccion = this.rutaActiva.snapshot.params.operacion;
+    /** Recepcion de parametros */
+    this.prefijoAccion = this.rutaActiva.snapshot.params.operacionMov;
     this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
     // regreso a la pag anterior
-    this.consultasMenu = 'consultas/' + this.numeroDestino + '/S/' + this.prefijoAccion ;
+    // tslint:disable-next-line:max-line-length
+    this.consultasMenu = 'consultas/' + this.numeroDestino + '/' + this.rutaActiva.snapshot.params.operacionSaldo + '/' + this.prefijoAccion;
   }
 
   accounts: any[] = [

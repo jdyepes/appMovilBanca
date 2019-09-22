@@ -13,6 +13,7 @@ import { MENSAJE_SUBPAGINAS } from '../../constantes/prefijo-opciones';
 export class RecargaDirectvPage implements OnInit {
 
   prefijoAccion: string;
+  prefijoTelefonia: string;
   servicioSeleccion: any;
   numeroClienteContrato: string;
   tipoCuentaOrigen: any;
@@ -38,11 +39,14 @@ export class RecargaDirectvPage implements OnInit {
               private sms: SMS, private rutaActiva: ActivatedRoute,
               private navCtrl: NavController, private platform: Platform)
   {
+    /** Recepcion de parametros */
     this.prefijoAccion = this.rutaActiva.snapshot.params.operacionDirectv;
-    this.operacion = 'RECARGA DIRECTV';    
+    this.prefijoTelefonia = this.rutaActiva.snapshot.params.operacionTel;
     this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
-    // regreso a la pag anterior
-    this.recargasMenu = 'recargas/' + this.numeroDestino + '/RT/' + this.prefijoAccion;
+
+    this.operacion = 'RECARGA DIRECTV';
+        // regreso a la pag anterior
+    this.recargasMenu = 'recargas/' + this.numeroDestino + '/' + this.prefijoTelefonia + '/' + this.prefijoAccion;
     this.servicioSeleccion = 'Prepago';
     this.prepago = true;
     this.montoDecimal === undefined ? this.montoDecimal = '00' : this.montoDecimal ;

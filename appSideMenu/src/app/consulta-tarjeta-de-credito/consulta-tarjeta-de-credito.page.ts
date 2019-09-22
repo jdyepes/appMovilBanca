@@ -31,10 +31,10 @@ export class ConsultaTarjetaDeCreditoPage implements OnInit {
               private sms: SMS, private rutaActiva: ActivatedRoute,
               private navCtrl: NavController, private platform: Platform)
   {
-    this.prefijoAccion = this.rutaActiva.snapshot.params.operacion;
+    this.prefijoAccion = this.rutaActiva.snapshot.params.operacionSaldo;
     this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
     // regreso a la pag anterior
-    this.consultasMenu = 'consultas/' + this.numeroDestino + '/' + this.prefijoAccion + '/M';
+    this.consultasMenu = 'consultas/' + this.numeroDestino + '/' + this.prefijoAccion + '/' + this.rutaActiva.snapshot.params.operacionMov;
   }
 
   cards: any[] = [

@@ -13,6 +13,7 @@ import { MENSAJE_SUBPAGINAS } from '../../constantes/prefijo-opciones';
 export class RecargaTelefonicaPage implements OnInit {
 
   prefijoAccion: string;
+  prefijoDirectv: string;
   operadoraSeleccion: any;
   telefonoSeleccion: string;
   tipoCuentaOrigen: any;
@@ -36,11 +37,14 @@ export class RecargaTelefonicaPage implements OnInit {
               private sms: SMS, private rutaActiva: ActivatedRoute,
               private navCtrl: NavController, private platform: Platform)
   {
+    /** Recepcion de parametros */
     this.prefijoAccion = this.rutaActiva.snapshot.params.operacionTel;
-    this.operacion = 'RECARGA TELEFONICA';
+    this.prefijoDirectv = this.rutaActiva.snapshot.params.operacionDirectv;
     this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
+
+    this.operacion = 'RECARGA TELEFONICA';
     // regreso a la pag anterior
-    this.recargasMenu = 'recargas/' + this.numeroDestino + '/' + this.prefijoAccion + '/RD';
+    this.recargasMenu = 'recargas/' + this.numeroDestino + '/' + this.prefijoAccion + '/' + this.prefijoDirectv;
     this.montoDecimal === undefined ? this.montoDecimal = '00' : this.montoDecimal ;
   }
 

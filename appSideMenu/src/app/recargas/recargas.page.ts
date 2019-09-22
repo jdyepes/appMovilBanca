@@ -47,10 +47,10 @@ export class RecargasPage implements OnInit {
 
   abrirSiguientePag(pagina: number) {
     if (pagina === 1) {
-      this.navCtrl.navigateForward('recarga-telefonica/' + this.numeroProveedor + '/' + this.prefijoTelefonia);
+      this.navCtrl.navigateForward('recarga-telefonica/' + this.numeroProveedor + '/' + this.prefijoTelefonia + '/' + this.prefijoDirectv);
     }
     if (pagina === 2) {
-      this.navCtrl.navigateForward('recarga-directv/' + this.numeroProveedor + '/' + this.prefijoDirectv);
+      this.navCtrl.navigateForward('recarga-directv/' + this.numeroProveedor + '/' + this.prefijoTelefonia + '/' + this.prefijoDirectv);
     }
   }
 
