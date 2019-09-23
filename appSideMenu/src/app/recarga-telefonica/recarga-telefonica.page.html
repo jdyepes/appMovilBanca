@@ -46,16 +46,7 @@
         </ion-item>                
       </ion-row>
     </ion-card-content>
-    <ion-card-header class="card-title">Monto a recargar</ion-card-header>
-    <ion-card-content>
-      <ion-row>
-        <ion-item>
-          <ion-label>Monto:</ion-label>
-          <ion-input required [(ngModel)]="montoEntero" type="number" placeholder=""></ion-input>,
-          <ion-input required [(ngModel)]="montoDecimal" type="number" placeholder=""onKeyPress="if(this.value.length==2) return false;"></ion-input>
-        </ion-item>
-      </ion-row>
-    </ion-card-content>
+
     <ion-card-header class="card-title">Cuenta a debitar</ion-card-header>
     <ion-card-content>
       <ion-row>
@@ -81,7 +72,18 @@
         </ion-col>
       </ion-row>
     </ion-card-content>
-    
+
+    <ion-card-header class="card-title">Monto a recargar</ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-item>
+          <ion-label>Monto:</ion-label>
+          <ion-input required [(ngModel)]="montoEntero" type="number" placeholder="" onKeyPress="if(this.value.length==10) return false;"></ion-input>,
+          <ion-input required [(ngModel)]="montoDecimal" type="number" placeholder=""onKeyPress="if(this.value.length==2) return false;"></ion-input>
+        </ion-item>
+      </ion-row>
+    </ion-card-content>
+       
     <ion-button float-right expand="full" class="btn-enviar" fill="outline" (click)="realizarPago()">Enviar
     </ion-button>
   </ion-card>

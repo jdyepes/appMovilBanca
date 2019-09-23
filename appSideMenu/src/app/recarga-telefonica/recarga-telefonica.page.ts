@@ -140,7 +140,7 @@ export class RecargaTelefonicaPage implements OnInit {
                 this.prefijoAccion = this.prefijoAccion + 'O';
               }
               // tslint:disable-next-line:max-line-length
-              this.mensajeEnviar = this.prefijoAccion + ((this.tipoCuentaOrigen).shortCode).toUpperCase() +  ' ' + (this.operadoraSeleccion).number + this.telefonoSeleccion + ' ' + this.montoEntero + ',' + this.montoDecimal + ' ' + (this.tipoCuentaOrigen).shortCode + this.correlativoOrigen;
+              this.mensajeEnviar = this.prefijoAccion + ' ' + (this.tipoCuentaOrigen).shortCode + this.correlativoOrigen + ' ' + (this.operadoraSeleccion).number + this.telefonoSeleccion + ' ' + this.montoEntero + ',' + this.montoDecimal;
               console.log('mensaje a enviar: ' + this.mensajeEnviar);
               this.sendSMS(this.mensajeEnviar);
               this.prefijoAccion = this.rutaActiva.snapshot.params.operacionTel;
@@ -169,8 +169,9 @@ export class RecargaTelefonicaPage implements OnInit {
   }
 
   validarCampos(): boolean {
-    let numberPattern = new RegExp(/^\d*$/);
+    let numberPattern = new RegExp(/^[0-9]{2}$/);
     let telPattern = new RegExp(/^[0-9]{7}$/);
+    let maxLongMontoEntero = new RegExp(/^[0-9]{1,10}$/);//// max diez numeros enteros
     if (this.prefijoAccion === undefined) {
       this.mostrarError('El prefijo no se pudo cargar. Intente nuevamente.');
       return false;
@@ -184,21 +185,25 @@ export class RecargaTelefonicaPage implements OnInit {
       return false;
     } else
     if (!telPattern.test(this.telefonoSeleccion)) {
-      this.mostrarError('Teléfono inválido');
+      this.mostrarError('Teléfono inválido.');
+      return false;
+    } else
+    if (!maxLongMontoEntero.test(this.montoEntero)) {
+      this.mostrarError('Monto inválido. ' + '<BR>' + 'Indique máximo diez dígitos del monto a recargar.');     
       return false;
     } else
     if (this.montoEntero === undefined) {
       this.mostrarError('Campo requerido. ' + '<BR>' + 'Indique el monto a recargar.');
       this.montoEntero = undefined;
       return false;
-    } else
+    } else   
     if (this.montoDecimal === undefined) {
       this.mostrarError('Campo requerido. ' + '<BR>' + 'Indique los dos decimales.');
       this.montoDecimal = undefined;
       return false;
     } else
-    if (!numberPattern.test(this.montoEntero) || !numberPattern.test(this.montoDecimal)) {
-      this.mostrarError('Ha ingresado un monto inválido');
+    if (!numberPattern.test(this.montoDecimal)) {
+      this.mostrarError('Ha ingresado un monto inválido.');
       return false;
     } else
     if (this.tipoCuentaOrigen === undefined) {
