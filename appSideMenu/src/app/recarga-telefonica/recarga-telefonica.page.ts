@@ -171,7 +171,7 @@ export class RecargaTelefonicaPage implements OnInit {
   validarCampos(): boolean {
     let numberPattern = new RegExp(/^[0-9]{2}$/);
     let telPattern = new RegExp(/^[0-9]{7}$/);
-    let maxLongMontoEntero = new RegExp(/^[0-9]{1,10}$/);//// max diez numeros enteros
+    let maxLongMontoEntero = new RegExp(/^[0-9]{1,10}$/);//// max uno a diez numeros enteros
     if (this.prefijoAccion === undefined) {
       this.mostrarError('El prefijo no se pudo cargar. Intente nuevamente.');
       return false;
