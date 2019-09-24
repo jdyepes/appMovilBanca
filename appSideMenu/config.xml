@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.ionic.starter" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>BFC SMS QA</name>
+    <name>BFC SMS</name>
     <description>Aplicacion movil que utiliza el servicio de mensajeria SMS de modo MO.</description>
     <author email="hi@ionicframework.com" href="http://ionicframework.com/">Desarrollado por Jesus Yepes para BFC Banco Fondo Común. Derechos reservados 2019.</author>
     <content src="index.html" />
