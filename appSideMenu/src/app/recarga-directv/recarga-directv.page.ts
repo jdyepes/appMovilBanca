@@ -99,8 +99,9 @@ export class RecargaDirectvPage implements OnInit {
   }
 
   validarCampos(): boolean {
-    let numberPattern = new RegExp(/^\d*$/);
+    let numberPattern = new RegExp(/^[0-9]{2}$/);
     let prepagoPattern = new RegExp(/^[0-9]{12}$/);    // se quita opcion previo pago el miercoles 4 sep
+    let maxLongMontoEntero = new RegExp(/^[0-9]{1,10}$/);//// max uno a diez numeros enteros
     if (this.prefijoAccion === undefined) {
       this.mostrarError('El prefijo no se pudo cargar. Intente nuevamente');
       return false;
@@ -114,6 +115,10 @@ export class RecargaDirectvPage implements OnInit {
       this.mostrarError('Número de Tarjeta inválido. Ingrese un total de doce dígitos');
       return false;
     } else
+    if (!maxLongMontoEntero.test(this.montoEntero)) {
+      this.mostrarError('Monto inválido. ' + '<BR>' + 'Indique máximo diez dígitos del monto a recargar.');
+      return false;
+    } else
     if (this.montoEntero === undefined) {
       this.mostrarError('Campo requerido. ' + '<BR>' + 'Indique el monto a recargar.');
       this.montoEntero = undefined;
@@ -124,7 +129,7 @@ export class RecargaDirectvPage implements OnInit {
       this.montoDecimal = undefined;
       return false;
     } else
-    if (!numberPattern.test(this.montoEntero) || !numberPattern.test(this.montoDecimal)) {
+    if (!numberPattern.test(this.montoDecimal)) {
       this.mostrarError('Ha ingresado un monto inválido');
       return false;
     } else
@@ -172,7 +177,7 @@ export class RecargaDirectvPage implements OnInit {
               }
               // se quito opcion previo pago mier 4 sep   
               // tslint:disable-next-line:max-line-length
-              this.mensajeEnviar = this.prefijoAccion + ' ' + this.numeroClienteContrato + ' ' + this.montoEntero + ',' + this.montoDecimal + ' ' + auxAccounts.shortCode + this.correlativoOrigen;
+              this.mensajeEnviar = this.prefijoAccion + ' ' + auxAccounts.shortCode + this.correlativoOrigen + ' ' + this.numeroClienteContrato + ' ' + this.montoEntero + ',' + this.montoDecimal;
               console.log('mensaje a enviar: ' + this.mensajeEnviar);
               this.sendSMS(this.mensajeEnviar);
             }

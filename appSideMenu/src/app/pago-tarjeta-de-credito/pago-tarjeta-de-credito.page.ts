@@ -135,8 +135,8 @@ async realizarPagoTDC() {
   }
 
   validarCampos(): boolean {
-    let numberPattern = new RegExp(/^\d*$/);
-
+    let numberPattern = new RegExp(/^[0-9]{2}$/);// decimales
+    let maxLongMontoEntero = new RegExp(/^[0-9]{1,10}$/);//// max uno a diez numeros enteros
     if (this.prefijoAccion === undefined) {
       this.mostrarError('El prefijo no se pudo cargar. Intente nuevamente.');
       return false;
@@ -161,6 +161,10 @@ async realizarPagoTDC() {
       this.correlativoDestino = undefined;
       return false;
     } else
+    if (!maxLongMontoEntero.test(this.montoEntero)) {
+      this.mostrarError('Monto inválido. ' + '<BR>' + 'Indique máximo diez dígitos del monto a recargar.');
+      return false;
+    } else
     if (this.montoEntero === undefined) {
       this.mostrarError('Campo requerido. ' + '<BR>' + 'Indique el monto a transferir.');
       this.montoEntero = undefined;
@@ -171,7 +175,7 @@ async realizarPagoTDC() {
       this.montoDecimal = undefined;
       return false;
     } else
-    if (!numberPattern.test(this.montoEntero) || !numberPattern.test(this.montoDecimal)) {
+    if (!numberPattern.test(this.montoDecimal)) {
       this.mostrarError('Ha ingresado un monto inválido');
       return false;
     } else {
