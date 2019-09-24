@@ -177,7 +177,7 @@ export class RecargaDirectvPage implements OnInit {
               }
               // se quito opcion previo pago mier 4 sep   
               // tslint:disable-next-line:max-line-length
-              this.mensajeEnviar = this.prefijoAccion + ' ' + this.numeroClienteContrato + ' ' + this.montoEntero + ',' + this.montoDecimal + ' ' + auxAccounts.shortCode + this.correlativoOrigen;
+              this.mensajeEnviar = this.prefijoAccion + ' ' + auxAccounts.shortCode + this.correlativoOrigen + ' ' + this.numeroClienteContrato + ' ' + this.montoEntero + ',' + this.montoDecimal;
               console.log('mensaje a enviar: ' + this.mensajeEnviar);
               this.sendSMS(this.mensajeEnviar);
             }
