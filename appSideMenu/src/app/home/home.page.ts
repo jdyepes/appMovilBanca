@@ -143,7 +143,7 @@ export class HomePage {
     this.appPages[5].icon = 'bookmarks';
     this.appPages[5].src = '';
 
-    this.appPages[6].title = 'Suspension de TDD';
+    this.appPages[6].title = 'Suspensión de TDD';
     this.appPages[6].url = '/suspension-tarjeta-de-debito/' + this.numeroDestinoProveedor + '/' + this.prefijoSuspensionTDD;
     this.appPages[6].icon = 'close-circle';
     this.appPages[6].src = '';
