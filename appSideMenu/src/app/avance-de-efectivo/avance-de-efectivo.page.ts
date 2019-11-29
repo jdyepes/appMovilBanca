@@ -162,7 +162,7 @@ export class AvanceDeEfectivoPage implements OnInit {
       this.mostrarError('Número de CVV es de 3 dígitos');
       return false;
     } else
-    if (!numberPattern.test(this.cvvTarjeta)) {
+    if (!numberCVVPattern.test(this.cvvTarjeta)) {
       this.mostrarError('Número de CVV inválido');
       return false;
     } else
