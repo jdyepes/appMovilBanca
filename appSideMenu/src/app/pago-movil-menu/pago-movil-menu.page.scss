@@ -23,6 +23,23 @@
     }
 }
 
+.btn-center {
+    height: 110px;
+    max-width: 48%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -110px;
+    margin-top: 25px;
+    display: block !important;
+    --background: rgb(245, 244, 244);
+    --border-radius: 10px;
+    p {
+        color: black;
+        font-weight: 550;
+    }
+}
+
 .btn-right {
     height: 110px;
     max-width: 48%;
