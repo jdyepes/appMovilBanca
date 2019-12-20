@@ -21,7 +21,6 @@ namespace WSProveedorSMSApi.Controllers
         {
             try
             {
-                /// lee desde el archivo de configuracion los numeros de destino del proveedor
                 Proveedor pro = new Proveedor(
                     Convert.ToInt32(ConfigurationManager.AppSettings.Get("idProveedor")),
                     ConfigurationManager.AppSettings.Get("nombreProveedor"),
