@@ -1,0 +1,50 @@
+.card-title {
+  margin-bottom:200px;
+  background: #0d46a0; 
+  color: whitesmoke;
+  font-size: 20px;
+  text-align: center;
+}
+  
+.card-content {
+    margin-top: -100px; 
+    margin-bottom: 200px;
+}
+
+.btn-left {
+    height: 100px; 
+    width: 48%; 
+    --background:rgb(138, 4, 4);
+    --border-radius: 10px;
+    p {
+        color: white;
+        font-weight: 500;
+        margin-left: auto; 
+        margin-right: auto; 
+       } 
+}
+
+.btn-right {
+    height: 100px; 
+    width: 48%; 
+    --background: #0d46a0;
+    --border-radius: 10px;
+    p {
+        color: white;
+        font-weight: 500;
+        margin-left: auto; 
+        margin-right: auto; 
+       } 
+}
+
+.logo-img-btn {
+    width: 100px; 
+    height: 50px !important; 
+    margin-left: 0;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: 0;
+    display: block;
+    transform: scale(1);
+    --border-radius: 5px; 
+  }

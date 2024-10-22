@@ -1,18 +1,82 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Suspension de Tárjeta de Débito</ion-title>
+    <ion-title>Suspensión de Tarjeta de Débito</ion-title>
     <ion-buttons slot="start">
-        <ion-back-button color= "primary" defaultHref="home" icon="arrow-back" defaultHref="#"></ion-back-button>
+        <ion-button (click)="regresar()">
+          <ion-icon color="primary" slot="start" name="arrow-back"></ion-icon>
+          <p class="arrow-back">atrás</p>
+        </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card class="page-card">
+    <ion-img src="/assets/icon/logoTUBFCpage.png" class="logo-img"></ion-img>
+    <ion-title class="number-home">{{numeroDestino}}</ion-title>
+  </ion-card>
 
-</ion-content>
+  <!--<ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content 
+      pullingText="Deslice para actualizar">
+      </ion-refresher-content>
+    </ion-refresher>-->
 
-<ion-footer>
-    <ion-toolbar>
-      <ion-title>Footer</ion-title>
+<ion-card class="content-card">
+  <ion-card-header class="card-title">Suspender TDD</ion-card-header>
+  <ion-card-content>
+  <ion-row>
+    <ion-col class="card-content-name">
+    <ion-item class="item-name">
+      <ion-label>Tipo de Documento</ion-label>
+      <ion-select required [(ngModel)]="tipoIdentificacion" style="padding:5px; " placeholder="" okText="Aceptar"
+        cancelText="Cancelar">
+        <ion-select-option *ngFor="let option of tipos" [value]="option.type">{{option.type}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-item style="margin-left:10px; margin-right: 9px; width:100%;" class="item-name">
+      <ion-label style="">Número de Cédula</ion-label>
+        <ion-input required [(ngModel)]="numeroCedula" type="tel" placeholder="">    
+      </ion-input>
+    </ion-item>
+  </ion-row>
+  <ion-row>
+    <ion-col style="margin-top: -5px;" class="card-content-name">
+    <ion-item style="width:auto;" class="item-name">
+      <ion-label>Motivo</ion-label>
+      <ion-select required [(ngModel)]="motivoSuspension" style="padding:5px; " placeholder="" okText="Aceptar"
+        cancelText="Cancelar">
+        <ion-select-option *ngFor="let option of motivos" [value]="option">{{option.id}}: {{option.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-grid>
+    <ion-row>
+      <!--<ion-button class="btn-stdd" (click)="suspenderTarjeta()">
+        <p> Enviar <BR>
+          SMS <BR>
+        </p>
+        <ion-img src="/assets/icon/suspensionTDD.svg" class="logo-img-btn"></ion-img>
+      </ion-button>-->
+    </ion-row>
+  </ion-grid>
+  </ion-card-content>
+
+  <ion-button float-right expand="full" class="btn-enviar" fill="outline" (click)="suspenderTarjeta()">Enviar
+  </ion-button>
+  </ion-card>
+
+  <ion-footer>
+    <ion-toolbar id="std" class="toolbar-container"> 
+        <ion-title ></ion-title>
+        <p>{{mensajeFooter1}}</p>
+        <p>{{mensajeFooter2}}</p>
+        <p>{{mensajeFooter3}}</p>
+        <p>{{mensajeFooter4}}</p>      
     </ion-toolbar>
   </ion-footer>
+</ion-content>

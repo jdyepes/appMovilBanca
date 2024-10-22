@@ -1,0 +1,389 @@
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\WSProveedorSMSApi.dll.config
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\WSProveedorSMSApi.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\WSProveedorSMSApi.pdb
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Antlr3.Runtime.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\EntityFramework.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Data.Edm.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Data.OData.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Newtonsoft.Json.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Net.Http.Formatting.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Spatial.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Helpers.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.OData.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.Tracing.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.WebHost.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Mvc.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Optimization.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Providers.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Razor.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.Razor.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\WebGrease.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\EntityFramework.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Newtonsoft.Json.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Net.Http.Formatting.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Helpers.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.WebHost.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Mvc.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Razor.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.Razor.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.Tracing.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.OData.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Data.Edm.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Data.OData.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Spatial.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\de\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\es\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\fr\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\it\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ja\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ko\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ru\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\obj\Debug\WSProveedorSMSApi.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\obj\Debug\WSProveedorSMSApi.pdb
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\obj\Debug\WSProveedorSMSApi.csprojResolveAssemblyReference.cache
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\WSProveedorSMSApi.dll.config
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\WSProveedorSMSApi.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\WSProveedorSMSApi.pdb
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\EntityFramework.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Data.Edm.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Data.OData.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Newtonsoft.Json.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Net.Http.Formatting.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Spatial.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Helpers.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.OData.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.Tracing.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.WebHost.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Mvc.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Providers.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Razor.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.Razor.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\EntityFramework.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Newtonsoft.Json.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Net.Http.Formatting.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Helpers.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.WebHost.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Mvc.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Razor.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.Razor.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.Tracing.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.OData.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Data.Edm.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Data.OData.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Spatial.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\de\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\es\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\fr\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\it\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ja\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ko\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ru\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\obj\Debug\WSProveedorSMSApi.csprojResolveAssemblyReference.cache
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\obj\Debug\WSProveedorSMSApi.csproj.CoreCompileInputs.cache
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\obj\Debug\WSProveedorSMSApi.csproj.CopyComplete
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\obj\Debug\WSProveedorSMSApi.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\obj\Debug\WSProveedorSMSApi.pdb
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\EntityFramework.SqlServer.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.Jwt.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Owin.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Cors.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.Cors.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\EntityFramework.SqlServer.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Logging.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Protocols.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.Jwt.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.Cors.xml
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Antlr3.Runtime.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Optimization.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\WebGrease.dll
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Antlr3.Runtime.pdb
+C:\Users\Jesus Yepes\Desktop\tig\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Optimization.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\WSProveedorSMSApi.dll.config
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\WSProveedorSMSApi.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\WSProveedorSMSApi.pdb
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Antlr3.Runtime.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\EntityFramework.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\EntityFramework.SqlServer.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Data.Edm.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Data.OData.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.Jwt.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Newtonsoft.Json.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Owin.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Net.Http.Formatting.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Spatial.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Cors.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Helpers.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.Cors.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.OData.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.Tracing.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.WebHost.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Mvc.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Optimization.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Providers.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Razor.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.Razor.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\WebGrease.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Antlr3.Runtime.pdb
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\EntityFramework.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\EntityFramework.SqlServer.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Logging.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Protocols.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.Jwt.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Newtonsoft.Json.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Net.Http.Formatting.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.Cors.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.WebHost.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Optimization.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Helpers.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Mvc.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Razor.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.Razor.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.Tracing.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.OData.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Data.Edm.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Data.OData.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Spatial.xml
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\de\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\es\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\fr\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\it\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ja\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ko\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ru\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\obj\Debug\WSProveedorSMSApi.csprojResolveAssemblyReference.cache
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\obj\Debug\WSProveedorSMSApi.csproj.CoreCompileInputs.cache
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\obj\Debug\WSProveedorSMSApi.csproj.CopyComplete
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\obj\Debug\WSProveedorSMSApi.dll
+C:\Users\Jesus Yepes\Desktop\tig\codigo fuente\servicio rest c# extraccion numero del proveedor\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\obj\Debug\WSProveedorSMSApi.pdb
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\WSProveedorSMSApi.dll.config
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\WSProveedorSMSApi.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\WSProveedorSMSApi.pdb
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Antlr3.Runtime.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\EntityFramework.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\EntityFramework.SqlServer.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Data.Edm.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Data.OData.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.Jwt.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Newtonsoft.Json.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Owin.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Net.Http.Formatting.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Spatial.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Cors.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Helpers.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.Cors.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.OData.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.Tracing.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.WebHost.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Mvc.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Optimization.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Providers.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Razor.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.Razor.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\WebGrease.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Antlr3.Runtime.pdb
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\EntityFramework.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\EntityFramework.SqlServer.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Logging.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Protocols.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.Jwt.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Newtonsoft.Json.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Net.Http.Formatting.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.Cors.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.WebHost.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Optimization.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Helpers.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Mvc.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Razor.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.WebPages.Razor.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.Tracing.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Web.Http.OData.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Data.Edm.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\Microsoft.Data.OData.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\System.Spatial.xml
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\de\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\es\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\fr\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\it\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ja\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ko\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\ru\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\obj\Debug\WSProveedorSMSApi.dll
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\obj\Debug\WSProveedorSMSApi.pdb
+C:\Users\Jesus Yepes\Desktop\workspaces\ServicioRestProveedorVS\ServicioRestProveedorVS\WSProveedorSMSApi\WSProveedorSMSApi\obj\Debug\WSProveedorSMSApi.csprojResolveAssemblyReference.cache
