@@ -2,15 +2,25 @@
   <ion-toolbar>
     <ion-title>Avance de Efectivo TDC</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button color= "primary" defaultHref="home" icon="arrow-back" defaultHref="#"></ion-back-button>
+      <ion-button (click)="regresar()">
+        <ion-icon color="primary" slot="start" name="arrow-back"></ion-icon>
+        <p class="arrow-back">atrás</p>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
 <ion-content>
     <ion-card class="page-card">
         <ion-img src="/assets/icon/logoTUBFCpage.png" class="logo-img"></ion-img>
+        <ion-title class="number-home">{{numeroDestino}}</ion-title>
     </ion-card>
 
+  <!--  <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content pullingText="Deslice para actualizar">
+      </ion-refresher-content>
+    </ion-refresher> -->
+    
     <ion-card>
         <ion-card-header class="card-title">Datos del Pago</ion-card-header>
         <ion-card-content>
@@ -77,10 +87,14 @@
             <ion-button float-right expand="full" class="btn-enviar" fill="outline" (click)="realizarAvanceTDC()">Enviar SMS</ion-button>          
         </ion-card-content>
     </ion-card>
-</ion-content>
 
 <ion-footer>
-    <ion-toolbar>
-        <ion-title>Footer</ion-title>
+    <ion-toolbar class="toolbar-container"> 
+        <ion-title ></ion-title>
+        <p>{{mensajeFooter1}}</p>
+        <p>{{mensajeFooter2}}</p>
+        <p>{{mensajeFooter3}}</p>
+        <p>{{mensajeFooter4}}</p>      
     </ion-toolbar>
-</ion-footer>
+  </ion-footer>
+</ion-content>

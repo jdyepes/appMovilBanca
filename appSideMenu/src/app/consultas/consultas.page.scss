@@ -1,53 +1,48 @@
-.page-card ion-img {
-    max-height: 200px; 
-  }
-  
-.page-card {
-    --webkit-box-shadow: none;
-    box-shadow: none;
-    margin-top: 10px;    
-  }
-  
-.logo-img {
-    width: 300px; 
-    height: 100px; 
-    margin-left: auto; 
-    margin-right: auto; 
-    display: block;
-}
-  
-ion-item{ 
-    --border-color: #0d46a0; 
-}
-
 .btn-saldo{
     margin-left: auto;
     margin-right: auto;
     display: block !important;
-    height: 70px;
-    width: 100%;
-    font-size: 18px;
-    --background: #f7b423;
+    height: 120px;
+    width: 80%;
+    font-size: 16px;    
+  //--background: #f7b423;    
+  --background: rgb(245, 244, 244);  // rgba(213, 225, 238, 0.664);// rgba(255, 166, 0, 0.788);
+  --border-radius: 10px;
+   p {
+    color: #0d46a0;
+    font-weight: bold;
+   }
+
 }
 
 .btn-movimiento{
     margin-left: auto;
     margin-right: auto;
     display: block !important;
-    height: 70px;
-    width: 100%;
-    font-size: 18px;
-    --background: #ad1010;
+    height: 120px;
+    width: 80%;
+    font-size: 16px;
+    --background: rgb(245, 244, 244);  // rgba(213, 225, 238, 0.664);// rgba(255, 166, 0, 0.788);
+    --border-radius: 10px;
+    p {
+    color: rgb(240, 6, 6);
+    font-weight: bold;
+   }
 }
 
 .btn-tdc{
     margin-left: auto;
     margin-right: auto;
     display: block !important;
-    height: 70px;
-    width: 100%;
-    font-size: 18px;
-    --background: #0d46a0;
+    height: 120px;
+    width: 80%;
+    font-size: 16px;
+    --background: rgb(245, 244, 244);  // rgba(213, 225, 238, 0.664);// rgba(255, 166, 0, 0.788);
+    --border-radius: 10px; 
+    p {
+      color: black;
+      font-weight: bold;
+     }  
 }
 
 .card-menu{
@@ -60,4 +55,12 @@ ion-item{
   color: whitesmoke;
   font-size: 20px;
   text-align: center;
+}
+
+.logo-img-btn {
+  width: 300px; 
+  height: 100px; 
+  margin-left: auto; 
+  margin-right: auto; 
+  display: block;  
 }

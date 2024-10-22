@@ -3,8 +3,10 @@
   <ion-toolbar>
     <ion-title>Consultas</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button color="primary" text="atrás" icon="arrow-back" defaultHref="home">
-      </ion-back-button>
+      <ion-button (click)="regresar()">
+        <ion-icon color="primary" slot="start" name="arrow-back"></ion-icon>
+        <p class="arrow-back">atrás</p>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -12,13 +14,19 @@
 
   <ion-card class="page-card">
     <ion-img src="/assets/icon/logoTUBFCpage.png" class="logo-img"></ion-img>
+    <ion-title class="number-home">{{numeroProveedor}}</ion-title>
   </ion-card>
-  
+ 
   <ion-card class="card-menu"> 
+      <ion-card-header class="card-title">Opciones</ion-card-header>
     <ion-card-content>
       <ion-grid>
         <ion-row>
-          <ion-button expand="full"  class="btn-saldo" (click)="abrirSiguientePag(1)" >Saldo</ion-button> 
+          <ion-button class="btn-saldo" (click)="abrirSiguientePag(1)" >            
+            <p> Saldo</p>
+            <ion-img src="/assets/icon/saldo.png" class="logo-img-btn"></ion-img>
+          
+          </ion-button> 
         </ion-row>      
       </ion-grid>
     </ion-card-content>
@@ -26,7 +34,10 @@
     <ion-card-content> 
       <ion-grid>
         <ion-row>
-          <ion-button expand="full" class="btn-movimiento" (click)="abrirSiguientePag(2)">Movimientos</ion-button>
+          <ion-button class="btn-movimiento" (click)="abrirSiguientePag(2)">
+            <ion-img src="/assets/icon/movimientos.png" class="logo-img-btn"></ion-img>
+            <p> Movimientos</p>
+          </ion-button>
         </ion-row>
       </ion-grid>
     </ion-card-content>
@@ -34,15 +45,24 @@
     <ion-card-content>
       <ion-grid>
         <ion-row>
-          <ion-button expand="full" class="btn-tdc" (click)="abrirSiguientePag(3)">Tarjeta de Crédito (TDC)</ion-button>
+          <ion-button class="btn-tdc" (click)="abrirSiguientePag(3)">        
+            <p> Tarjeta <BR>
+                  de <BR>
+             Crédito </p>  
+            <ion-img src="/assets/icon/tdc.png" class="logo-img-btn"></ion-img>              
+          </ion-button>
         </ion-row>
       </ion-grid>
     </ion-card-content>
   </ion-card>
-</ion-content>
 
-<ion-footer>
-  <ion-toolbar>
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>
+  <ion-footer>
+    <ion-toolbar class="toolbar-container"> 
+        <ion-title ></ion-title>
+        <p>{{mensajeFooter1}}</p>
+        <p>{{mensajeFooter2}}</p>
+        <p>{{mensajeFooter3}}</p>
+        <p>{{mensajeFooter4}}</p>      
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

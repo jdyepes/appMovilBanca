@@ -1,37 +1,46 @@
-<!--<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      Principal
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
--->
-<ion-card class="welcome-card">   
-  <ion-img src="/assets/icon/logoTUBFC.png" class="logo-img"></ion-img>      
-</ion-card>
-
 <ion-content>
-<ion-card>
-  <ion-card-content>
-    <ion-list>
-        <ion-label auto-hide="false" *ngFor="let p of appPages">
-          <ion-item class="item-divider" [routerDirection]="'root'" [routerLink]="[p.url]">
-            <ion-icon slot="start" [name]="p.icon" [src]="p.src"></ion-icon>
-            <ion-label>
-              {{p.title}}
-            </ion-label>
-          </ion-item>
-        </ion-label>
-    </ion-list>
-  </ion-card-content>
-</ion-card>
-</ion-content>
-
-<ion-footer>
-    <ion-toolbar>
-        <ion-title>Footer</ion-title>
+  
+<ion-header>
+    <ion-toolbar class="toolbar-home">
+      <ion-buttons class="boton-superior" slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-card class="welcome-card">
+        <ion-img src="/assets/icon/logoTUBFC.png" class="logo-img"></ion-img>
+        <ion-title class="number-home">{{numeroDestinoProveedor}}</ion-title>
+      </ion-card>
     </ion-toolbar>
-</ion-footer>
+  </ion-header>
+  
+<!--
+  <ion-card class="welcome-card">   
+    <ion-img src="/assets/icon/logoTUBFC.png" class="logo-img"></ion-img>      
+  <ion-title class="number-home">{{numeroDestinoProveedor}}</ion-title>
+  </ion-card>
+-->
+  <ion-card class="menu-principal">
+    <ion-card-content>
+      <ion-list>
+          <ion-label auto-hide="false" *ngFor="let p of appPages">
+            <ion-item class="item-divider" [routerDirection]="'root'" [routerLink]="[p.url]" >
+              <ion-icon slot="end" [name]="p.icon" [src]="p.src"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-label>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <br>
+  <ion-footer  >
+      <ion-toolbar id="home" class="toolbar-container"> 
+          <ion-title ></ion-title>
+          <p>{{mensajeFooter1}}</p>
+          <p>{{mensajeFooter2}}</p>
+          <p>{{mensajeFooter3}}</p>
+          <p>{{mensajeFooter4}}</p>
+          <p>{{mensajeFooter5}}</p>
+      </ion-toolbar>
+  </ion-footer>
+</ion-content>

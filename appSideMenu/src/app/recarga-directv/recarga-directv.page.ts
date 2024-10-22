@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController, Platform } from '@ionic/angular';
+
+import { SMS } from '@ionic-native/sms/ngx';
+import { ActivatedRoute } from '@angular/router';
+import { MENSAJE_SUBPAGINAS } from '../../constantes/prefijo-opciones';
 
 @Component({
   selector: 'app-recarga-directv',
@@ -9,8 +13,9 @@ import { AlertController } from '@ionic/angular';
 export class RecargaDirectvPage implements OnInit {
 
   prefijoAccion: string;
+  prefijoTelefonia: string;
   servicioSeleccion: any;
-  numeroClienteContrato: number|string;
+  numeroClienteContrato: string;
   tipoCuentaOrigen: any;
   correlativoOrigen: string;
   montoEntero: string;
@@ -19,14 +24,32 @@ export class RecargaDirectvPage implements OnInit {
   mostrar: boolean;
   prepago: boolean;
   mensajeEnviar: string;
+  numeroDestino: string;
+  recargasMenu: string;
+  subscription: any;
 
-  constructor(public alertCtrl: AlertController) {
-    this.prefijoAccion = 'RD';
+  /** Mensajes pie de pagina */
+  mensajeFooter1: string = MENSAJE_SUBPAGINAS.mensajeFooter1;
+  mensajeFooter2: string = MENSAJE_SUBPAGINAS.mensajeFooter2;
+  mensajeFooter3: string = MENSAJE_SUBPAGINAS.mensajeFooter3;
+  mensajeFooter4: string = MENSAJE_SUBPAGINAS.mensajeFooter4;
+ 
+  /** Navegacion entre paginas por rutas */
+  constructor(public alertCtrl: AlertController,
+              private sms: SMS, private rutaActiva: ActivatedRoute,
+              private navCtrl: NavController, private platform: Platform)
+  {
+    /** Recepcion de parametros */
+    this.prefijoAccion = this.rutaActiva.snapshot.params.operacionDirectv;
+    this.prefijoTelefonia = this.rutaActiva.snapshot.params.operacionTel;
+    this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
+
     this.operacion = 'RECARGA DIRECTV';
-    this.mostrar = false;
-  }
-
-  ngOnInit() {
+        // regreso a la pag anterior
+    this.recargasMenu = 'recargas/' + this.numeroDestino + '/' + this.prefijoTelefonia + '/' + this.prefijoAccion;
+    this.servicioSeleccion = 'Prepago';
+    this.prepago = true;
+    this.montoDecimal === undefined ? this.montoDecimal = '00' : this.montoDecimal ;
   }
 
   accounts: any[] = [
@@ -46,65 +69,167 @@ export class RecargaDirectvPage implements OnInit {
   servicios: any[] = [
     {
       id: 1,
-      name: 'Prepago',
-    },
-    {
+      name: '',
+    }/*,
+   {
       id: 2,
       name: 'Previo Pago',
-    }
+    }*/
   ];
 
-  //correlativos
+  // correlativos
   options: number[] = [1, 2, 3, 4, 5, 6];
 
-  //evento del seleccionarServicio
-  mostrarContenido()
-  {
-    let aux = this.servicioSeleccion;
-    aux.id === 1 ? this.prepago = true : false; //prepago
-    aux.id === 2 ? this.prepago = false : true; //previo pago
-    this.mostrar = true; //oculta o no el contenido
-    this.numeroClienteContrato = '';
-    this.prefijoAccion = 'RD';
+  // deshabilita el boton regresar antes de salir de la pag
+  ionViewWillLeave() {
+    this.subscription.unsubscribe();
+  }
+
+  // evento cuando se presiona el boton de regresar en el telefono
+  initializeBackButton() {
+    this.subscription = this.platform.backButton.subscribeWithPriority(999999, () => {
+      this.regresar();
+    });
+  }
+
+  ngOnInit() {
+    this.initializeBackButton();
+    this.servicios[0].id = 1;
+    this.servicios[0].name = 'Prepago';
+  }
+
+  validarCampos(): boolean {
+    let numberPattern = new RegExp(/^[0-9]{2}$/);
+    let prepagoPattern = new RegExp(/^[0-9]{12}$/);    // se quita opcion previo pago el miercoles 4 sep
+    let maxLongMontoEntero = new RegExp(/^[0-9]{1,10}$/);//// max uno a diez numeros enteros
+    if (this.prefijoAccion === undefined) {
+      this.mostrarError('El prefijo no se pudo cargar. Intente nuevamente');
+      return false;
+    } else
+    if (this.numeroClienteContrato === undefined || this.numeroClienteContrato === '') {
+      this.mostrarError('Campo requerido. ' + '<BR>' + 'Indique el número de tarjeta.');
+      this.numeroClienteContrato = undefined;
+      return false;
+    } else
+      if (!prepagoPattern.test(this.numeroClienteContrato)) {
+      this.mostrarError('Número de Tarjeta inválido. Ingrese un total de doce dígitos');
+      return false;
+    } else
+    if (!maxLongMontoEntero.test(this.montoEntero)) {
+      this.mostrarError('Monto inválido. ' + '<BR>' + 'Indique máximo diez dígitos del monto a recargar.');
+      return false;
+    } else
+    if (this.montoEntero === undefined) {
+      this.mostrarError('Campo requerido. ' + '<BR>' + 'Indique el monto a recargar.');
+      this.montoEntero = undefined;
+      return false;
+    } else
+    if (this.montoDecimal === undefined) {
+      this.mostrarError('Campo requerido. ' + '<BR>' + 'Indique los dos decimales.');
+      this.montoDecimal = undefined;
+      return false;
+    } else
+    if (!numberPattern.test(this.montoDecimal)) {
+      this.mostrarError('Ha ingresado un monto inválido');
+      return false;
+    } else
+    if (this.tipoCuentaOrigen === undefined) {
+      this.mostrarError('Campo requerido. ' + '<BR>' + 'Seleccione la cuenta origen.');
+      this.tipoCuentaOrigen = undefined;
+      return false;
+    } else
+    if (this.correlativoOrigen === undefined) {
+      this.mostrarError('Campo requerido. ' + '<BR>' + 'Seleccione el correlativo de origen.');
+      this.correlativoOrigen = undefined;
+      return false;
+    } else {
+    return true;
+    }
   }
 
   //alertBox
   async realizarPago() {
-    let auxAccounts = this.tipoCuentaOrigen; // recibe la cuenta origen en objeto
-    let auxServicios = this.servicioSeleccion;
+    if (this.validarCampos()) {
+      let auxAccounts = this.tipoCuentaOrigen; // recibe la cuenta origen en objeto
+      let auxServicios = this.servicioSeleccion;
+      let alert = await this.alertCtrl.create({
+        header: 'Alerta',
+        message: 'Confirma que desea realizar una ' + '<b>' + this.operacion + '</b>' +
+          ' con los siguientes datos: ' + '<BR>' +
+          '<b>Servicio: </b>' + auxServicios  + '<BR>' +
+          '<b>Nro Cliente/Contrato: </b>' + this.numeroClienteContrato + '<BR>' +
+          '<b>Monto: </b>' + this.montoEntero + ',' + this.montoDecimal + '<BR>' +
+          '<b>Cuenta a debitar: </b>' + auxAccounts.name + ' ' + this.correlativoOrigen,
+
+        buttons: [
+          {
+            text: 'Cancelar',
+            handler: () => {
+              //no
+              console.log('entro en no');
+            }
+          },
+          {
+            text: 'OK',
+            handler: () => {
+              if (auxServicios === 'Prepago') { //Prepago
+                this.prefijoAccion = this.prefijoAccion + 'D';
+              }
+              // se quito opcion previo pago mier 4 sep   
+              // tslint:disable-next-line:max-line-length
+              this.mensajeEnviar = this.prefijoAccion + ' ' + auxAccounts.shortCode + this.correlativoOrigen + ' ' + this.numeroClienteContrato + ' ' + this.montoEntero + ',' + this.montoDecimal;
+              console.log('mensaje a enviar: ' + this.mensajeEnviar);
+              this.sendSMS(this.mensajeEnviar);
+            }
+          }
+        ]
+      });
+      await alert.present();
+    }
+  }
+
+  async sendSMS(mensaje: string) {
+    // CONFIGURATION
+    var options = {
+      replaceLineBreaks: false, // true to replace \n by a new line, false by default
+      android: {
+        intent: 'INTENT'  // send SMS with the native android SMS messaging
+        //intent: '' // send SMS without opening any other app
+      }
+    };
+    await this.sms.send(this.numeroDestino, mensaje, options);
+  }
+
+  // alertBox
+  async mostrarError(mensaje: string) {
+
     let alert = await this.alertCtrl.create({
       header: 'Alerta',
-      message: 'Confirma que desea realizar una ' + '<b>' + this.operacion + '</b>' +
-        ' con los siguientes datos: ' + '<BR>' +
-        '<b>Servicio: </b>' + auxServicios.name  + '<BR>' +
-        '<b>Nro Cliente/Contrato: </b>' + this.numeroClienteContrato + '<BR>' +
-        '<b>Monto: </b>' + this.montoEntero + ',' + this.montoDecimal + '<BR>' +
-        '<b>Cuenta a debitar: </b>' + auxAccounts.name + ' ' + this.correlativoOrigen,
-
+      message: '<p>' + mensaje + '</p>',
+      cssClass: 'alertColor',
       buttons: [
         {
-          text: 'Cancelar',
-          handler: () => {
-            //no
-            console.log('entro en no');
-          }
-        },
-        {
-          text: 'OK',
-          handler: () => {
-            if (auxServicios.id === 1) {//Prepago
-              this.prefijoAccion = this.prefijoAccion + 'D';
-            }
-            if (auxServicios.id === 2) {//Previo Pago
-              this.prefijoAccion = this.prefijoAccion + 'P';
-            }
-            // tslint:disable-next-line:max-line-length
-            this.mensajeEnviar = this.prefijoAccion + ' ' + this.numeroClienteContrato + ' ' + this.montoEntero + ',' + this.montoDecimal + ' ' + auxAccounts.shortCode + this.correlativoOrigen;
-            console.log('mensaje a enviar: ' + this.mensajeEnviar);
-          }
+          text: 'OK'
         }
       ]
     });
     await alert.present();
+  }
+
+  doRefresh(event) {
+    console.log('Begin async operation');
+    this.navCtrl.pop();
+    this.navCtrl.navigateBack('spinner');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      this.navCtrl.pop();
+      this.navCtrl.navigateForward('recarga-directv/' + this.numeroDestino + '/' + this.prefijoAccion);
+      event.target.complete();
+    }, 1000);
+  }
+
+  regresar() {
+    this.navCtrl.navigateBack(this.recargasMenu);
   }
 }

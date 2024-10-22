@@ -2,7 +2,10 @@
   <ion-toolbar>
     <ion-title>Recargas</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button color="primary" text="atrás" defaultHref="" icon="arrow-back"></ion-back-button>
+      <ion-button (click)="regresar()">
+        <ion-icon color="primary" slot="start" name="arrow-back"></ion-icon>
+        <p class="arrow-back">atrás</p>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -10,25 +13,32 @@
 <ion-content>
   <ion-card class="page-card">
     <ion-img src="/assets/icon/logoTUBFCpage.png" class="logo-img"></ion-img>
+    <ion-title class="number-home">{{numeroProveedor}}</ion-title>
   </ion-card>
-
 
   <ion-card class="card-menu">
     <ion-card-header class="card-title">Opciones</ion-card-header>
     <ion-card-content class="card-content">
       <ion-button float-left class="btn-left" (click)="abrirSiguientePag(1)">
-        <ion-icon slot="start" name="star"></ion-icon>
-        Telefonía
+          <p> Telefonía     
+            <ion-img src="/assets/icon/recargasTelefonicas.png" class="logo-img-btn"></ion-img>
+          </p>
       </ion-button>    
-      <ion-button float-right class="btn-right" (click)="abrirSiguientePag(2)">
-        <ion-icon slot="start" name="star"></ion-icon>
-        Directv 
+      <ion-button float-right class="btn-right" (click)="abrirSiguientePag(2)">    
+          <p> Directv <br> 
+            <ion-img src="/assets/icon/recargaDirectv.png" class="logo-img-btn"></ion-img>
+          </p>
       </ion-button>     
     </ion-card-content>
   </ion-card>
-</ion-content>
+
 <ion-footer>
-  <ion-toolbar>
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>
+    <ion-toolbar id="recargas" class="toolbar-container"> 
+        <ion-title ></ion-title>
+        <p>{{mensajeFooter1}}</p>
+        <p>{{mensajeFooter2}}</p>
+        <p>{{mensajeFooter3}}</p>
+        <p>{{mensajeFooter4}}</p>      
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

@@ -1,0 +1,4 @@
+Refereencia para la api en c# usando mvc 4
+
+1. https://developer.okta.com/blog/2018/07/27/build-crud-app-in-aspnet-framework-webapi-and-angular
+2. https://blog.ng-classroom.com/blog/ionic2/rest-api-with-ionic/

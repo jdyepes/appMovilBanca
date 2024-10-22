@@ -9,15 +9,11 @@
 }
 
 .logo-img {
-  width: 300px; 
-  height: 300px; 
+  width: 250px; 
+  height: 200px; 
   margin-left: auto; 
   margin-right: auto; 
   display: block;
-}
-
-ion-item{ 
-  --border-color: #0d46a0; 
 }
 
 /*.card, .card-md, .card-ios {
@@ -28,12 +24,29 @@ ion-card {
   box-shadow: 0 0px 0px 0px rgba(0,0,0,.2), 0 0px 0px 0px rgba(0,0,0,.14), 0 0px 0px 0 rgba(0,0,0,.12);
   }
 
+// cabecera de la vista home
+.toolbar-home {
+  //--background: #0d46a0;
+  --box-shadow: 0 0px 0px 0px rgba(0,0,0,.2), 0 0px 0px 0px rgba(0,0,0,.14), 0 0px 0px 0 rgba(0,0,0,.12);
+   --webkit-box-shadow: none;
+  box-shadow: none;
+  max-height: 150px;
+  position: relative;   
+}
 
-/* para el logo movil
-.logo-img {
-  width:200px; 
-  height: 200px; 
-  margin-left: auto; 
-  margin-right: auto; 
-  display: block;
-}*/
+// linea de la cabecera del header
+.header-md:after {
+  height: 0px;
+}
+
+// boton del header de la pagina
+.boton-superior {
+    margin-left: 5px;
+    color: #0d46a0;
+}
+
+// card content menu principal (Opciones)
+.menu-principal {
+  margin-left: -10px;
+  margin-right: 5px;
+}

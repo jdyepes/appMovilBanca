@@ -9,3 +9,171 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+ 
+/*Estilos comunes para la aplicacion*/
+/*Estilo para mensajes de alerta*/
+.alertColor {
+  p {
+    color :red;
+    font-weight: bold;
+  } 
+  button{
+      color: #4c8dff !important;   
+  }
+  .alert-button.sc-ion-alert-md {
+    margin-left: auto; 
+    margin-right: auto; 
+    font-size: 16px;
+    line-height: 20px;
+    //font-weight: bold;
+    }
+}
+
+ion-item{ 
+    --border-color: #0d46a0; 
+}
+
+/* imagen dentro del card de todas las paginas*/
+.page-card ion-img {
+    max-height: 200px; 
+}
+
+.page-card {
+    --webkit-box-shadow: none;
+    box-shadow: none;
+    margin-top: 20px; 
+    margin-bottom: 1a0px;   
+  }
+
+/*contenido de los cards Consultas*/
+.content-card {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+
+.content-card-recargas {
+  margin-top: 60px;
+  margin-bottom: 10px;
+}
+
+.logo-img {
+    width: 300px; 
+    height: 100px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    display: block;
+}
+
+.btn-enviar {
+  margin-left: 70px;
+  margin-right: 30px; 
+  margin-bottom: 15px; 
+  margin-top:15px;
+  width: 75px;
+  font-size: 11px;
+}
+
+.arrow-back {
+  color:#3880ff;
+}
+
+/* pie de pagina */
+.toolbar-container {
+  --background: #032864;
+  color: white;
+  ion-title {
+  font-size: 14px;
+  }
+  p {
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.5px;
+    font-family: "Roboto", "Helvetica Neue", sans-serif;
+  }
+  position: relative;
+  bottom: 0;
+  display: block;
+}
+
+/* Modulo de recargas, confirmar pago movil*/
+.item-name {
+    padding:1px; 
+    margin-bottom: 5px;
+}
+  
+.card-title {
+  background: #0d46a0; 
+  color: whitesmoke;
+  font-size: 18px;
+}
+
+.card-content-name {
+    margin-top: 10px; 
+    margin-left: 5px;
+    color: black;
+    font: 400 15px Arial;
+}
+
+.sc-ion-input-md-h {
+  --color: black;
+}
+
+/*Modulo de recargas y pago movil*/
+
+.card-menu {
+  margin-top: 20px;
+}
+
+/* Numero del proveedor de SMS en el HOME*/
+.number-home {
+    color: #e70202;
+    text-align: center; 
+    font-weight: bold;
+    font-family: Arial;
+    letter-spacing: 20px;   
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: -15px; 
+    font-size: 24px;
+}
+
+/**Propiedad responsive pie de pagina */
+/* 
+ * Creado sabado 31 agosto 4to sprint
+ * Propiedad responsive para ubicar el pie
+ * de pagina (footer) siempre al final de las vistas
+ * especificadas
+*/
+@media screen and (min-height: 645px){
+  #home {
+    margin-top: calc(100vh - 648px);
+   }  
+}
+
+@media screen and (min-height: 595px){
+   #saldo, #movimiento, #tdc {
+    margin-top: calc(100vh - 535px);
+   }
+   #pago-movil-menu {
+      margin-top: calc(100vh - 590px);
+   }  
+}
+
+@media screen and (min-height: 645px){
+   #recargas {
+    margin-top: calc(100vh - 639px);
+   }  
+}
+   
+@media screen and (min-height: 732px){
+    #std {
+    margin-top: calc(100vh - 670px);
+  }
+}
+
+@media screen and (min-height: 571px){
+  #numeroDestinoProveedor {
+  margin-top: calc(100vh - 520px);
+  }
+}

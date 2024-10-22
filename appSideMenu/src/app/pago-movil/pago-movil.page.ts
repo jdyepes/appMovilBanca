@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, Platform, NavController } from '@ionic/angular';
+
+import { SMS } from '@ionic-native/sms/ngx';
+import { ActivatedRoute } from '@angular/router';
+import { MENSAJE_SUBPAGINAS } from '../../constantes/prefijo-opciones';
 
 @Component({
   selector: 'app-pago-movil',
@@ -8,22 +12,39 @@ import { AlertController } from '@ionic/angular';
 })
 export class PagoMovilPage implements OnInit {
 
+  parametroPAT: string;
+  parametroPAC: string;
   prefijoAccion: string;
-  bancoSeleccion: string;
+  bancoSeleccion: any;
   operadoraSeleccion: string;
-  telefonoSeleccion: number;
+  telefonoSeleccion: string;
   tipoIdentificacion: string;
-  numeroCedula: number;
+  numeroCedula: string;
   montoEntero: string;
   montoDecimal: string;
   operacion: string;
+  mensajeEnviar: string;
+  numeroDestino: string;
+  pagoMovilMenu: string; // pagina anterior
+  subscription: any;
 
-  constructor(public alertCtrl: AlertController) { 
-    this.prefijoAccion ='PAT';
-    this.operacion ='PAGO';
-  }
+  /** Mensajes pie de pagina */
+  mensajeFooter1: string = MENSAJE_SUBPAGINAS.mensajeFooter1;
+  mensajeFooter2: string = MENSAJE_SUBPAGINAS.mensajeFooter2;
+  mensajeFooter3: string = MENSAJE_SUBPAGINAS.mensajeFooter3;
+  mensajeFooter4: string = MENSAJE_SUBPAGINAS.mensajeFooter4;
+ 
 
-  ngOnInit() {
+  /** Navegacion entre paginas por rutas */
+  constructor(public alertCtrl: AlertController,
+              private sms: SMS, private rutaActiva: ActivatedRoute,
+              private navCtrl: NavController, private platform: Platform) {
+    this.parametroPAT = this.rutaActiva.snapshot.params.operacionPAT; // paramtros para el ->
+    this.parametroPAC = this.rutaActiva.snapshot.params.operacionPAC; // regreso a la pagina anterior
+    this.prefijoAccion = this.rutaActiva.snapshot.params.valorSeleccion; // valor seleccionado por el usuario (PAT por defecto)   
+    this.numeroDestino = this.rutaActiva.snapshot.params.numeroProveedor;
+    this.operacion = 'PAGO';
+    this.montoDecimal === undefined ? this.montoDecimal = '00' : this.montoDecimal;
   }
 
   banks: any[] = [
@@ -187,35 +208,165 @@ export class PagoMovilPage implements OnInit {
     } 
   ];
 
-  //alertBox
- async realizarPago(){
-  let alert = await this.alertCtrl.create({
-     header: 'Alerta',  
-     message: 'Confirma que desea realizar un ' + '<b>' + this.operacion + '</b>' +
-     ' con los siguientes datos: ' + '<BR>' +
-     '<b>Banco: </b>' + this.bancoSeleccion + '<BR>' +
-     '<b>Teléfono: </b>' + this.operadoraSeleccion + this.telefonoSeleccion + '<BR>' +
-     '<b>Monto: </b>' + this.montoEntero + ',' + this.montoDecimal + '<BR>' + 
-     '<b>C.I.: </b>' + this.tipoIdentificacion + this.numeroCedula,
-
-     buttons: [
-       {
-         text: 'Cancelar',
-         handler: () => {
-           //no
-           console.log('entro en no');            
-         }
-       },
-       {
-         text: 'OK',
-         handler: () => {
-           //si           
-           console.log('mensaje a enviar: '+this.prefijoAccion + ' ' + this.bancoSeleccion + ' ' + this.operadoraSeleccion + this.telefonoSeleccion + ' ' + this.montoEntero + ',' + this.montoDecimal + ' ' + this.tipoIdentificacion + this.numeroCedula);
-         }
-       }
-     ]       
-   });
-   await alert.present();
+  // deshabilita el boton regresar antes de salir de la pag
+  ionViewWillLeave() {
+    this.subscription.unsubscribe();
  }
 
+ // evento cuando se presiona el boton de regresar en el telefono
+ initializeBackButton() {
+   this.subscription = this.platform.backButton.subscribeWithPriority(999999, () => {
+     this.regresar();
+   });
+ }
+
+  ngOnInit() {
+    this.pagoMovilMenu = 'pago-movil-menu/' + this.numeroDestino + '/' + this.parametroPAT + '/' + this.parametroPAC; // pagina anterior
+    this.initializeBackButton();
+  }
+
+// muestra los mensajes de los campos si estan errados
+async mostrarError(mensaje: string) {
+
+  let alert = await this.alertCtrl.create({
+    header: 'Alerta',
+    message: '<p>' + mensaje + '</p>',
+    cssClass: 'alertColor',
+    buttons: [
+      {
+        text: 'OK'
+      }
+    ]
+  });
+  await alert.present();
+}
+
+  //alertBox
+ async realizarPago(){
+  if(this.validarCampos()) {
+    let alert = await this.alertCtrl.create({
+      header: 'Alerta',  
+      message: 'Confirma que desea realizar un ' + '<b>' + this.operacion + '</b>' +
+      ' con los siguientes datos: ' + '<BR>' +
+      '<b>Operacion: </b>' + this.prefijoAccion + '<BR>' +
+      '<b>Banco: </b>' + (this.bancoSeleccion).code + ' | ' + (this.bancoSeleccion).name + '<BR>' +
+      '<b>Teléfono: </b>' + this.operadoraSeleccion + this.telefonoSeleccion + '<BR>' +
+      '<b>Monto: </b>' + this.montoEntero + ',' + this.montoDecimal + '<BR>' + 
+      '<b>C.I.: </b>' + this.tipoIdentificacion + this.numeroCedula,
+
+      buttons: [
+        {
+          text: 'Cancelar',
+          handler: () => {
+            //no
+            console.log('entro en no');
+          }
+        },
+        {
+          text: 'OK',
+          handler: () => {
+            //si
+            this.mensajeEnviar = this.prefijoAccion + ' ' + (this.bancoSeleccion).code + ' ' + this.operadoraSeleccion + this.telefonoSeleccion + ' ' + this.montoEntero + ',' + this.montoDecimal + ' ' + this.tipoIdentificacion + this.numeroCedula;
+            console.log('mensaje a enviar: ' + this.mensajeEnviar);
+            this.sendSMS(this.mensajeEnviar);
+          }
+        }
+      ]
+    });
+    await alert.present();
+   }
+ }
+
+ validarCampos(): boolean {
+    let numberPattern = new RegExp(/^\d*$/);
+    let telPattern = new RegExp(/^[0-9]{7}$/);
+    let cedPattern = new RegExp(/^[0-9]{7,8}$/);
+    let maxLongMontoEntero = new RegExp(/^[0-9]{1,10}$/);//// max uno a diez numeros enteros
+    if (this.prefijoAccion === undefined) {
+      this.mostrarError('El prefijo no se pudo cargar. Intente nuevamente.');
+      return false;
+    } else
+    if (this.bancoSeleccion === undefined) {
+      this.mostrarError('Campo requerido. ' + '<BR>' + 'Seleccione el banco destino.');
+      this.bancoSeleccion = undefined;
+      return false;
+    } else
+    if (this.operadoraSeleccion === undefined) {
+      this.mostrarError('Campo requerido. ' + '<BR>' + 'Seleccione la operadora.');
+      this.operadoraSeleccion = undefined;
+      return false;
+    } else
+    if (this.telefonoSeleccion === undefined) {
+      this.mostrarError('Campo requerido. ' + '<BR>' + 'Indique el número telefónico.');
+      this.telefonoSeleccion = undefined;
+      return false;
+    } else
+    if (!telPattern.test(this.telefonoSeleccion)) {
+      this.mostrarError('Teléfono inválido');
+      return false;
+    } else
+    if (this.tipoIdentificacion === undefined) {
+      this.mostrarError('Campo requerido. ' + '<BR>' + 'Seleccione el tipo de documentación.');
+      this.tipoIdentificacion = undefined;
+      return false;
+    } else
+    if (this.numeroCedula === undefined) {
+      this.mostrarError('Campo requerido. ' + '<BR>' + 'Indique el número de cédula.');
+      this.numeroCedula = undefined;
+      return false;
+    } else
+    if (!cedPattern.test(this.numeroCedula)) {
+      this.mostrarError('Número de cédula inválido');
+      return false;
+    } else
+    if (!maxLongMontoEntero.test(this.montoEntero)) {
+      this.mostrarError('Monto inválido. ' + '<BR>' + 'Indique máximo diez dígitos del monto a recargar.');
+      return false;
+    } else
+    if (this.montoEntero === undefined) {
+      this.mostrarError('Campo requerido. ' + '<BR>' + 'Indique el monto a transferir.');
+      this.montoEntero = undefined;
+      return false;
+    } else
+    if (this.montoDecimal === undefined) {
+      this.mostrarError('Campo requerido. ' + '<BR>' + 'Indique los dos decimales.');
+      this.montoDecimal = undefined;
+      return false;
+    } else
+    if (!numberPattern.test(this.montoDecimal)) {
+      this.mostrarError('Ha ingresado un monto inválido');
+      return false;
+    } else {
+    return true;
+    }
+  }
+
+  async sendSMS(mensaje: string) {
+    // CONFIGURATION
+    var options = {
+      replaceLineBreaks: false, // true to replace \n by a new line, false by default
+      android: {
+        intent: 'INTENT'  // send SMS with the native android SMS messaging
+        //intent: '' // send SMS without opening any other app
+      }
+    };
+    await this.sms.send(this.numeroDestino, mensaje, options);
+  }
+
+  doRefresh(event) {
+    console.log('Begin async operation');
+    this.navCtrl.pop();
+    this.navCtrl.navigateBack('spinner');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      this.navCtrl.pop();
+      this.navCtrl.navigateForward('pago-movil/' + this.numeroDestino + '/' + this.parametroPAT + '/' + this.parametroPAC + '/' + this.prefijoAccion);
+      event.target.complete ();
+    }, 1000);
+  }
+
+  regresar() {
+    this.navCtrl.navigateBack(this.pagoMovilMenu);
+  }
 }
